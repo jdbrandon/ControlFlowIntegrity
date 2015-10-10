@@ -1,20 +1,14 @@
 /* The body of our parser */
 
-#include <stdio.h>
 #include <udis86.h>
+#include "global.h"
 
-int main()
+extern char infile[], outfile[];
+
+int main(int argc, char *argv[])
 {
-    ud_t ud_obj;
-
-    ud_init(&ud_obj);
-    ud_set_input_file(&ud_obj, stdin);
-    ud_set_mode(&ud_obj, 64);
-    ud_set_syntax(&ud_obj, UD_SYN_INTEL);
-
-    while (ud_disassemble(&ud_obj)) {
-        printf("\t%s\n", ud_insn_asm(&ud_obj));
-    }
-
+	check_arguments(argc, argv);
+	printf("input file: %s\n", infile);
+	printf("output file: %s\n", outfile);
     return 0;
 }
