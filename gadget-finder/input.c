@@ -58,3 +58,14 @@ void check_arguments(int argc, char *argv[])
 		exit(1);
 	}
 }
+
+/* return 32 for x86, 64 for x64, exit directly if file type not supported */
+int check_elf_file()
+{
+    if((input_fd = fopen(infile, "r")) == NULL){
+        fprintf(stderr,"Error opening input file: %s\n",infile);
+        exit(1);
+    }
+    
+	return 64;
+}
