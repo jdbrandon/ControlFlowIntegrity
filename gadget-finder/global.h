@@ -8,6 +8,6 @@
 #include <string.h>
 
 void check_arguments(int, char**);
-int check_elf_file();
+void parse_elf_file();
 
 #endif
