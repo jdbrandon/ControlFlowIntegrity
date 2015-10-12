@@ -1,14 +1,12 @@
 /* input handling, commandline argument parsing */
 
 #include <fcntl.h>
-#include <elf.h>
-#include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
 
 #include "global.h"
 
-extern char infile[], outfile[];
+extern char infile[], outfile[], outdir[];
 
 /* Usage: %s [options] [arguments] input-file. */
 void check_arguments(int argc, char *argv[])
@@ -70,7 +68,7 @@ void check_arguments(int argc, char *argv[])
 	create a directory called exesections, which contain files with raw instructions
 	from exetuable sections. One file per section. the name is [vaddr]-[section name]
  */
-void parse_elf_file()
+struct section * parse_elf_file()
 {
 	int error = 0;
 	
@@ -118,22 +116,30 @@ void parse_elf_file()
 	//parse string table
 	char *strtbl = (char *)(start + shdrs[elfhdr->e_shstrndx].sh_offset);
 
-	if (mkdir("./exesections", S_IRWXU)) {
+	if (mkdir(outdir, S_IRWXU)) {
 		fprintf(stderr, "fail to create output directory \"exesections\", directory may already exist.\n");
 		error = 2;
 		goto bad;
 	}
 	
+	//linked list to save the section names and vaddr
+	struct section *s = NULL, *s1;
+	
 	for (int i=0; i<elfhdr->e_shnum; i++) {
 		if (shdrs[i].sh_flags & SHF_EXECINSTR) {
-			char name[32];
-			if (strlen(&strtbl[shdrs[i].sh_name]) > 16) {
-				printf("Not normal, Section name too long.");
+			char name[64];
+			if (strlen(&strtbl[shdrs[i].sh_name]) > 15) {
+				fprintf(stderr, "Not normal, Section name too long.\n");
 				error = 3;
 			}
 			
-			sprintf(name, "./exesections/%016lx-%s", shdrs[i].sh_addr, &strtbl[shdrs[i].sh_name]);
-			printf("name: %s\n", name);
+			sprintf(name, "%s/%016lx-%s", outdir, shdrs[i].sh_addr, &strtbl[shdrs[i].sh_name]);
+			
+			//save the file name
+			s1 = create_section(name, shdrs[i].sh_addr);
+			s1->next = s;
+			s = s1;
+			
 			int fd = open(name, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
 			if (fd < 0) {
 				fprintf(stderr, "fail to create output file in directory ./exesections.\n");
@@ -162,7 +168,7 @@ void parse_elf_file()
 		goto bad;
 	}
 	
-	return;
+	return s;
 	
 bad:
 	switch (error) {

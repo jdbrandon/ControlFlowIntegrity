@@ -4,7 +4,7 @@ CFLAGS  = -Wall -Werror -std=c11
 LFLAGS	= -static -ludis86
 
 #target, objects and sources
-SOURCES	= main.c input.c output.c global.c
+SOURCES	= main.c input.c output.c global.c section.c
 OBJECTS	= $(SOURCES:.c=.o)
 TARGET	= gadget-finder
 
