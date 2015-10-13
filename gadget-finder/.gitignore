@@ -1,0 +1,6 @@
+exesections/*
+
+*.so
+*.o
+*.a
+gadget-finder
