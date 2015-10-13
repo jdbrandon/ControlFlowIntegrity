@@ -1,6 +1,10 @@
 #ifndef GLOBAL_HEADER
 #define GLOBAL_HEADER
 
+#define CLP_HEX 0x0f1f40aa
+#define JLP_HEX 0x0f1f40bb
+#define RLP_HEX 0x0f1f40cc
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
