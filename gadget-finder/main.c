@@ -18,9 +18,9 @@ int main(int argc, char *argv[])
     char last_instr_hex[INSTR_SIZE_MAX] = "", output_buffer[BUF_SIZE] = "";
     FILE* input_fd;
     const char* tmp;
+    check_arguments(argc, argv);
     struct section *s = parse_elf_file();
     struct section *s1 = s;
-    check_arguments(argc, argv);
 
     printf("input file: %s\n", infile);
     printf("output file: %s\n", outfile);
