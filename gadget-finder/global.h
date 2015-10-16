@@ -1,9 +1,9 @@
 #ifndef GLOBAL_HEADER
 #define GLOBAL_HEADER
 
-#define CLP_HEX 0x0f1f40aa
-#define JLP_HEX 0x0f1f40bb
-#define RLP_HEX 0x0f1f40cc
+#define CLP_SIG 0x0f1f40aa
+#define JLP_SIG 0x0f1f40bb
+#define RLP_SIG 0x0f1f40cc
 
 #include <ctype.h>
 #include <stdio.h>
@@ -20,6 +20,9 @@ struct section {
 };
 
 void check_arguments(int, char**);
+void fscanf_errcheck(unsigned, unsigned);
+void snprintf_errcheck(size_t, size_t);
+void write_output(size_t, char*);
 struct section * parse_elf_file();
 struct section * create_section(char *name, Elf64_Addr addr);
 
