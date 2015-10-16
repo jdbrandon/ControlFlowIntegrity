@@ -17,11 +17,13 @@ int main(int argc, char *argv[])
     unsigned sig = 0, matched = 0;
     FILE* input_fd;
     const char* tmp;
-    struct section *s = parse_elf_file();
-    struct section *s1 = s;
-    ud_mnemonic_code_t mnemonic;
+    section *s, *s1;
 
     check_arguments(argc, argv);
+    s = parse_elf_file();
+    s1 = s;
+    ud_mnemonic_code_t mnemonic;
+
     printf("input file: %s\n", infile);
     printf("output file: %s\n", outfile);
     
@@ -39,24 +41,29 @@ int main(int argc, char *argv[])
         ud_set_syntax(&disassembly_obj, UD_SYN_INTEL);
         ud_set_pc(&disassembly_obj, s1->vaddr);	
 
-        //TODO: Add special rules for NSA instrumented instructions
-        while((matched = fscanf(input_fd, "%c", (char*)&sig)) != EOF){
-            fscanf_errcheck(matched, 1);
+        //Add special rules for NSA instrumented instructions
+        while((matched = fread(&sig, 1, 1, input_fd)) != EOF){
+            fread_errcheck(matched, 1, "Reading byte");
 
             if(sig == (CLP_SIG>>24)){
-                fseek(input_fd, ftell(input_fd)-1, SEEK_SET); //rewinds one byte
-                matched = fscanf(input_fd, "%x", &sig);
-                fscanf_errcheck(matched, 1);
-
+                matched = fread(&sig, 2, 1, input_fd);
+                fread_errcheck(matched, 1, "Tried to read short");
+                if((short)sig != PATTERN){
+                    fseek(input_fd, ftell(input_fd)-2, SEEK_SET); //rewind 2    
+                    continue;
+                }
+                matched = fread(&sig, 1, 1, input_fd);
+                fread_errcheck(matched, 1, "reading sig");
+                sig &= 0xff;
                 switch(sig){
-                    case CLP_SIG:
-                        printf("clp");
+                    case CLP_SHORT_SIG:
+                        printf("clp\n");
                         break;
-                    case RLP_SIG:
-                        printf("rlp");
+                    case RLP_SHORT_SIG:
+                        printf("rlp\n");
                         break;
-                    case JLP_SIG:
-                        printf("jlp");
+                    case JLP_SHORT_SIG:
+                        printf("jlp\n");
                         break;
                     default:
                         fseek(input_fd, ftell(input_fd)-3, SEEK_SET); //rewind 3
@@ -161,7 +168,7 @@ void snprintf_errcheck(size_t written, size_t bufsz){
         fprintf(stderr, "\n\nError: following output truncated, output buffer size %zu is too small!\n\n", bufsz);
 }
 
-void fscanf_errcheck(unsigned matched, unsigned expected){
+void fread_errcheck(unsigned matched, unsigned expected, const char* msg){
     if(matched != expected)
-        fprintf(stderr, "Error: fprintf matched %u items instead of %u\n", matched, expected);
+        fprintf(stderr, "Error: fread matched %u items instead of %u: %s\n", matched, expected, msg);
 }

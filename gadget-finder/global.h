@@ -4,6 +4,10 @@
 #define CLP_SIG 0x0f1f40aa
 #define JLP_SIG 0x0f1f40bb
 #define RLP_SIG 0x0f1f40cc
+#define CLP_SHORT_SIG (CLP_SIG & 0xff)
+#define JLP_SHORT_SIG (JLP_SIG & 0xff)
+#define RLP_SHORT_SIG (RLP_SIG & 0xff)
+#define PATTERN 0x401f
 
 #include <ctype.h>
 #include <stdio.h>
@@ -18,9 +22,10 @@ struct section {
 	Elf64_Addr vaddr;
 	struct section *next;
 };
+typedef struct section section;
 
 void check_arguments(int, char**);
-void fscanf_errcheck(unsigned, unsigned);
+void fread_errcheck(unsigned, unsigned, const char*);
 void snprintf_errcheck(size_t, size_t);
 void write_output(size_t, char*);
 struct section * parse_elf_file();
