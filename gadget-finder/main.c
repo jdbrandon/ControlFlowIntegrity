@@ -9,19 +9,19 @@
 #include "global.h"
 
 extern char infile[], outfile[], outdir[];
-void snprintf_errcheck(size_t, size_t);
-void write_output(size_t, char*);
 
 int main(int argc, char *argv[])
 {
     size_t len, count = 1;
     char last_instr_hex[INSTR_SIZE_MAX] = "", output_buffer[BUF_SIZE] = "";
+    unsigned sig = 0, matched = 0;
     FILE* input_fd;
     const char* tmp;
-    check_arguments(argc, argv);
     struct section *s = parse_elf_file();
     struct section *s1 = s;
+    ud_mnemonic_code_t mnemonic;
 
+    check_arguments(argc, argv);
     printf("input file: %s\n", infile);
     printf("output file: %s\n", outfile);
     
@@ -40,28 +40,57 @@ int main(int argc, char *argv[])
         ud_set_pc(&disassembly_obj, s1->vaddr);	
 
         //TODO: Add special rules for NSA instrumented instructions
-        while(ud_disassemble(&disassembly_obj)) {
-            tmp = ud_insn_hex(&disassembly_obj);
+        while((matched = fscanf(input_fd, "%c", (char*)&sig)) != EOF){
+            fscanf_errcheck(matched, 1);
 
-            //This coalesces repeated instructions to make output more compressed / readable
-            if(strcmp(last_instr_hex, tmp) == 0) {
-                count++;
-                continue;
+            if(sig == (CLP_SIG>>24)){
+                fseek(input_fd, ftell(input_fd)-1, SEEK_SET); //rewinds one byte
+                matched = fscanf(input_fd, "%x", &sig);
+                fscanf_errcheck(matched, 1);
+
+                switch(sig){
+                    case CLP_SIG:
+                        printf("clp");
+                        break;
+                    case RLP_SIG:
+                        printf("rlp");
+                        break;
+                    case JLP_SIG:
+                        printf("jlp");
+                        break;
+                    default:
+                        fseek(input_fd, ftell(input_fd)-3, SEEK_SET); //rewind 3
+                        continue;
+                }
             }
+        
+            //TODO: Change this loop to disassemble until a control flow instruction
+            while(ud_disassemble(&disassembly_obj)) {
+                tmp = ud_insn_hex(&disassembly_obj);
 
-            write_output(count, output_buffer);
-            count = 1;
+                //This coalesces repeated instructions to make output more compressed / readable
+                if(strcmp(last_instr_hex, tmp) == 0) {
+                    count++;
+                    continue;
+                }
 
-            len = snprintf(output_buffer, BUF_SIZE, "0x%.8lx\t%s%s%s", (long unsigned int) ud_insn_off(&disassembly_obj), ud_insn_asm(&disassembly_obj),"%s","%s");
-            snprintf_errcheck(len, BUF_SIZE);
+                write_output(count, output_buffer);
+                count = 1;
 
-            //update last_instr for repeated instruction coalescing
-            len = strlen(tmp);
-            strncpy(last_instr_hex, tmp, len);
-            last_instr_hex[len] = 0;
+                len = snprintf(output_buffer, BUF_SIZE, "0x%.8lx\t%s%s%s", (long unsigned int) ud_insn_off(&disassembly_obj), ud_insn_asm(&disassembly_obj),"%s","%s");
+                snprintf_errcheck(len, BUF_SIZE);
+
+                //update last_instr for repeated instruction coalescing
+                len = strlen(tmp);
+                strncpy(last_instr_hex, tmp, len);
+                last_instr_hex[len] = 0;
+                mnemonic = disassembly_obj.mnemonic;
+                if(mnemonic == UD_Icall || mnemonic == UD_Ijmp || mnemonic == UD_Iret)
+                    break;
+            }
+            //flush last output	
+    		write_output(count, output_buffer);
         }
-        //flush last output	
-		write_output(count, output_buffer);
 
         //Parse Disassembly
 
@@ -130,4 +159,9 @@ void write_output(size_t count, char* buf){
 void snprintf_errcheck(size_t written, size_t bufsz){
     if(written == bufsz)
         fprintf(stderr, "\n\nError: following output truncated, output buffer size %zu is too small!\n\n", bufsz);
+}
+
+void fscanf_errcheck(unsigned matched, unsigned expected){
+    if(matched != expected)
+        fprintf(stderr, "Error: fprintf matched %u items instead of %u\n", matched, expected);
 }
