@@ -14,7 +14,9 @@ int main(int argc, char *argv[])
 {
     size_t len, count = 1;
     char last_instr_hex[INSTR_SIZE_MAX] = "", output_buffer[BUF_SIZE] = "";
-    unsigned sig = 0, matched = 0;
+    unsigned matched = 0;
+    unsigned char sig;
+    unsigned short sig2;
     FILE* input_fd;
     const char* tmp;
     section *s, *s1;
@@ -42,19 +44,18 @@ int main(int argc, char *argv[])
         ud_set_pc(&disassembly_obj, s1->vaddr);	
 
         //Add special rules for NSA instrumented instructions
-        while((matched = fread(&sig, 1, 1, input_fd)) != EOF){
+        while((matched = fread(&sig, 1, 1, input_fd)) != 0){
             fread_errcheck(matched, 1, "Reading byte");
 
             if(sig == (CLP_SIG>>24)){
-                matched = fread(&sig, 2, 1, input_fd);
+                matched = fread(&sig2, 2, 1, input_fd);
                 fread_errcheck(matched, 1, "Tried to read short");
-                if((short)sig != PATTERN){
+                if((short)sig2 != PATTERN){
                     fseek(input_fd, ftell(input_fd)-2, SEEK_SET); //rewind 2    
                     continue;
                 }
                 matched = fread(&sig, 1, 1, input_fd);
                 fread_errcheck(matched, 1, "reading sig");
-                sig &= 0xff;
                 switch(sig){
                     case CLP_SHORT_SIG:
                         printf("clp\n");
@@ -71,7 +72,6 @@ int main(int argc, char *argv[])
                 }
             }
         
-            //TODO: Change this loop to disassemble until a control flow instruction
             while(ud_disassemble(&disassembly_obj)) {
                 tmp = ud_insn_hex(&disassembly_obj);
 
@@ -92,11 +92,12 @@ int main(int argc, char *argv[])
                 strncpy(last_instr_hex, tmp, len);
                 last_instr_hex[len] = 0;
                 mnemonic = disassembly_obj.mnemonic;
-                if(mnemonic == UD_Icall || mnemonic == UD_Ijmp || mnemonic == UD_Iret)
+                if(mnemonic == UD_Icall || mnemonic == UD_Ijmp || mnemonic == UD_Iret){
                     break;
+                }
             }
             //flush last output	
-    		write_output(count, output_buffer);
+     		write_output(count, output_buffer);
         }
 
         //Parse Disassembly
