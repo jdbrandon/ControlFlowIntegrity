@@ -1,4 +1,5 @@
 You must run two commands:
+```
 $ git submodule init
 # to initialize your local configuration file, and
 $ git submodule update
@@ -6,3 +7,4 @@ $ git submodule update
 
 # Or from the beginning
 git clone --recursive <repo url>
+```
