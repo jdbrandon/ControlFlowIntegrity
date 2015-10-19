@@ -20,11 +20,11 @@ int main(int argc, char *argv[])
     FILE* input_fd;
     const char* tmp;
     section *s, *s1;
+    ud_mnemonic_code_t mnemonic;
 
     check_arguments(argc, argv);
     s = parse_elf_file();
     s1 = s;
-    ud_mnemonic_code_t mnemonic;
 
     printf("input file: %s\n", infile);
     printf("output file: %s\n", outfile);
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
             if(sig == (CLP_SIG>>24)){
                 matched = fread(&sig2, 2, 1, input_fd);
                 fread_errcheck(matched, 1, "Tried to read short");
-                if((short)sig2 != PATTERN){
+                if(sig2 != PATTERN){
                     fseek(input_fd, ftell(input_fd)-2, SEEK_SET); //rewind 2    
                     continue;
                 }
@@ -67,11 +67,13 @@ int main(int argc, char *argv[])
                         printf("jlp\n");
                         break;
                     default:
+                        printf("default\n");
                         fseek(input_fd, ftell(input_fd)-3, SEEK_SET); //rewind 3
                         continue;
                 }
+            } else {
+                continue;
             }
-        
             while(ud_disassemble(&disassembly_obj)) {
                 tmp = ud_insn_hex(&disassembly_obj);
 
@@ -92,12 +94,18 @@ int main(int argc, char *argv[])
                 strncpy(last_instr_hex, tmp, len);
                 last_instr_hex[len] = 0;
                 mnemonic = disassembly_obj.mnemonic;
-                if(mnemonic == UD_Icall || mnemonic == UD_Ijmp || mnemonic == UD_Iret){
+                if(mnemonic == UD_Icall || isJump(mnemonic) || mnemonic == UD_Iret){
                     break;
                 }
             }
             //flush last output	
      		write_output(count, output_buffer);
+            
+            //Maybe we should add logi to follow static jumps here?
+            /* if(isJump(mnemonic)){
+                
+                }
+            */
         }
 
         //Parse Disassembly
@@ -169,7 +177,55 @@ void snprintf_errcheck(size_t written, size_t bufsz){
         fprintf(stderr, "\n\nError: following output truncated, output buffer size %zu is too small!\n\n", bufsz);
 }
 
+/* fread_errcheck
+ Error checking function for fread.
+ Parameters:
+    matched:
+        The number of elements matched
+    expected:
+        The number of elements expected
+    msg:
+        Error message to be appended in result of a mismatch (aids in locating source of error)
+
+ Description:
+    Checks to see if the number of matched elemts is equal to the
+    expected number. If they are not equal this indicates that there
+    has been an error, and probably too few bytes were read
+    This error does not affect further execution so a message is
+    printed to stderr and then execution continues.
+*/
 void fread_errcheck(unsigned matched, unsigned expected, const char* msg){
     if(matched != expected)
         fprintf(stderr, "Error: fread matched %u items instead of %u: %s\n", matched, expected, msg);
+}
+
+/* isJump
+ Helper function for determining if a disassembled instruction is a type of jump
+ Parameters:
+    m: the mnemonic to check
+ Description:
+    Checks agains all available jump instruction mnemonic values as defined in libudis header files.
+    returns 1 if m is a mnemmonic for a jump instruction and 0 if it is not.
+*/
+int isJump(ud_mnemonic_code_t m){
+   return (m == UD_Ijo ||
+        m == UD_Ijno ||
+        m == UD_Ijb ||
+        m == UD_Ijae ||
+        m == UD_Ijz ||
+        m == UD_Ijnz ||
+        m == UD_Ijbe ||
+        m == UD_Ija ||
+        m == UD_Ijs ||
+        m == UD_Ijns ||
+        m == UD_Ijp ||
+        m == UD_Ijnp ||
+        m == UD_Ijl ||
+        m == UD_Ijge ||
+        m == UD_Ijle ||
+        m == UD_Ijg ||
+        m == UD_Ijcxz ||
+        m == UD_Ijecxz ||
+        m == UD_Ijrcxz ||
+        m == UD_Ijmp);
 }

@@ -28,6 +28,7 @@ void check_arguments(int, char**);
 void fread_errcheck(unsigned, unsigned, const char*);
 void snprintf_errcheck(size_t, size_t);
 void write_output(size_t, char*);
+int isJump(ud_mnemonic_code_t);
 struct section * parse_elf_file();
 struct section * create_section(char *name, Elf64_Addr addr);
 
