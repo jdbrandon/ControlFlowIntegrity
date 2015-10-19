@@ -1,0 +1,3 @@
+[submodule "nsa-cfi"]
+	path = nsa-cfi
+	url = https://github.com/mmaps/Control-Flow-Integrity
