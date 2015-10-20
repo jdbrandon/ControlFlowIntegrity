@@ -1,8 +1,12 @@
 exesections/*
 
+# C stuff
 *.so
 *.o
 *.a
 gadget-finder
 output
 testls.sh
+
+# Python
+*.pyc
