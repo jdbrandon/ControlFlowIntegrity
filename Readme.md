@@ -8,3 +8,8 @@ $ git submodule update
 # Or from the beginning
 git clone --recursive <repo url>
 ```
+
+Modified ROPGadget can find LPI gadgets:
+```
+python ROPgadget.py --binary ~/14850-cfi/ControlFlowIntegrity/nsa-cfi/code/ls --lpi
+```
