@@ -10,3 +10,6 @@ testls.sh
 
 # Python
 *.pyc
+
+# Temp files
+*.swp
