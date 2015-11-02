@@ -156,7 +156,7 @@ class Gadgets:
                         if gadget:
                             gadget = gadget[:-3]
                             offset = self.__offset
-                            ret += [{"vaddr" :  offset + sect_vaddr + lpi_offset - i,
+                            ret += [{"vaddr" :  offset + sect_vaddr + lpi_offset,
                                      "gadget" : gadget,
                                      "decodes" : disassembly,
                                      "bytes": section["opcodes"][lpi_offset - i:lpi_offset + g_size]}]
