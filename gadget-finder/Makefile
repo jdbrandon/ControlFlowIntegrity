@@ -8,7 +8,7 @@ LFLAGS	= -Wall --static -ludis86
 endif
 
 #target, objects and sources
-SOURCES	= main.c input.c output.c global.c section.c
+SOURCES	= main.c input.c output.c global.c section.c lpoints.c gadget.c
 OBJECTS	= $(SOURCES:.c=.o)
 TARGET	= gadget-finder
 
