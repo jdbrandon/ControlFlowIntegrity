@@ -40,3 +40,7 @@ such jumps will be space for future work in this area.
 
 We believe that the potential for attacks will be low here due to the extremely limited number of possible valid attacks, as outlined in 
 the project proposal. 
+
+Conditional Dynamic Jumps
+-------------------------
+We are allowing this because if the attacker controls the flags then they can choose to not take the jump and continue execution in the current gadget. This is still limited by depth. The JLP on the other end will find the other gadget for later analysis. 
