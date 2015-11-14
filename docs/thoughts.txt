@@ -1,0 +1,51 @@
+Considering two paradigms 
+
+1. Shadow stack is not a given
+
+In this case we are allowed to follow any flow that does not break a constructed control flow graph.
+This paradigm allows for traditional buffer overflows where a return address is overwritten to successfully
+modify control flow to go to any return address that would be allowed under at least one legitimate execution.
+A gadget can begin at any rlp, jlp, or clp, and an attack would most likely begin at an rlp and go from there.
+
+A gadget in this context begins at any landing point and ends with a return address in most cases but could also
+end with a dynamic call or dynamic jump instruction. Indeed, this scheme will produce more gadgets and more potential
+for successful attacks. 
+
+2. Shadow stack is assumed secure
+
+In the case where the shadow stack is implemented and safely protected in secure storage we have to rethink gadgets 
+again. Now an attacker must find a location where they can control the target of a dynamic jump or call and point the
+pc to a jlp or clp of their choice accordingly. This significantly limits the options for the beginning of an attack
+compared to when there is no shadow stack. In fact we can no longer consider rlp as a valid landing point for the beginning
+of a gadget.
+
+As we developed our gadget identification tool we decided to use a two pass method for processing the binary. In the first
+pass we identify all landing points, including mis-aligned landing points. After all landing points are collected, we go through
+them in the order they were encountered. We disassemble from a landing point and we have 4 conditions on which we terminate the
+gadget identification process.
+
+1. Dynamic call encountered - gadget successfully identified
+2. Dynamic jump encountered - gadget successfully identified
+3. Bad instruction encountered - gadget is thrown out
+4. Gadget depth parameter is exceeded - gadget is thrown out
+
+Gadget depth is a parameter to our gadget finding tool supplied at runtime which specifies how many instructions may be included in a gadget before it is deemed
+"too large to be realisitcally useful". It is also applied to avoid state/space explosions the occur from identifying very large gadgets. The current flow
+of gadget analysis is to begin with a landing point and keep track of any other landing points encountered while processing. This way
+if depth is exceeded we may first analyze the gadgets that would begin in the middle of the gadget that would have been thrown out. If
+any of the landing points would produce a gadget that conforms to the depth requirement it is stored to be displayed as a valid gadget.
+To save on output space, if a gadget contains sub-gadgets (smaller gadgets contained within a larget gadget) the smaller gadget's entry
+point is marked in the display of the larger gadget. Thus making it clear that multiple gadgets are availavble to an attacker while effectivly
+coalescing several gadgets worth of output into the output for the largest logical gadget.
+
+With respect to static jumps, both conditional and nonconditional, we do not throw out gadgets when these are encountered. In most cases
+we believe these will correspond to looping and conditional constructs in the gadget within the scope of the function/gadget. In the case
+that a jump does change the scope or context, we leave it up to the analyst of our program's output to determine the gadget's usefulness. Following 
+such jumps in an automated fashion will be space for future work in this area.
+
+We believe that the potential for attacks will be low here due to the extremely limited number of possible valid attacks, as outlined in 
+the project proposal.  
+
+Conditional Dynamic Jumps
+-------------------------
+We are allowing this because if the attacker controls the flags then they can choose to not take the jump and continue execution in the current gadget. This is still limited by depth. The JLP on the other end will find the other gadget for later analysis. 
