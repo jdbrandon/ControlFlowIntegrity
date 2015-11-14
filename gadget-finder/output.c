@@ -33,6 +33,7 @@ void display_gadgets(gadget *list, FILE *fp)
 				fprintf(fp, "\t%s\n", ud_insn_asm(&ud_obj));			
 			}
 		}
+	
 		fprintf(fp, "\n");
 	}
 }

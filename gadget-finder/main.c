@@ -6,7 +6,9 @@
 extern char infile[], outfile[], outdir[];
 extern int save;
 extern unsigned depth;
+extern unsigned noshadow;
 
+/*
 static int is_cond_jump(ud_mnemonic_code_t m)
 {
 	return (m == UD_Ijo ||
@@ -29,13 +31,10 @@ static int is_cond_jump(ud_mnemonic_code_t m)
 		m == UD_Ijecxz ||
 		m == UD_Ijrcxz);
 }
-
-static int is_lp(ud_t *udptr)
-{
-	const uint8_t *instbuf = ud_insn_ptr(udptr);
-	int inst = *(int *)(instbuf);
-	
-	return (inst == CLP_SIG) || (inst == JLP_SIG) || (inst == RLP_SIG);
+*/
+static int is_lp(int inst)
+{	
+	return (inst == CLP_SIG) || (inst == JLP_SIG) || ((inst == RLP_SIG) && (noshadow));
 }
 
 static int check_dynamic_opr(ud_t *udptr)
@@ -57,7 +56,7 @@ static int check_dynamic_opr(ud_t *udptr)
 uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 {
 /******************definition******************/
-	unsigned count = 0;
+	unsigned count;
 
 	typedef struct list {
 		uint64_t start;
@@ -75,7 +74,7 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 		}
 	}
 	
-	list *init_list(uint64_t start, unsigned count)
+	list *init_list(uint64_t start, unsigned depth)
 	{
 		list *l = (list *)malloc(sizeof(list));
 		if (l == NULL) {
@@ -84,34 +83,42 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 		}
 		
 		l->start = start;
-		l->depth = count;
+		l->depth = depth;
 		l->next = NULL;
 		return l;
 	}
 
 /***********************alogrithm***********************/
-	list *l = (list *)malloc(sizeof(list));
-	l->start = *start;
-	l->depth = depth;
-	l->next = NULL;
+	list *l = init_list(0, depth);
+	count = 1;
 	
 	list *l1 = l;	//keep track of the list end
 
-	while (ud_disassemble(udptr)) {
-	
+	while (ud_disassemble(udptr)) {		//disassemble the next instruction
+		count++;
 		ud_mnemonic_code_t m = ud_insn_mnemonic(udptr);
 		
+		//if it is an LP instruction, save it into a list for a potential next gadget start and delete its address from the lpListArray
+		const uint8_t *instbuf = ud_insn_ptr(udptr);
+		int inst = *(int *)(instbuf);
+		if (is_lp(inst)) {
+			uint64_t lpaddr = ud_insn_off(udptr);
+			l1->next = init_list(lpaddr, count);
+			l1 = l1->next;
+			delete_lp(lpaddr, lpListArray);
+			goto next;
+		}
+				
 		//if it is an invalid instruction
 		if (ud_lookup_mnemonic(m) == NULL)
 			goto bad;
 		
-		//if current instruction is a conditional jump, then abandon this gadget
-		if (is_cond_jump(m))
-			goto bad;
-		
 		//if it is a return instruction
-		if (m == UD_Iret)
+		if (m == UD_Iret) {
+			if (noshadow)
+				goto good;
 			goto bad;
+		}
 		
 		//if it is an unconditional jump, then need to look at the operand
 		if (m == UD_Ijmp) {
@@ -119,8 +126,8 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 			if (check_dynamic_opr(udptr))
 				goto good;
 			
-			//if it is a static jump, then most likely it goes to the beginning of loops. Don't follow it for now.
-			goto bad;
+			//if it is a static jump, then most likely it goes to the beginning of loops. Just pass it for now.
+			goto next;
 		}
 		
 		//if it is a call instruction, then check the operand
@@ -130,20 +137,10 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 				goto good;
 			
 			//if it is a static call, then just go through it
-			goto next;
-		}
-		
-		//otherwise, if it is an LP instruction, save it into a list for a potential next gadget start and delete its address from the lpListArray
-		if (is_lp(udptr)) {
-			uint64_t lpaddr = ud_insn_off(udptr);
-			l1->next = init_list(lpaddr, count);
-			l1 = l1->next;
-			delete_lp(lpaddr, lpListArray);
 		}
 						
 		//go to the next landing point
-next:
-		count++;
+next:	
 		if (count == l->depth) {
 			list *l2 = l;
 			l = l->next;
@@ -156,13 +153,13 @@ next:
 		}
 	}
 
-good:
-	free_list(l);
-	return ud_insn_off(udptr) + ud_insn_len(udptr);
-
 bad:
 	free_list(l);
 	return 0;
+
+good:
+	free_list(l);
+	return ud_insn_off(udptr) + ud_insn_len(udptr);
 }
 
 static void collect_landing_points(void *start, section *s, lpoint **lpArrayList)
@@ -171,7 +168,7 @@ static void collect_landing_points(void *start, section *s, lpoint **lpArrayList
 	
 	for (uint64_t i=0; i<s->size-3; i++) {
 		int inst = *((int *)(start + i));
-		if ((inst == CLP_SIG) || (inst == JLP_SIG) || (inst == RLP_SIG))
+		if (is_lp(inst))
 			add_lp(secstart + i, lpArrayList);
 	}
 }
@@ -188,11 +185,12 @@ static gadget * collect_gadgets(unsigned char *start, section *s, lpoint **lpArr
 
 	while (!is_empty(lpArrayList)) {
 		remove_smallest(lpArrayList, &lpaddr);
-		unsigned offset = lpaddr - s->vaddr;
-		ud_set_input_buffer(&ud_obj, start+offset+4, s->size-offset-4);
+		unsigned offset = lpaddr - s->vaddr + 4;
+		ud_set_input_buffer(&ud_obj, start+offset, s->size-offset);
 		ud_set_pc(&ud_obj, lpaddr+4);
 		end = find_gadget_end(&ud_obj, &lpaddr, lpArrayList);
 		if (end != 0) {
+			offset = lpaddr - s->vaddr;
 			gadget *g = create_gadget(lpaddr, end, start+offset);
 			add_gadget(g, &list);
 			*count = *count + 1;

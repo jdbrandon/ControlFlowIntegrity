@@ -5,6 +5,7 @@
 extern char infile[], outfile[], outdir[];
 extern int save;	//command line switch for saving the output directory
 extern unsigned depth;
+extern unsigned noshadow;
 
 static int check_ascii_int(char *s)
 {
@@ -30,6 +31,7 @@ void check_arguments(int argc, char *argv[])
 				fprintf(stderr, "Invalid option %s.\n", argv[i]);
 				exit(1);
 			}
+			
 			switch (argv[i][1]) {
 			case 'h':
 				printf("Usage: %s [options] [arguments] input-file.\n", argv[0]);
@@ -66,7 +68,8 @@ void check_arguments(int argc, char *argv[])
 				}
 				
 				depth = atoi(argv[i]);
-				
+			case 'N':
+				noshadow = 1;
 			}
 		}
 		
