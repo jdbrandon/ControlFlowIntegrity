@@ -62,12 +62,16 @@ void check_arguments(int argc, char *argv[])
 					exit(1);
 				}
 				
-				if(!check_ascii_int(argv[i])) {
+				if (!check_ascii_int(argv[i])) {
 					fprintf(stderr, "Invalid depth parameter.\n");
 					exit(1);
 				}
 				
 				depth = atoi(argv[i]);
+				if (depth < 2) {
+					fprintf(stderr, "Depth has to be greater than 2.\n");
+					exit(1);
+				}
 				break;
 			case 'N':
 				noshadow = 1;

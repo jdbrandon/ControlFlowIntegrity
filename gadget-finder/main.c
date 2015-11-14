@@ -60,7 +60,7 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 
 	typedef struct list {
 		uint64_t start;
-		unsigned depth;
+		unsigned remain;
 		struct list *next;
 	}list;
 	
@@ -74,7 +74,7 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 		}
 	}
 	
-	list *init_list(uint64_t start, unsigned depth)
+	list *init_list(uint64_t start, unsigned count)
 	{
 		list *l = (list *)malloc(sizeof(list));
 		if (l == NULL) {
@@ -83,7 +83,7 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 		}
 		
 		l->start = start;
-		l->depth = depth;
+		l->remain = count;
 		l->next = NULL;
 		return l;
 	}
@@ -91,11 +91,12 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 /***********************alogrithm***********************/
 	list *l = init_list(0, depth);
 	count = 1;
+
+	unsigned idx1, idx2 = 1;
 	
 	list *l1 = l;	//keep track of the list end
 
 	while (ud_disassemble(udptr)) {		//disassemble the next instruction
-		count++;
 		ud_mnemonic_code_t m = ud_insn_mnemonic(udptr);
 		
 		//if it is an LP instruction, save it into a list for a potential next gadget start and delete its address from the lpListArray
@@ -103,7 +104,8 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 		int inst = *(int *)(instbuf);
 		if (is_lp(inst)) {
 			uint64_t lpaddr = ud_insn_off(udptr);
-			l1->next = init_list(lpaddr, count);
+			l1->next = init_list(lpaddr, idx2-idx1);
+			idx1 = idx2;
 			l1 = l1->next;
 			delete_lp(lpaddr, lpListArray);
 			goto next;
@@ -141,13 +143,15 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 						
 		//go to the next landing point
 next:	
-		if (count == l->depth) {
+		count++;
+		idx2++;
+		if (count == l->remain) {
 			list *l2 = l;
 			l = l->next;
 			free(l2);
 			if (l == NULL)
 				goto bad;
-				
+
 			count = 0;
 			*start = l->start;
 		}
