@@ -68,6 +68,7 @@ void check_arguments(int argc, char *argv[])
 				}
 				
 				depth = atoi(argv[i]);
+				break;
 			case 'N':
 				noshadow = 1;
 			}
