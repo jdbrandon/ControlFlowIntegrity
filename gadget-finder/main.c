@@ -130,6 +130,8 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 				goto good;
 			
 			//if it is a static unconditional jump, then return directly. Such gadgets need to be determined further
+            //TODO: move disassembler to target of jump and continue gadget identification
+            //TODO: store value of current/next instruction so we can return to disassemble where we left off
 			goto good;
 		}
 		
