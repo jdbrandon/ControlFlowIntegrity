@@ -4,7 +4,6 @@ exesections/*
 *.so
 *.o
 *.a
-gadget-finder
 output
 testls.sh
 
