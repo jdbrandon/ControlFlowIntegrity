@@ -112,7 +112,8 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 		}
 				
 		//if it is an invalid instruction
-		if (ud_lookup_mnemonic(m) == NULL)
+		const char *strmnic = ud_lookup_mnemonic(m);
+		if (strmnic == NULL || !strcmp(strmnic, "invalid"))
 			goto bad;
 		
 		//if it is a return instruction
@@ -128,8 +129,8 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 			if (check_dynamic_opr(udptr))
 				goto good;
 			
-			//if it is a static jump, then most likely it goes to the beginning of loops. Just pass it for now.
-			goto next;
+			//if it is a static unconditional jump, then return directly. Such gadgets need to be determined further
+			goto good;
 		}
 		
 		//if it is a call instruction, then check the operand
