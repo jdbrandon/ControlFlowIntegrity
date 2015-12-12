@@ -7,7 +7,7 @@
 
   4004fa:	0f 1f 40 bb                     jlp		<=
   4004fe:	68 00 00 00 00                  push 0x0
-  400503:	e9 c8 ff ff ff                  jmp 0x4004d0
+  400503:	e9 c8 ff ff ff                  jmp 0x4004d0 #Address of init
 
   400510:	0f 1f 40 aa                     clp		<=
   400514:	ff 25 1e 07 20 00               jmp qword [rip+0x20071e]
@@ -53,26 +53,26 @@
 
 ./exesections/4005d0-.text: 4005d0
 **********************************************************
-  4006a0:	0f 1f 40 aa                     clp		<=
-  4006a4:	80 3d cd 05 20 00 00            cmp byte [rip+0x2005cd], 0x0
+  4006a0:	0f 1f 40 aa                     clp		<= #Control rip+0x2005b7 and we can choose a function in a function table to call
+  4006a4:	80 3d cd 05 20 00 00            cmp byte [rip+0x2005cd], 0x0 
   4006ab:	75 6b                           jnz 0x400718
   4006ad:	55                              push rbp
   4006ae:	48 89 e5                        mov rbp, rsp
   4006b1:	53                              push rbx
   4006b2:	bb 70 0a 60 00                  mov ebx, 0x600a70
-  4006b7:	48 81 eb 68 0a 60 00            sub rbx, 0x600a68
+  4006b7:	48 81 eb 68 0a 60 00            sub rbx, 0x600a68 #rbx = 2?
   4006be:	48 83 ec 08                     sub rsp, 0x8
   4006c2:	48 8b 05 b7 05 20 00            mov rax, [rip+0x2005b7]
   4006c9:	48 c1 fb 03                     sar rbx, 0x3
   4006cd:	48 83 eb 01                     sub rbx, 0x1
   4006d1:	48 39 d8                        cmp rax, rbx
   4006d4:	73 2c                           jae 0x400702
-  4006d6:	66 2e 0f 1f 84 00 00 00 00 00   o16 nop [cs:rax+rax]
+  4006d6:	66 2e 0f 1f 84 00 00 00 00 00   o16 nop [cs:rax+rax] #strange nop?
   4006e0:	48 83 c0 01                     add rax, 0x1
   4006e4:	48 89 05 95 05 20 00            mov [rip+0x200595], rax
-  4006eb:	ff 14 c5 68 0a 60 00            call qword [rax*8+0x600a68]
+  4006eb:	ff 14 c5 68 0a 60 00            call qword [rax*8+0x600a68] #rax index into a function table
 
-  400720:	0f 1f 40 aa                     clp		<=
+  400720:	0f 1f 40 aa                     clp		<= #Call function in rax if the function is solely stored in high 32 bits of rax
   400724:	48 83 3d 4c 03 20 00 00         cmp qword [rip+0x20034c], 0x0
   40072c:	55                              push rbp
   40072d:	48 89 e5                        mov rbp, rsp
@@ -92,7 +92,7 @@
   400765:	83 7d dc 03                     cmp dword [rbp-0x24], 0x3
   400769:	74 27                           jz 0x400792
   40076b:	48 8b 45 d0                     mov rax, [rbp-0x30]
-  40076f:	48 8b 00                        mov rax, [rax]
+  40076f:	48 8b 00                        mov rax, [rax] #read rbp-0x30
   400772:	48 89 c6                        mov rsi, rax
   400775:	bf d8 08 40 00                  mov edi, 0x4008d8
   40077a:	b8 00 00 00 00                  mov eax, 0x0
@@ -103,19 +103,19 @@
   400792:	48 c7 45 f8 e3 07 40 00         mov qword [rbp-0x8], 0x4007e3
   40079a:	48 8b 45 d0                     mov rax, [rbp-0x30]
   40079e:	48 83 c0 08                     add rax, 0x8
-  4007a2:	48 8b 00                        mov rax, [rax]
+  4007a2:	48 8b 00                        mov rax, [rax] #read, but not highly useful
   4007a5:	48 89 c7                        mov rdi, rax
   4007a8:	e8 e3 fd ff ff                  call 0x400590
   4007ad:	0f 1f 40 cc                     rlp		<=
   4007b1:	48 63 d0                        movsxd rdx, eax
   4007b4:	48 8b 45 d0                     mov rax, [rbp-0x30]
   4007b8:	48 83 c0 10                     add rax, 0x10
-  4007bc:	48 8b 08                        mov rcx, [rax]
+  4007bc:	48 8b 08                        mov rcx, [rax] #read but not highly useful
   4007bf:	48 8d 45 e0                     lea rax, [rbp-0x20]
   4007c3:	48 89 ce                        mov rsi, rcx
   4007c6:	48 89 c7                        mov rdi, rax
   4007c9:	e8 a2 fd ff ff                  call 0x400570
-  4007ce:	0f 1f 40 cc                     rlp		<=
+  4007ce:	0f 1f 40 cc                     rlp		<= 
   4007d2:	48 8b 55 f8                     mov rdx, [rbp-0x8]
   4007d6:	b8 00 00 00 00                  mov eax, 0x0
   4007db:	ff d2                           call rdx
@@ -133,7 +133,7 @@
   40081d:	48 8d 2d 30 02 20 00            lea rbp, [rip+0x200230]
   400824:	53                              push rbx
   400825:	4c 29 e5                        sub rbp, r12
-  400828:	31 db                           xor ebx, ebx
+  400828:	31 db                           xor ebx, ebx #clear ebx
   40082a:	48 c1 fd 03                     sar rbp, 0x3
   40082e:	48 83 ec 08                     sub rsp, 0x8
   400832:	e8 61 fc ff ff                  call 0x400498
@@ -143,9 +143,9 @@
   400840:	4c 89 ea                        mov rdx, r13
   400843:	4c 89 f6                        mov rsi, r14
   400846:	44 89 ff                        mov edi, r15d
-  400849:	41 ff 14 dc                     call qword [r12+rbx*8]
+  400849:	41 ff 14 dc                     call qword [r12+rbx*8] # call rip relative offset stored in r12, indexed by ebx, which appears to be 0
 
-  400880:	0f 1f 40 aa                     clp		<=
+  400880:	0f 1f 40 aa                     clp		<= Call rip+0x2001bf
   400884:	55                              push rbp
   400885:	48 89 e5                        mov rbp, rsp
   400888:	53                              push rbx
