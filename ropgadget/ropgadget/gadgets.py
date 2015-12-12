@@ -11,7 +11,9 @@
 ##  (at your option) any later version.
 
 import re
-from   capstone import *
+import sys
+from capstone import *
+from capstone.x86 import *
 from sys import stderr
 from binascii import hexlify
 
@@ -107,10 +109,15 @@ class Gadgets:
         sect_vaddr = section["vaddr"]
 
         disassembler = Cs(arch, mode)
+        disassembler.detail = True
+        
+        g_count = 0
+        sys.stderr.write("Section %08x: " % sect_vaddr)
         for gad in gadgets:
             g_opcode = gad[0]
             g_size = gad[1]
             g_align = gad[2]
+            sys.stderr.write("%s" % LPI.get(g_opcode))
             
             """
             Find all the offsets of this LPI gadget in the bytecode of this executable section
@@ -122,44 +129,77 @@ class Gadgets:
             """
             for lpi_offset in lpi_offsets:
                 lpi_addr = sect_vaddr + lpi_offset
-                i = 0 
-                ret_reached = False
-                while i < 100 and not ret_reached:
+                try:
                     """
-                    i is an arbitrary limiter so that we don't add enormous functions to the gadget list.
-                    Necessary? Probably not.
+                    Disassemble forwards not backwards like regular ROP gadget.
+                    Start just after the LPI so that we don't get nonsense NOP from Capstone.
                     """
-                    try:
-                        """
-                        Disassemble forwards not backwards like regular ROP gadget.
-                        Start just after the LPI so that we don't get nonsense NOP from Capstone.
-                        """
-                        disassembly = disassembler.disasm(section["opcodes"][lpi_offset + g_size:], lpi_addr)
-                    except CsError as e:
-                        """
-                        Bad disassembly ruins a gadget
-                        """
-                        stderr.write("CsError: %s\n" % e)
-                        break
-                    else:
+                    disassembly = disassembler.disasm(section["opcodes"][lpi_offset + g_size:], lpi_addr)
+                except CsError as e:
+                    """
+                    Bad disassembly ruins a gadget
+                    """
+                    stderr.write("CsError: %s\n" % e)
+                    break
+                else:
+                    """
+                    Gadget starts with the LPI not with '' like regular gadget.
+                    """
+                    i = 0
+                    reads = set()
+                    writes = set()
+                    gadget = LPI.get(g_opcode)
+                    
+                    for instruction in disassembly:
                         i += 1
-                        """
-                        Gadget starts with the LPI not with '' like regular gadget.
-                        """
-                        gadget = LPI.get(g_opcode)
-                        for instruction in disassembly:
-                            #stderr.write("0x%s:  %s %s\n" % (hexlify(instruction.bytes), instruction.mnemonic, instruction.op_str))
-                            gadget += (instruction.mnemonic + " " + instruction.op_str + " ; ").replace("  ", " ")
-                            if instruction.mnemonic == "ret":
-                                ret_reached = True
-                                break
-                        if gadget:
-                            gadget = gadget[:-3]
-                            offset = self.__offset
-                            ret += [{"vaddr" :  offset + sect_vaddr + lpi_offset,
-                                     "gadget" : gadget,
-                                     "decodes" : disassembly,
-                                     "bytes": section["opcodes"][lpi_offset - i:lpi_offset + g_size]}]
+
+                        gadget += (instruction.mnemonic + " " + instruction.op_str + " ; ").replace("  ", " ")
+                        
+                        for op in instruction.operands:
+                            if op.type == X86_OP_REG:
+                                r = instruction.reg_name(op.reg)
+                                if op.access == CS_AC_READ:
+                                    reads.add(r)
+                                elif op.access == CS_AC_WRITE:
+                                    writes.add(r)
+                                elif op.access == CS_AC_WRITE | CS_AC_READ:
+                                    reads.add(r)
+                                    writes.add(r)
+
+                        for r in instruction.regs_read:
+                            reads.add(instruction.reg_name(r))
+                        for r in instruction.regs_write:
+                            writes.add(instruction.reg_name(r))
+
+                        if instruction.mnemonic == "ret" or instruction.mnemonic == "call" or instruction.mnemonic.startswith("j"):
+                            break
+                        
+                        if i == 15:
+                            gadget += "ENDEND"
+                            break
+
+                    if gadget:
+                        g_count += 1
+                        gadget = gadget[:-3]
+                        offset = self.__offset
+                        print "%016x: %s" % (offset + sect_vaddr + lpi_offset, gadget)
+
+                        print "read:",
+                        for r in sorted(reads):
+                            print r,
+                        print ""
+
+                        print "write:",
+                        for r in sorted(writes):
+                            print r,
+                        print ""
+
+                        print '-'*80
+
+        cnt = "section %016x gadget count: %d\n" % (sect_vaddr, g_count)
+        if g_count > 0:
+            sys.stdout.write(cnt)
+        sys.stderr.write(cnt)
         return ret 
 
 
