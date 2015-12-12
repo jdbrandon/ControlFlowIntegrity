@@ -2,6 +2,24 @@
 
 #include "global.h"
 
+void print_bytes(const uint8_t *buf, unsigned size, FILE *fp)
+{
+	unsigned i, spacenum;
+	
+	for (i=0; i<size; i++) {
+		fprintf(fp, "%02x ", buf[i]);
+	}
+	
+	if (size <= 10)
+		spacenum = 32 - size * 3;
+	else 
+		spacenum = 47 - size * 3;
+	
+	for (i=0; i<spacenum; i++) {
+		fprintf(fp, " ");
+	}
+}
+
 void display_gadgets(gadget *list, FILE *fp)
 {
 	ud_t ud_obj;
@@ -15,22 +33,22 @@ void display_gadgets(gadget *list, FILE *fp)
 		
 		while (ud_disassemble(&ud_obj)) {
 			uint64_t addr = ud_insn_off(&ud_obj);
-			fprintf(fp, "\t%llx:", (unsigned long long)addr);
-				
+			fprintf(fp, "  %llx:\t", (unsigned long long)addr);
+			print_bytes(ud_insn_ptr(&ud_obj), ud_insn_len(&ud_obj), fp);
 			const uint8_t *instbuf = ud_insn_ptr(&ud_obj);
 			int inst = *(int *)(instbuf);	
 			switch (inst) {
 			case CLP_SIG:
-				fprintf(fp, "\tclp\t\t<=\n");
+				fprintf(fp, "clp\t\t<=\n");
 				break;
 			case JLP_SIG:
-				fprintf(fp, "\tjlp\t\t<=\n");
+				fprintf(fp, "jlp\t\t<=\n");
 				break;
 			case RLP_SIG:
-				fprintf(fp, "\trlp\t\t<=\n");
+				fprintf(fp, "rlp\t\t<=\n");
 				break;
 			default:
-				fprintf(fp, "\t%s\n", ud_insn_asm(&ud_obj));			
+				fprintf(fp, "%s\n", ud_insn_asm(&ud_obj));			
 			}
 		}
 	

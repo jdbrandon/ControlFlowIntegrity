@@ -92,7 +92,7 @@ uint64_t find_gadget_end(ud_t *udptr, uint64_t *start, lpoint **lpListArray)
 	list *l = init_list(0, depth);
 	count = 1;
 
-	unsigned idx1, idx2 = 1;
+	unsigned idx1 = 1, idx2 = 1;
 	
 	list *l1 = l;	//keep track of the list end
 
