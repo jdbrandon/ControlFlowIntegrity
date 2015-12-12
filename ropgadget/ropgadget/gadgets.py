@@ -124,7 +124,7 @@ class Gadgets:
                 lpi_addr = sect_vaddr + lpi_offset
                 i = 0 
                 ret_reached = False
-                while i < 1000 and not ret_reached:
+                while i < 100 and not ret_reached:
                     """
                     i is an arbitrary limiter so that we don't add enormous functions to the gadget list.
                     Necessary? Probably not.
