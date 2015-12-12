@@ -1,12 +1,21 @@
 /* input handling, commandline argument parsing */
 
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <sys/mman.h>
-
 #include "global.h"
 
 extern char infile[], outfile[], outdir[];
+extern int save;	//command line switch for saving the output directory
+extern unsigned depth;
+extern unsigned noshadow;
+
+static int check_ascii_int(char *s)
+{
+	for (char *c=s; *c!='\0'; c++) {
+		if (*c < '0' || *c > '9')
+			return 0;	
+	}
+	
+	return 1;
+}
 
 /* Usage: %s [options] [arguments] input-file. */
 void check_arguments(int argc, char *argv[])
@@ -22,6 +31,7 @@ void check_arguments(int argc, char *argv[])
 				fprintf(stderr, "Invalid option %s.\n", argv[i]);
 				exit(1);
 			}
+			
 			switch (argv[i][1]) {
 			case 'h':
 				printf("Usage: %s [options] [arguments] input-file.\n", argv[0]);
@@ -41,6 +51,30 @@ void check_arguments(int argc, char *argv[])
 					exit(1);
 				}
 				strcpy(outfile, argv[i]);
+				break;
+			case 's':
+				save = 1;
+				break;
+			case 'd':
+				i++;
+				if (i == argc) {
+					fprintf(stderr, "Missing depth parameter.\n");
+					exit(1);
+				}
+				
+				if (!check_ascii_int(argv[i])) {
+					fprintf(stderr, "Invalid depth parameter.\n");
+					exit(1);
+				}
+				
+				depth = atoi(argv[i]);
+				if (depth < 2) {
+					fprintf(stderr, "Depth has to be greater than 2.\n");
+					exit(1);
+				}
+				break;
+			case 'N':
+				noshadow = 1;
 			}
 		}
 		
@@ -71,6 +105,7 @@ void check_arguments(int argc, char *argv[])
 struct section * parse_elf_file()
 {
 	int error = 0;
+	char cmd[32];
 	
 	//get file size
 	struct stat st;
@@ -104,8 +139,8 @@ struct section * parse_elf_file()
 	Elf64_Ehdr *elfhdr = (Elf64_Ehdr *)start ;
 	
 	//check file type
-	if (elfhdr->e_type != ET_EXEC) {
-		fprintf(stderr, "File not executable.\n");
+	if (elfhdr->e_type != ET_EXEC && elfhdr->e_type != ET_DYN) {
+		fprintf(stderr, "File not executable or shared obj.\n");
 		error = 2;
 		goto bad;
 	}
@@ -123,23 +158,23 @@ struct section * parse_elf_file()
 	}
 	
 	//linked list to save the section names and vaddr
-	struct section *s = NULL, *s1;
+	section *list = NULL, *s1;
 	
 	for (int i=0; i<elfhdr->e_shnum; i++) {
 		if (shdrs[i].sh_flags & SHF_EXECINSTR) {
 			char name[64];
-			if (strlen(&strtbl[shdrs[i].sh_name]) > 15) {
+			if (strlen(&strtbl[shdrs[i].sh_name]) > 32) {
 				fprintf(stderr, "Not normal, Section name too long.\n");
 				error = 3;
+				goto bad;
 			}
 			
-			sprintf(name, "%s/%016lx-%s", outdir, shdrs[i].sh_addr, &strtbl[shdrs[i].sh_name]);
+			sprintf(name, "%s/%lx-%s", outdir, shdrs[i].sh_addr, &strtbl[shdrs[i].sh_name]);
 			
 			//save the file name
-			s1 = create_section(name, shdrs[i].sh_addr);
-			s1->next = s;
-			s = s1;
-			
+			s1 = create_section(name, shdrs[i].sh_addr, shdrs[i].sh_size);
+			add_section(s1, &list);
+
 			int fd = open(name, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
 			if (fd < 0) {
 				fprintf(stderr, "fail to create output file in directory ./exesections.\n");
@@ -168,12 +203,13 @@ struct section * parse_elf_file()
 		goto bad;
 	}
 	
-	return s;
+	return list;
 	
 bad:
 	switch (error) {
 	case 3:
-		system("rm -rf ./exesections");
+		sprintf(cmd, "rm -rf %s", outdir);
+		system(cmd);
 	case 2:
 		munmap(start, st.st_size);
 	case 1:

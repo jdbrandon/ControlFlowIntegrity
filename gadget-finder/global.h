@@ -1,12 +1,9 @@
 #ifndef GLOBAL_HEADER
 #define GLOBAL_HEADER
 
-#define CLP_SIG 0x0f1f40aa
-#define JLP_SIG 0x0f1f40bb
-#define RLP_SIG 0x0f1f40cc
-#define CLP_SHORT_SIG (CLP_SIG & 0xff)
-#define JLP_SHORT_SIG (JLP_SIG & 0xff)
-#define RLP_SHORT_SIG (RLP_SIG & 0xff)
+#define CLP_SIG 0xaa401f0f
+#define JLP_SIG 0xbb401f0f
+#define RLP_SIG 0xcc401f0f
 #define PATTERN 0x401f
 
 #include <ctype.h>
@@ -14,23 +11,55 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <fcntl.h>
 #include <elf.h>
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
 #include <udis86.h>
 
-struct section {
+typedef struct section {
 	char sh_name[64];
 	Elf64_Addr vaddr;
+	Elf64_Xword size;
 	struct section *next;
-};
-typedef struct section section;
+}section;
+
+typedef struct lpoint {
+	uint64_t addr;
+	struct lpoint *next;
+}lpoint;
+
+typedef struct gadget {
+	uint64_t start;
+	uint64_t end;
+	uint64_t size;
+	unsigned char *buf;
+	struct gadget *next;
+}gadget;
 
 void check_arguments(int, char**);
-void fread_errcheck(unsigned, unsigned, const char*);
-void snprintf_errcheck(size_t, size_t);
-void write_output(size_t, char*);
-int isJump(ud_mnemonic_code_t johnny_mnemonic);
-struct section * parse_elf_file();
-struct section * create_section(char *name, Elf64_Addr addr);
+section * parse_elf_file();
+
+section * create_section(char *, Elf64_Addr, Elf64_Xword);
+void add_section(section *s, section **list);
+void free_sections(struct section *);
+size_t get_section_count();
+
+lpoint ** create_lp_array(size_t s);
+void free_lp_array(lpoint **lpListArray);
+void add_lp(uint64_t addr, lpoint **lpListArray);
+void delete_lp(uint64_t addr, lpoint **lpListArray);
+void remove_smallest(lpoint **lpListArray, uint64_t *value);
+void print_lp(lpoint **lpListArray);
+int is_empty(lpoint **lpListArray);
+
+gadget * create_gadget(uint64_t start, uint64_t end, void *buf);
+void add_gadget(gadget *g, gadget **list);
+size_t get_gadget_count(gadget *list);
+void free_gadget(gadget *g);
+void free_gadget_list(gadget *list);
+
+void display_gadgets(gadget *list, FILE *fp);
 
 #endif
