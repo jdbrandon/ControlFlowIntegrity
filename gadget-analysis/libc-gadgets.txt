@@ -1,0 +1,3644 @@
+./exesections/1f370-.plt: 1f370
+**********************************************************
+  1f390:	0f 1f 40 aa                     clp		<=
+  1f394:	ff 25 7e 9c 34 00               jmp qword [rip+0x349c7e]
+
+  1f39a:	0f 1f 40 bb                     jlp		<=
+  1f39e:	68 08 00 00 00                  push 0x8
+  1f3a3:	e9 c8 ff ff ff                  jmp 0x1f370
+
+  1f3b0:	0f 1f 40 aa                     clp		<=
+  1f3b4:	ff 25 66 9c 34 00               jmp qword [rip+0x349c66]
+
+  1f3ba:	0f 1f 40 bb                     jlp		<=
+  1f3be:	68 00 00 00 00                  push 0x0
+  1f3c3:	e9 a8 ff ff ff                  jmp 0x1f370
+
+  1f3d0:	0f 1f 40 aa                     clp		<=
+  1f3d4:	ff 25 4e 9c 34 00               jmp qword [rip+0x349c4e]
+
+  1f3da:	0f 1f 40 bb                     jlp		<=
+  1f3de:	68 01 00 00 00                  push 0x1
+  1f3e3:	e9 88 ff ff ff                  jmp 0x1f370
+
+  1f3f0:	0f 1f 40 aa                     clp		<=
+  1f3f4:	ff 25 36 9c 34 00               jmp qword [rip+0x349c36]
+
+  1f3fa:	0f 1f 40 bb                     jlp		<=
+  1f3fe:	68 02 00 00 00                  push 0x2
+  1f403:	e9 68 ff ff ff                  jmp 0x1f370
+
+  1f410:	0f 1f 40 aa                     clp		<=
+  1f414:	ff 25 1e 9c 34 00               jmp qword [rip+0x349c1e]
+
+  1f41a:	0f 1f 40 bb                     jlp		<=
+  1f41e:	68 03 00 00 00                  push 0x3
+  1f423:	e9 48 ff ff ff                  jmp 0x1f370
+
+  1f430:	0f 1f 40 aa                     clp		<=
+  1f434:	ff 25 06 9c 34 00               jmp qword [rip+0x349c06]
+
+  1f43a:	0f 1f 40 bb                     jlp		<=
+  1f43e:	68 04 00 00 00                  push 0x4
+  1f443:	e9 28 ff ff ff                  jmp 0x1f370
+
+  1f450:	0f 1f 40 aa                     clp		<=
+  1f454:	ff 25 ee 9b 34 00               jmp qword [rip+0x349bee]
+
+  1f45a:	0f 1f 40 bb                     jlp		<=
+  1f45e:	68 05 00 00 00                  push 0x5
+  1f463:	e9 08 ff ff ff                  jmp 0x1f370
+
+  1f470:	0f 1f 40 aa                     clp		<=
+  1f474:	ff 25 d6 9b 34 00               jmp qword [rip+0x349bd6]
+
+  1f47a:	0f 1f 40 bb                     jlp		<=
+  1f47e:	68 06 00 00 00                  push 0x6
+  1f483:	e9 e8 fe ff ff                  jmp 0x1f370
+
+  1f490:	0f 1f 40 aa                     clp		<=
+  1f494:	ff 25 be 9b 34 00               jmp qword [rip+0x349bbe]
+
+  1f49a:	0f 1f 40 bb                     jlp		<=
+  1f49e:	68 07 00 00 00                  push 0x7
+  1f4a3:	e9 c8 fe ff ff                  jmp 0x1f370
+
+./exesections/1f4b0-.text: 1f4b0
+**********************************************************
+  20db9:	0f 1f 40 bb                     jlp		<=
+  20dbd:	48 8d 95 70 ff ff ff            lea rdx, [rbp-0x90]
+  20dc4:	b9 08 00 00 00                  mov ecx, 0x8
+  20dc9:	83 c8 ff                        or eax, 0xffffffff
+  20dcc:	48 89 d7                        mov rdi, rdx
+  20dcf:	f3 ab                           rep stosd
+  20dd1:	eb 23                           jmp 0x20df6
+
+  22040:	0f 1f 40 aa                     clp		<=
+  22044:	48 83 ec 18                     sub rsp, 0x18
+  22048:	48 8b 05 a1 88 34 00            mov rax, [rip+0x3488a1]
+  2204f:	48 85 c0                        test rax, rax
+  22052:	74 02                           jz 0x22056
+  22054:	ff d0                           call rax
+
+  22080:	0f 1f 40 aa                     clp		<=
+  22084:	48 83 ec 28                     sub rsp, 0x28
+  22088:	48 8b 05 59 88 34 00            mov rax, [rip+0x348859]
+  2208f:	48 85 c0                        test rax, rax
+  22092:	74 0b                           jz 0x2209f
+  22094:	ff d0                           call rax
+
+  22100:	0f 1f 40 aa                     clp		<=
+  22104:	0f b6 06                        movzx eax, byte [rsi]
+  22107:	84 c0                           test al, al
+  22109:	0f 84 a4 00 00 00               jz 0x221b3
+  2210f:	48 8b 0d 32 5a 34 00            mov rcx, [rip+0x345a32]
+  22116:	4c 8b 05 3b 5a 34 00            mov r8, [rip+0x345a3b]
+  2211d:	45 31 d2                        xor r10d, r10d
+  22120:	eb 2e                           jmp 0x22150
+
+  22560:	0f 1f 40 bb                     jlp		<=
+  22564:	48 8d 0d 15 1f 11 00            lea rcx, [rip+0x111f15]
+  2256b:	48 8d 35 06 1f 11 00            lea rsi, [rip+0x111f06]
+  22572:	48 8d 3d 47 54 11 00            lea rdi, [rip+0x115447]
+  22579:	ba 5b 00 00 00                  mov edx, 0x5b
+  2257e:	e8 2d c5 00 00                  call 0x2eab0
+  22583:	0f 1f 44 00 00                  nop [rax+rax]
+  22588:	45 31 ff                        xor r15d, r15d
+  2258b:	e9 8a fe ff ff                  jmp 0x2241a
+
+  24290:	0f 1f 40 aa                     clp		<=
+  24294:	41 56                           push r14
+  24296:	41 89 f6                        mov r14d, esi
+  24299:	41 55                           push r13
+  2429b:	49 89 fd                        mov r13, rdi
+  2429e:	41 54                           push r12
+  242a0:	55                              push rbp
+  242a1:	48 8d 2d c8 a0 34 00            lea rbp, [rip+0x34a0c8]
+  242a8:	53                              push rbx
+  242a9:	eb 2a                           jmp 0x242d5
+
+  2d138:	0f 1f 40 bb                     jlp		<=
+  2d13c:	85 db                           test ebx, ebx
+  2d13e:	75 4e                           jnz 0x2d18e
+  2d140:	48 83 f9 47                     cmp rcx, 0x47
+  2d144:	0f 87 cc fd ff ff               ja 0x2cf16
+  2d14a:	e9 b1 fd ff ff                  jmp 0x2cf00
+
+  2d4b0:	0f 1f 40 aa                     clp		<=
+  2d4b4:	53                              push rbx
+  2d4b5:	48 8b 47 20                     mov rax, [rdi+0x20]
+  2d4b9:	48 89 fb                        mov rbx, rdi
+  2d4bc:	48 85 c0                        test rax, rax
+  2d4bf:	74 06                           jz 0x2d4c7
+  2d4c1:	ff d0                           call rax
+
+  2f68d:	0f 1f 40 bb                     jlp		<=
+  2f691:	31 c9                           xor ecx, ecx
+  2f693:	49 39 f5                        cmp r13, rsi
+  2f696:	0f 94 c1                        setz cl
+  2f699:	e9 e6 fe ff ff                  jmp 0x2f584
+
+  2f69e:	0f 1f 40 bb                     jlp		<=
+  2f6a2:	31 c9                           xor ecx, ecx
+  2f6a4:	49 39 f5                        cmp r13, rsi
+  2f6a7:	0f 93 c1                        setae cl
+  2f6aa:	e9 d5 fe ff ff                  jmp 0x2f584
+
+  2f6af:	0f 1f 40 bb                     jlp		<=
+  2f6b3:	31 c9                           xor ecx, ecx
+  2f6b5:	49 39 f5                        cmp r13, rsi
+  2f6b8:	0f 96 c1                        setbe cl
+  2f6bb:	e9 c4 fe ff ff                  jmp 0x2f584
+
+  2f6c0:	0f 1f 40 bb                     jlp		<=
+  2f6c4:	31 c9                           xor ecx, ecx
+  2f6c6:	49 39 f5                        cmp r13, rsi
+  2f6c9:	0f 97 c1                        seta cl
+  2f6cc:	e9 b3 fe ff ff                  jmp 0x2f584
+
+  2f6d1:	0f 1f 40 bb                     jlp		<=
+  2f6d5:	31 c9                           xor ecx, ecx
+  2f6d7:	49 39 f5                        cmp r13, rsi
+  2f6da:	0f 92 c1                        setb cl
+  2f6dd:	e9 a2 fe ff ff                  jmp 0x2f584
+
+  2f6e2:	0f 1f 40 bb                     jlp		<=
+  2f6e6:	4c 89 e9                        mov rcx, r13
+  2f6e9:	48 29 f1                        sub rcx, rsi
+  2f6ec:	e9 93 fe ff ff                  jmp 0x2f584
+
+  2f6f1:	0f 1f 40 bb                     jlp		<=
+  2f6f5:	4a 8d 0c 2e                     lea rcx, [rsi+r13]
+  2f6f9:	e9 86 fe ff ff                  jmp 0x2f584
+
+  2f6fe:	0f 1f 40 bb                     jlp		<=
+  2f702:	4c 89 e8                        mov rax, r13
+  2f705:	31 d2                           xor edx, edx
+  2f707:	48 f7 f6                        div rsi
+  2f70a:	48 89 d1                        mov rcx, rdx
+  2f70d:	e9 72 fe ff ff                  jmp 0x2f584
+
+  2f712:	0f 1f 40 bb                     jlp		<=
+  2f716:	4c 89 e8                        mov rax, r13
+  2f719:	31 d2                           xor edx, edx
+  2f71b:	48 f7 f6                        div rsi
+  2f71e:	48 89 c1                        mov rcx, rax
+  2f721:	e9 5e fe ff ff                  jmp 0x2f584
+
+  2f726:	0f 1f 40 bb                     jlp		<=
+  2f72a:	49 0f af f5                     imul rsi, r13
+  2f72e:	48 89 f1                        mov rcx, rsi
+  2f731:	e9 4e fe ff ff                  jmp 0x2f584
+
+  2f736:	0f 1f 40 bb                     jlp		<=
+  2f73a:	31 c9                           xor ecx, ecx
+  2f73c:	49 39 f5                        cmp r13, rsi
+  2f73f:	0f 95 c1                        setnz cl
+  2f742:	e9 3d fe ff ff                  jmp 0x2f584
+
+  34042:	0f 1f 40 bb                     jlp		<=
+  34046:	31 d2                           xor edx, edx
+  34048:	31 f6                           xor esi, esi
+  3404a:	31 ff                           xor edi, edi
+  3404c:	e8 8f fa ff ff                  call 0x33ae0
+  34051:	0f 1f 40 cc                     rlp		<=
+  34055:	e9 c6 fd ff ff                  jmp 0x33e20
+
+  34100:	0f 1f 40 bb                     jlp		<=
+  34104:	49 8b 44 24 f8                  mov rax, [r12-0x8]
+  34109:	e9 12 fd ff ff                  jmp 0x33e20
+
+  3413a:	0f 1f 40 bb                     jlp		<=
+  3413e:	49 8b 04 24                     mov rax, [r12]
+  34142:	48 8b 54 24 28                  mov rdx, [rsp+0x28]
+  34147:	be 02 00 00 00                  mov esi, 0x2
+  3414c:	bf 01 00 00 00                  mov edi, 0x1
+  34151:	48 89 44 24 40                  mov [rsp+0x40], rax
+  34156:	e8 85 f9 ff ff                  call 0x33ae0
+  3415b:	0f 1f 40 cc                     rlp		<=
+  3415f:	e9 bc fc ff ff                  jmp 0x33e20
+
+  341a7:	0f 1f 40 bb                     jlp		<=
+  341ab:	48 8b 44 24 30                  mov rax, [rsp+0x30]
+  341b0:	4c 89 08                        mov [rax], r9
+  341b3:	e9 b6 fb ff ff                  jmp 0x33d6e
+
+  341b8:	0f 1f 40 bb                     jlp		<=
+  341bc:	80 7e 01 3d                     cmp byte [rsi+0x1], 0x3d
+  341c0:	0f 84 e8 01 00 00               jz 0x343ae
+  341c6:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  341d0:	48 21 44 24 38                  and [rsp+0x38], rax
+  341d5:	c7 44 24 18 03 01 00 00         mov dword [rsp+0x18], 0x103
+  341dd:	48 83 4c 24 38 09               or qword [rsp+0x38], 0x9
+  341e3:	eb c2                           jmp 0x341a7
+
+  341e5:	0f 1f 40 bb                     jlp		<=
+  341e9:	80 7e 01 3d                     cmp byte [rsi+0x1], 0x3d
+  341ed:	0f 84 e1 01 00 00               jz 0x343d4
+  341f3:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  341fd:	48 21 44 24 38                  and [rsp+0x38], rax
+  34202:	c7 44 24 18 03 01 00 00         mov dword [rsp+0x18], 0x103
+  3420a:	48 83 4c 24 38 08               or qword [rsp+0x38], 0x8
+  34210:	eb 95                           jmp 0x341a7
+
+  34262:	0f 1f 40 bb                     jlp		<=
+  34266:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  34270:	48 21 44 24 38                  and [rsp+0x38], rax
+  34275:	c7 44 24 18 05 01 00 00         mov dword [rsp+0x18], 0x105
+  3427d:	48 83 4c 24 38 04               or qword [rsp+0x38], 0x4
+  34283:	e9 1f ff ff ff                  jmp 0x341a7
+
+  34288:	0f 1f 40 bb                     jlp		<=
+  3428c:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  34296:	48 21 44 24 38                  and [rsp+0x38], rax
+  3429b:	c7 44 24 18 04 01 00 00         mov dword [rsp+0x18], 0x104
+  342a3:	48 83 4c 24 38 06               or qword [rsp+0x38], 0x6
+  342a9:	e9 f9 fe ff ff                  jmp 0x341a7
+
+  342ae:	0f 1f 40 bb                     jlp		<=
+  342b2:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  342bc:	48 21 44 24 38                  and [rsp+0x38], rax
+  342c1:	c7 44 24 18 05 01 00 00         mov dword [rsp+0x18], 0x105
+  342c9:	48 83 4c 24 38 03               or qword [rsp+0x38], 0x3
+  342cf:	e9 d3 fe ff ff                  jmp 0x341a7
+
+  342d4:	0f 1f 40 bb                     jlp		<=
+  342d8:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  342e2:	48 21 44 24 38                  and [rsp+0x38], rax
+  342e7:	c7 44 24 18 04 01 00 00         mov dword [rsp+0x18], 0x104
+  342ef:	48 83 4c 24 38 07               or qword [rsp+0x38], 0x7
+  342f5:	e9 ad fe ff ff                  jmp 0x341a7
+
+  342fa:	0f 1f 40 bb                     jlp		<=
+  342fe:	0f be 46 01                     movsx eax, byte [rsi+0x1]
+  34302:	39 44 24 18                     cmp [rsp+0x18], eax
+  34306:	0f 84 99 00 00 00               jz 0x343a5
+  3430c:	c7 44 24 18 00 01 00 00         mov dword [rsp+0x18], 0x100
+  34314:	e9 8e fe ff ff                  jmp 0x341a7
+
+  34319:	0f 1f 40 bb                     jlp		<=
+  3431d:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  34327:	48 21 44 24 38                  and [rsp+0x38], rax
+  3432c:	c7 44 24 18 05 01 00 00         mov dword [rsp+0x18], 0x105
+  34334:	48 83 4c 24 38 05               or qword [rsp+0x38], 0x5
+  3433a:	e9 68 fe ff ff                  jmp 0x341a7
+
+  3433f:	0f 1f 40 bb                     jlp		<=
+  34343:	80 7e 01 3d                     cmp byte [rsi+0x1], 0x3d
+  34347:	0f 85 5a fe ff ff               jnz 0x341a7
+  3434d:	48 b8 00 00 00 00 ff ff ff ff   mov rax, 0xffffffff00000000
+  34357:	48 21 44 24 38                  and [rsp+0x38], rax
+  3435c:	4c 8d 4e 02                     lea r9, [rsi+0x2]
+  34360:	48 83 4c 24 38 0d               or qword [rsp+0x38], 0xd
+  34366:	c7 44 24 18 02 01 00 00         mov dword [rsp+0x18], 0x102
+  3436e:	e9 34 fe ff ff                  jmp 0x341a7
+
+  34373:	0f 1f 40 bb                     jlp		<=
+  34377:	49 89 f1                        mov r9, rsi
+  3437a:	c7 44 24 18 00 00 00 00         mov dword [rsp+0x18], 0x0
+  34382:	e9 20 fe ff ff                  jmp 0x341a7
+
+  35cd0:	0f 1f 40 aa                     clp		<=
+  35cd4:	be 01 00 00 00                  mov esi, 0x1
+  35cd9:	e9 62 ff ff ff                  jmp 0x35c40
+
+  35ce0:	0f 1f 40 aa                     clp		<=
+  35ce4:	31 f6                           xor esi, esi
+  35ce6:	e9 55 ff ff ff                  jmp 0x35c40
+
+  388d0:	0f 1f 40 aa                     clp		<=
+  388d4:	53                              push rbx
+  388d5:	be 01 00 00 00                  mov esi, 0x1
+  388da:	31 c0                           xor eax, eax
+  388dc:	83 3d 91 5e 33 00 00            cmp dword [rip+0x335e91], 0x0
+  388e3:	74 0c                           jz 0x388f1
+  388e5:	f0 0f b1 35 5b 23 33 00         lock cmpxchg [rip+0x33235b], esi
+  388ed:	75 0b                           jnz 0x388fa
+  388ef:	eb 27                           jmp 0x38918
+
+  39450:	0f 1f 40 aa                     clp		<=
+  39454:	48 83 ec 08                     sub rsp, 0x8
+  39458:	89 fa                           mov edx, edi
+  3945a:	be 01 00 00 00                  mov esi, 0x1
+  3945f:	31 c0                           xor eax, eax
+  39461:	83 3d 0c 53 33 00 00            cmp dword [rip+0x33530c], 0x0
+  39468:	74 0c                           jz 0x39476
+  3946a:	f0 0f b1 35 2e 20 33 00         lock cmpxchg [rip+0x33202e], esi
+  39472:	75 0b                           jnz 0x3947f
+  39474:	eb 27                           jmp 0x3949d
+
+  395b0:	0f 1f 40 aa                     clp		<=
+  395b4:	53                              push rbx
+  395b5:	48 89 fa                        mov rdx, rdi
+  395b8:	be 01 00 00 00                  mov esi, 0x1
+  395bd:	31 c0                           xor eax, eax
+  395bf:	83 3d ae 51 33 00 00            cmp dword [rip+0x3351ae], 0x0
+  395c6:	74 0c                           jz 0x395d4
+  395c8:	f0 0f b1 35 d0 1e 33 00         lock cmpxchg [rip+0x331ed0], esi
+  395d0:	75 0b                           jnz 0x395dd
+  395d2:	eb 27                           jmp 0x395fb
+
+  39670:	0f 1f 40 aa                     clp		<=
+  39674:	48 83 ec 18                     sub rsp, 0x18
+  39678:	be 01 00 00 00                  mov esi, 0x1
+  3967d:	31 c0                           xor eax, eax
+  3967f:	83 3d ee 50 33 00 00            cmp dword [rip+0x3350ee], 0x0
+  39686:	74 0c                           jz 0x39694
+  39688:	f0 0f b1 35 10 1e 33 00         lock cmpxchg [rip+0x331e10], esi
+  39690:	75 0b                           jnz 0x3969d
+  39692:	eb 27                           jmp 0x396bb
+
+  42920:	0f 1f 40 aa                     clp		<=
+  42924:	53                              push rbx
+  42925:	8b 1f                           mov ebx, [rdi]
+  42927:	be 09 00 00 00                  mov esi, 0x9
+  4292c:	b8 3e 00 00 00                  mov eax, 0x3e
+  42931:	48 63 fb                        movsxd rdi, ebx
+  42934:	0f 05                           syscall
+  42936:	eb 15                           jmp 0x4294d
+
+  451f8:	0f 1f 40 bb                     jlp		<=
+  451fc:	0f 87 fe 00 00 00               ja 0x45300
+  45202:	41 89 c8                        mov r8d, ecx
+  45205:	83 c1 08                        add ecx, 0x8
+  45208:	4d 01 d0                        add r8, r10
+  4520b:	4d 8b 00                        mov r8, [r8]
+  4520e:	4c 89 87 98 00 00 00            mov [rdi+0x98], r8
+  45215:	eb d1                           jmp 0x451e8
+
+  45220:	0f 1f 40 bb                     jlp		<=
+  45224:	0f 87 e6 00 00 00               ja 0x45310
+  4522a:	41 89 c8                        mov r8d, ecx
+  4522d:	83 c1 08                        add ecx, 0x8
+  45230:	4d 01 d0                        add r8, r10
+  45233:	4d 8b 00                        mov r8, [r8]
+  45236:	4c 89 87 88 00 00 00            mov [rdi+0x88], r8
+  4523d:	eb a9                           jmp 0x451e8
+
+  45240:	0f 1f 40 bb                     jlp		<=
+  45244:	77 7a                           ja 0x452c0
+  45246:	41 89 c8                        mov r8d, ecx
+  45249:	83 c1 08                        add ecx, 0x8
+  4524c:	4d 01 d0                        add r8, r10
+  4524f:	4d 8b 00                        mov r8, [r8]
+  45252:	4c 89 47 30                     mov [rdi+0x30], r8
+  45256:	eb 90                           jmp 0x451e8
+
+  45260:	0f 1f 40 bb                     jlp		<=
+  45264:	77 6a                           ja 0x452d0
+  45266:	41 89 c8                        mov r8d, ecx
+  45269:	83 c1 08                        add ecx, 0x8
+  4526c:	4d 01 d0                        add r8, r10
+  4526f:	4d 8b 00                        mov r8, [r8]
+  45272:	4c 89 47 70                     mov [rdi+0x70], r8
+  45276:	e9 6d ff ff ff                  jmp 0x451e8
+
+  45280:	0f 1f 40 bb                     jlp		<=
+  45284:	77 6a                           ja 0x452f0
+  45286:	41 89 c8                        mov r8d, ecx
+  45289:	83 c1 08                        add ecx, 0x8
+  4528c:	4d 01 d0                        add r8, r10
+  4528f:	4d 8b 00                        mov r8, [r8]
+  45292:	4c 89 47 68                     mov [rdi+0x68], r8
+  45296:	e9 4d ff ff ff                  jmp 0x451e8
+
+  457c0:	0f 1f 40 aa                     clp		<=
+  457c4:	48 83 ea 01                     sub rdx, 0x1
+  457c8:	79 10                           jns 0x457da
+  457ca:	eb 2c                           jmp 0x457f8
+
+  4ab33:	0f 1f 40 bb                     jlp		<=
+  4ab37:	c7 85 88 fa ff ff 10 00 00 00   mov dword [rbp-0x578], 0x10
+  4ab41:	e9 82 e2 ff ff                  jmp 0x48dc8
+
+  4ab8c:	0f 1f 40 bb                     jlp		<=
+  4ab90:	c7 85 88 fa ff ff 08 00 00 00   mov dword [rbp-0x578], 0x8
+  4ab9a:	e9 29 e2 ff ff                  jmp 0x48dc8
+
+  4ae8f:	0f 1f 40 bb                     jlp		<=
+  4ae93:	8b bd 50 fb ff ff               mov edi, [rbp-0x4b0]
+  4ae99:	48 8d b5 e0 fb ff ff            lea rsi, [rbp-0x420]
+  4aea0:	ba e8 03 00 00                  mov edx, 0x3e8
+  4aea5:	e8 86 a6 03 00                  call 0x85530
+  4aeaa:	0f 1f 40 cc                     rlp		<=
+  4aeae:	c7 85 98 fa ff ff 00 00 00 00   mov dword [rbp-0x568], 0x0
+  4aeb8:	49 89 c5                        mov r13, rax
+  4aebb:	e9 bc ef ff ff                  jmp 0x49e7c
+
+  4bdf6:	0f 1f 40 bb                     jlp		<=
+  4bdfa:	41 8b 17                        mov edx, [r15]
+  4bdfd:	83 fa 30                        cmp edx, 0x30
+  4be00:	73 38                           jae 0x4be3a
+  4be02:	89 d0                           mov eax, edx
+  4be04:	49 03 47 10                     add rax, [r15+0x10]
+  4be08:	83 c2 08                        add edx, 0x8
+  4be0b:	41 89 17                        mov [r15], edx
+  4be0e:	4c 8b 28                        mov r13, [rax]
+  4be11:	e9 e6 d6 ff ff                  jmp 0x494fc
+
+  4be16:	0f 1f 40 bb                     jlp		<=
+  4be1a:	80 bd 38 fb ff ff 00            cmp byte [rbp-0x4c8], 0x0
+  4be21:	0f 85 01 db ff ff               jnz 0x49928
+  4be27:	48 8b 05 3a d0 31 00            mov rax, [rip+0x31d03a]
+  4be2e:	64 c7 00 16 00 00 00            mov dword [fs:rax], 0x16
+  4be35:	e9 f9 c0 ff ff                  jmp 0x47f33
+
+  4c26b:	0f 1f 40 bb                     jlp		<=
+  4c26f:	c7 85 c4 fa ff ff 10 00 00 00   mov dword [rbp-0x53c], 0x10
+  4c279:	e9 af f8 ff ff                  jmp 0x4bb2d
+
+  4c2a9:	0f 1f 40 bb                     jlp		<=
+  4c2ad:	c7 85 c4 fa ff ff 08 00 00 00   mov dword [rbp-0x53c], 0x8
+  4c2b7:	e9 71 f8 ff ff                  jmp 0x4bb2d
+
+  4cc63:	0f 1f 40 bb                     jlp		<=
+  4cc67:	48 8b 85 60 fb ff ff            mov rax, [rbp-0x4a0]
+  4cc6e:	48 8d 50 01                     lea rdx, [rax+0x1]
+  4cc72:	48 89 95 60 fb ff ff            mov [rbp-0x4a0], rdx
+  4cc79:	0f b6 40 01                     movzx eax, byte [rax+0x1]
+  4cc7d:	8d 50 e0                        lea edx, [rax-0x20]
+  4cc80:	88 85 38 fb ff ff               mov [rbp-0x4c8], al
+  4cc86:	31 c0                           xor eax, eax
+  4cc88:	80 fa 5a                        cmp dl, 0x5a
+  4cc8b:	77 22                           ja 0x4ccaf
+  4cc8d:	0f be 85 38 fb ff ff            movsx eax, byte [rbp-0x4c8]
+  4cc94:	48 8d 15 05 2b 0e 00            lea rdx, [rip+0xe2b05]
+  4cc9b:	83 e8 20                        sub eax, 0x20
+  4cc9e:	48 98                           cdqe
+  4cca0:	0f b6 14 02                     movzx edx, byte [rdx+rax]
+  4cca4:	48 8d 05 75 28 0e 00            lea rax, [rip+0xe2875]
+  4ccab:	48 63 04 90                     movsxd rax, dword [rax+rdx*4]
+  4ccaf:	4c 01 e0                        add rax, r12
+  4ccb2:	c7 85 f0 fa ff ff 01 00 00 00   mov dword [rbp-0x510], 0x1
+  4ccbc:	c7 85 c4 fa ff ff 00 00 00 00   mov dword [rbp-0x53c], 0x0
+  4ccc6:	ff e0                           jmp rax
+
+  4ccc8:	0f 1f 40 bb                     jlp		<=
+  4cccc:	eb 95                           jmp 0x4cc63
+
+  4d0e0:	0f 1f 40 aa                     clp		<=
+  4d0e4:	0f b6 16                        movzx edx, byte [rsi]
+  4d0e7:	31 c0                           xor eax, eax
+  4d0e9:	45 31 c0                        xor r8d, r8d
+  4d0ec:	8d 4a ff                        lea ecx, [rdx-0x1]
+  4d0ef:	80 f9 7d                        cmp cl, 0x7d
+  4d0f2:	76 27                           jbe 0x4d11b
+  4d0f4:	eb 30                           jmp 0x4d126
+
+  51760:	0f 1f 40 aa                     clp		<=
+  51764:	53                              push rbx
+  51765:	be 01 00 00 00                  mov esi, 0x1
+  5176a:	48 89 fb                        mov rbx, rdi
+  5176d:	31 c0                           xor eax, eax
+  5176f:	83 3d fe cf 31 00 00            cmp dword [rip+0x31cffe], 0x0
+  51776:	74 0c                           jz 0x51784
+  51778:	f0 0f b1 35 94 9f 31 00         lock cmpxchg [rip+0x319f94], esi
+  51780:	75 0b                           jnz 0x5178d
+  51782:	eb 27                           jmp 0x517ab
+
+  52a2a:	0f 1f 40 bb                     jlp		<=
+  52a2e:	48 8b 85 90 ef ff ff            mov rax, [rbp-0x1070]
+  52a35:	48 8d 50 04                     lea rdx, [rax+0x4]
+  52a39:	8b 40 04                        mov eax, [rax+0x4]
+  52a3c:	48 89 95 90 ef ff ff            mov [rbp-0x1070], rdx
+  52a43:	8d 50 e0                        lea edx, [rax-0x20]
+  52a46:	89 85 40 ef ff ff               mov [rbp-0x10c0], eax
+  52a4c:	31 c0                           xor eax, eax
+  52a4e:	83 fa 5a                        cmp edx, 0x5a
+  52a51:	77 16                           ja 0x52a69
+  52a53:	48 8d 05 46 d1 0d 00            lea rax, [rip+0xdd146]
+  52a5a:	0f b6 14 10                     movzx edx, byte [rax+rdx]
+  52a5e:	48 8d 05 bb ce 0d 00            lea rax, [rip+0xdcebb]
+  52a65:	48 63 04 90                     movsxd rax, dword [rax+rdx*4]
+  52a69:	4c 01 e8                        add rax, r13
+  52a6c:	c7 85 20 ef ff ff 01 00 00 00   mov dword [rbp-0x10e0], 0x1
+  52a76:	c7 85 fc ee ff ff 00 00 00 00   mov dword [rbp-0x1104], 0x0
+  52a80:	ff e0                           jmp rax
+
+  52b28:	0f 1f 40 bb                     jlp		<=
+  52b2c:	e9 f9 fe ff ff                  jmp 0x52a2a
+
+  5363e:	0f 1f 40 bb                     jlp		<=
+  53642:	c7 85 fc ee ff ff 08 00 00 00   mov dword [rbp-0x1104], 0x8
+  5364c:	eb a7                           jmp 0x535f5
+
+  5364e:	0f 1f 40 bb                     jlp		<=
+  53652:	c7 85 fc ee ff ff 10 00 00 00   mov dword [rbp-0x1104], 0x10
+  5365c:	eb 97                           jmp 0x535f5
+
+  54285:	0f 1f 40 bb                     jlp		<=
+  54289:	c7 85 b8 ee ff ff 08 00 00 00   mov dword [rbp-0x1148], 0x8
+  54293:	e9 cd f9 ff ff                  jmp 0x53c65
+
+  54298:	0f 1f 40 bb                     jlp		<=
+  5429c:	c7 85 b8 ee ff ff 10 00 00 00   mov dword [rbp-0x1148], 0x10
+  542a6:	e9 ba f9 ff ff                  jmp 0x53c65
+
+  5436b:	0f 1f 40 bb                     jlp		<=
+  5436f:	8b 13                           mov edx, [rbx]
+  54371:	83 fa 30                        cmp edx, 0x30
+  54374:	0f 83 ea 24 00 00               jae 0x56864
+  5437a:	89 d0                           mov eax, edx
+  5437c:	48 03 43 10                     add rax, [rbx+0x10]
+  54380:	83 c2 08                        add edx, 0x8
+  54383:	89 13                           mov [rbx], edx
+  54385:	4c 8b 00                        mov r8, [rax]
+  54388:	e9 07 f6 ff ff                  jmp 0x53994
+
+  54b76:	0f 1f 40 bb                     jlp		<=
+  54b7a:	83 bd 40 ef ff ff 00            cmp dword [rbp-0x10c0], 0x0
+  54b81:	0f 85 d7 e4 ff ff               jnz 0x5305e
+  54b87:	48 8b 05 da 42 31 00            mov rax, [rip+0x3142da]
+  54b8e:	64 c7 00 16 00 00 00            mov dword [fs:rax], 0x16
+  54b95:	e9 f1 e6 ff ff                  jmp 0x5328b
+
+  54b9a:	0f 1f 40 bb                     jlp		<=
+  54b9e:	48 63 85 54 ef ff ff            movsxd rax, dword [rbp-0x10ac]
+  54ba5:	48 6b c0 48                     imul rax, rax, 0x48
+  54ba9:	48 03 85 68 ef ff ff            add rax, [rbp-0x1098]
+  54bb0:	0f 84 35 1c 00 00               jz 0x567eb
+  54bb6:	48 63 40 30                     movsxd rax, dword [rax+0x30]
+  54bba:	48 8b 8d 70 ef ff ff            mov rcx, [rbp-0x1090]
+  54bc1:	48 c1 e0 04                     shl rax, 0x4
+  54bc5:	4c 8b 2c 01                     mov r13, [rcx+rax]
+  54bc9:	e9 9c fc ff ff                  jmp 0x5486a
+
+  587f1:	0f 1f 40 bb                     jlp		<=
+  587f5:	0f b6 5a 01                     movzx ebx, byte [rdx+0x1]
+  587f9:	80 fb 6c                        cmp bl, 0x6c
+  587fc:	0f 84 cd 24 00 00               jz 0x5accf
+  58802:	81 8d e8 fd ff ff 00 20 00 00   or dword [rbp-0x218], 0x2000
+  5880c:	e9 29 fb ff ff                  jmp 0x5833a
+
+  58811:	0f 1f 40 bb                     jlp		<=
+  58815:	0f b6 5a 01                     movzx ebx, byte [rdx+0x1]
+  58819:	80 fb 6c                        cmp bl, 0x6c
+  5881c:	0f 84 99 24 00 00               jz 0x5acbb
+  58822:	83 8d e8 fd ff ff 01            or dword [rbp-0x218], 0x1
+  58829:	e9 0c fb ff ff                  jmp 0x5833a
+
+  5882e:	0f 1f 40 bb                     jlp		<=
+  58832:	0f b6 5a 01                     movzx ebx, byte [rdx+0x1]
+  58836:	80 fb 68                        cmp bl, 0x68
+  58839:	0f 84 a7 24 00 00               jz 0x5ace6
+  5883f:	83 8d e8 fd ff ff 04            or dword [rbp-0x218], 0x4
+  58846:	e9 ef fa ff ff                  jmp 0x5833a
+
+  5884b:	0f 1f 40 bb                     jlp		<=
+  5884f:	83 8d e8 fd ff ff 03            or dword [rbp-0x218], 0x3
+  58856:	0f b6 5a 01                     movzx ebx, byte [rdx+0x1]
+  5885a:	e9 db fa ff ff                  jmp 0x5833a
+
+  58e87:	0f 1f 40 bb                     jlp		<=
+  58e8b:	83 8d e8 fd ff ff 40            or dword [rbp-0x218], 0x40
+  58e92:	45 31 db                        xor r11d, r11d
+  58e95:	e9 fa f9 ff ff                  jmp 0x58894
+
+  59788:	0f 1f 40 bb                     jlp		<=
+  5978c:	49 89 d5                        mov r13, rdx
+  5978f:	e9 a6 eb ff ff                  jmp 0x5833a
+
+  59794:	0f 1f 40 bb                     jlp		<=
+  59798:	41 bb 08 00 00 00               mov r11d, 0x8
+  5979e:	66 90                           nop
+  597a0:	e9 ef f0 ff ff                  jmp 0x58894
+
+  5a064:	0f 1f 40 bb                     jlp		<=
+  5a068:	bb 02 00 00 00                  mov ebx, 0x2
+  5a06d:	e9 36 e3 ff ff                  jmp 0x583a8
+
+  61c97:	0f 1f 40 bb                     jlp		<=
+  61c9b:	44 8b 61 04                     mov r12d, [rcx+0x4]
+  61c9f:	41 83 fc 6c                     cmp r12d, 0x6c
+  61ca3:	0f 84 8d 1a 00 00               jz 0x63736
+  61ca9:	81 8d b8 fe ff ff 00 20 00 00   or dword [rbp-0x148], 0x2000
+  61cb3:	e9 9f f7 ff ff                  jmp 0x61457
+
+  61cb8:	0f 1f 40 bb                     jlp		<=
+  61cbc:	44 8b 61 04                     mov r12d, [rcx+0x4]
+  61cc0:	41 83 fc 6c                     cmp r12d, 0x6c
+  61cc4:	0f 84 51 1a 00 00               jz 0x6371b
+  61cca:	83 8d b8 fe ff ff 01            or dword [rbp-0x148], 0x1
+  61cd1:	e9 81 f7 ff ff                  jmp 0x61457
+
+  61cd6:	0f 1f 40 bb                     jlp		<=
+  61cda:	44 8b 61 04                     mov r12d, [rcx+0x4]
+  61cde:	41 83 fc 68                     cmp r12d, 0x68
+  61ce2:	0f 84 15 1a 00 00               jz 0x636fd
+  61ce8:	83 8d b8 fe ff ff 04            or dword [rbp-0x148], 0x4
+  61cef:	e9 63 f7 ff ff                  jmp 0x61457
+
+  61cf4:	0f 1f 40 bb                     jlp		<=
+  61cf8:	83 8d b8 fe ff ff 03            or dword [rbp-0x148], 0x3
+  61cff:	44 8b 61 04                     mov r12d, [rcx+0x4]
+  61d03:	e9 4f f7 ff ff                  jmp 0x61457
+
+  61d43:	0f 1f 40 bb                     jlp		<=
+  61d47:	48 89 8d 98 fe ff ff            mov [rbp-0x168], rcx
+  61d4e:	e9 04 f7 ff ff                  jmp 0x61457
+
+  621f7:	0f 1f 40 bb                     jlp		<=
+  621fb:	83 8d b8 fe ff ff 40            or dword [rbp-0x148], 0x40
+  62202:	45 31 c0                        xor r8d, r8d
+  62205:	e9 f9 f3 ff ff                  jmp 0x61603
+
+  624eb:	0f 1f 40 bb                     jlp		<=
+  624ef:	41 b8 08 00 00 00               mov r8d, 0x8
+  624f5:	e9 09 f1 ff ff                  jmp 0x61603
+
+  62f68:	0f 1f 40 bb                     jlp		<=
+  62f6c:	bb 02 00 00 00                  mov ebx, 0x2
+  62f71:	e9 0a e3 ff ff                  jmp 0x61280
+
+  6a050:	0f 1f 40 aa                     clp		<=
+  6a054:	48 8b 97 88 00 00 00            mov rdx, [rdi+0x88]
+  6a05b:	83 6a 04 01                     sub dword [rdx+0x4], 0x1
+  6a05f:	75 36                           jnz 0x6a097
+  6a061:	48 c7 42 08 00 00 00 00         mov qword [rdx+0x8], 0x0
+  6a069:	83 3d 04 47 30 00 00            cmp dword [rip+0x304704], 0x0
+  6a070:	74 07                           jz 0x6a079
+  6a072:	f0 ff 0a                        lock dec dword [rdx]
+  6a075:	75 06                           jnz 0x6a07d
+  6a077:	eb 1e                           jmp 0x6a097
+
+  6aac0:	0f 1f 40 bb                     jlp		<=
+  6aac4:	b9 02 00 00 00                  mov ecx, 0x2
+  6aac9:	48 8d 3d e6 57 0c 00            lea rdi, [rip+0xc57e6]
+  6aad0:	48 8d 35 e9 57 0c 00            lea rsi, [rip+0xc57e9]
+  6aad7:	e9 34 ff ff ff                  jmp 0x6aa10
+
+  6aae0:	0f 1f 40 bb                     jlp		<=
+  6aae4:	b9 06 00 00 00                  mov ecx, 0x6
+  6aae9:	48 8d 3d 32 56 0c 00            lea rdi, [rip+0xc5632]
+  6aaf0:	48 8d 35 49 56 0c 00            lea rsi, [rip+0xc5649]
+  6aaf7:	e9 14 ff ff ff                  jmp 0x6aa10
+
+  6ab00:	0f 1f 40 bb                     jlp		<=
+  6ab04:	b9 06 00 00 00                  mov ecx, 0x6
+  6ab09:	48 8d 3d 78 55 0c 00            lea rdi, [rip+0xc5578]
+  6ab10:	48 8d 35 89 55 0c 00            lea rsi, [rip+0xc5589]
+  6ab17:	e9 f4 fe ff ff                  jmp 0x6aa10
+
+  6ab20:	0f 1f 40 bb                     jlp		<=
+  6ab24:	b9 08 00 00 00                  mov ecx, 0x8
+  6ab29:	48 8d 3d bd 58 0c 00            lea rdi, [rip+0xc58bd]
+  6ab30:	48 8d 35 c9 58 0c 00            lea rsi, [rip+0xc58c9]
+  6ab37:	e9 d4 fe ff ff                  jmp 0x6aa10
+
+  6ab40:	0f 1f 40 bb                     jlp		<=
+  6ab44:	b9 02 00 00 00                  mov ecx, 0x2
+  6ab49:	48 8d 3d bf 56 0c 00            lea rdi, [rip+0xc56bf]
+  6ab50:	48 8d 35 c9 56 0c 00            lea rsi, [rip+0xc56c9]
+  6ab57:	e9 b4 fe ff ff                  jmp 0x6aa10
+
+  6ab60:	0f 1f 40 bb                     jlp		<=
+  6ab64:	b9 03 00 00 00                  mov ecx, 0x3
+  6ab69:	48 8d 3d d6 56 0c 00            lea rdi, [rip+0xc56d6]
+  6ab70:	48 8d 35 e9 56 0c 00            lea rsi, [rip+0xc56e9]
+  6ab77:	e9 94 fe ff ff                  jmp 0x6aa10
+
+  6ae50:	0f 1f 40 aa                     clp		<=
+  6ae54:	48 8b 17                        mov rdx, [rdi]
+  6ae57:	41 b9 ff ff ff 7f               mov r9d, 0x7fffffff
+  6ae5d:	0f b6 02                        movzx eax, byte [rdx]
+  6ae60:	48 83 c2 01                     add rdx, 0x1
+  6ae64:	83 e8 30                        sub eax, 0x30
+  6ae67:	eb 23                           jmp 0x6ae8c
+
+  6aff0:	0f 1f 40 bb                     jlp		<=
+  6aff4:	c7 43 10 30 00 00 00            mov dword [rbx+0x10], 0x30
+  6affb:	e9 40 ff ff ff                  jmp 0x6af40
+
+  6b000:	0f 1f 40 bb                     jlp		<=
+  6b004:	80 4b 0c 20                     or byte [rbx+0xc], 0x20
+  6b008:	e9 33 ff ff ff                  jmp 0x6af40
+
+  6b010:	0f 1f 40 bb                     jlp		<=
+  6b014:	80 4b 0c 40                     or byte [rbx+0xc], 0x40
+  6b018:	e9 23 ff ff ff                  jmp 0x6af40
+
+  6b020:	0f 1f 40 bb                     jlp		<=
+  6b024:	80 4b 0c 80                     or byte [rbx+0xc], 0x80
+  6b028:	e9 13 ff ff ff                  jmp 0x6af40
+
+  6b030:	0f 1f 40 bb                     jlp		<=
+  6b034:	80 4b 0c 08                     or byte [rbx+0xc], 0x8
+  6b038:	e9 03 ff ff ff                  jmp 0x6af40
+
+  6b040:	0f 1f 40 bb                     jlp		<=
+  6b044:	80 4b 0c 10                     or byte [rbx+0xc], 0x10
+  6b048:	e9 f3 fe ff ff                  jmp 0x6af40
+
+  6b1e0:	0f 1f 40 bb                     jlp		<=
+  6b1e4:	48 89 ca                        mov rdx, rcx
+  6b1e7:	80 4b 0c 01                     or byte [rbx+0xc], 0x1
+  6b1eb:	48 8d 42 01                     lea rax, [rdx+0x1]
+  6b1ef:	e9 6b fe ff ff                  jmp 0x6b05f
+
+  6b1f8:	0f 1f 40 bb                     jlp		<=
+  6b1fc:	80 4b 0c 04                     or byte [rbx+0xc], 0x4
+  6b200:	80 7a 01 6c                     cmp byte [rdx+0x1], 0x6c
+  6b204:	0f 85 4e fe ff ff               jnz 0x6b058
+  6b20a:	48 83 c2 02                     add rdx, 0x2
+  6b20e:	eb d7                           jmp 0x6b1e7
+
+  6b210:	0f 1f 40 bb                     jlp		<=
+  6b214:	80 7a 01 68                     cmp byte [rdx+0x1], 0x68
+  6b218:	0f 84 0e 01 00 00               jz 0x6b32c
+  6b21e:	48 8d 42 02                     lea rax, [rdx+0x2]
+  6b222:	80 4b 0c 02                     or byte [rbx+0xc], 0x2
+  6b226:	48 89 ca                        mov rdx, rcx
+  6b229:	e9 31 fe ff ff                  jmp 0x6b05f
+
+  6b280:	0f 1f 40 bb                     jlp		<=
+  6b284:	48 89 c8                        mov rax, rcx
+  6b287:	e9 d3 fd ff ff                  jmp 0x6b05f
+
+  6b5a0:	0f 1f 40 aa                     clp		<=
+  6b5a4:	48 8b 17                        mov rdx, [rdi]
+  6b5a7:	41 b9 ff ff ff 7f               mov r9d, 0x7fffffff
+  6b5ad:	8b 02                           mov eax, [rdx]
+  6b5af:	48 83 c2 04                     add rdx, 0x4
+  6b5b3:	83 e8 30                        sub eax, 0x30
+  6b5b6:	eb 24                           jmp 0x6b5dc
+
+  6b760:	0f 1f 40 bb                     jlp		<=
+  6b764:	c7 43 10 30 00 00 00            mov dword [rbx+0x10], 0x30
+  6b76b:	8b 42 04                        mov eax, [rdx+0x4]
+  6b76e:	48 8d 4a 04                     lea rcx, [rdx+0x4]
+  6b772:	85 c0                           test eax, eax
+  6b774:	0f 85 35 ff ff ff               jnz 0x6b6af
+  6b77a:	66 0f 1f 44 00 00               o16 nop [rax+rax]
+  6b780:	48 89 4c 24 08                  mov [rsp+0x8], rcx
+  6b785:	48 89 ca                        mov rdx, rcx
+  6b788:	e9 39 ff ff ff                  jmp 0x6b6c6
+
+  6b790:	0f 1f 40 bb                     jlp		<=
+  6b794:	80 4b 0c 20                     or byte [rbx+0xc], 0x20
+  6b798:	e9 03 ff ff ff                  jmp 0x6b6a0
+
+  6b7a0:	0f 1f 40 bb                     jlp		<=
+  6b7a4:	80 4b 0c 40                     or byte [rbx+0xc], 0x40
+  6b7a8:	e9 f3 fe ff ff                  jmp 0x6b6a0
+
+  6b7b0:	0f 1f 40 bb                     jlp		<=
+  6b7b4:	80 4b 0c 80                     or byte [rbx+0xc], 0x80
+  6b7b8:	e9 e3 fe ff ff                  jmp 0x6b6a0
+
+  6b7c0:	0f 1f 40 bb                     jlp		<=
+  6b7c4:	80 4b 0c 08                     or byte [rbx+0xc], 0x8
+  6b7c8:	e9 d3 fe ff ff                  jmp 0x6b6a0
+
+  6b7d0:	0f 1f 40 bb                     jlp		<=
+  6b7d4:	80 4b 0c 10                     or byte [rbx+0xc], 0x10
+  6b7d8:	e9 c3 fe ff ff                  jmp 0x6b6a0
+
+  6b910:	0f 1f 40 bb                     jlp		<=
+  6b914:	83 7a 04 68                     cmp dword [rdx+0x4], 0x68
+  6b918:	0f 84 80 02 00 00               jz 0x6bb9e
+  6b91e:	80 4b 0c 02                     or byte [rbx+0xc], 0x2
+  6b922:	48 8d 42 08                     lea rax, [rdx+0x8]
+  6b926:	8b 52 04                        mov edx, [rdx+0x4]
+  6b929:	e9 c1 fe ff ff                  jmp 0x6b7ef
+
+  6b930:	0f 1f 40 bb                     jlp		<=
+  6b934:	80 4b 0c 04                     or byte [rbx+0xc], 0x4
+  6b938:	8b 4a 04                        mov ecx, [rdx+0x4]
+  6b93b:	83 f9 6c                        cmp ecx, 0x6c
+  6b93e:	74 b8                           jz 0x6b8f8
+  6b940:	48 8d 42 08                     lea rax, [rdx+0x8]
+  6b944:	89 ca                           mov edx, ecx
+  6b946:	e9 a4 fe ff ff                  jmp 0x6b7ef
+
+  6b9f0:	0f 1f 40 bb                     jlp		<=
+  6b9f4:	c7 43 34 00 08 00 00            mov dword [rbx+0x34], 0x800
+  6b9fb:	e9 60 ff ff ff                  jmp 0x6b960
+
+  6ba00:	0f 1f 40 bb                     jlp		<=
+  6ba04:	c7 43 34 01 00 00 00            mov dword [rbx+0x34], 0x1
+  6ba0b:	e9 50 ff ff ff                  jmp 0x6b960
+
+  6ba10:	0f 1f 40 bb                     jlp		<=
+  6ba14:	0f b6 43 0c                     movzx eax, byte [rbx+0xc]
+  6ba18:	a8 04                           test al, 0x4
+  6ba1a:	0f 84 2d 01 00 00               jz 0x6bb4d
+  6ba20:	c7 43 34 00 02 00 00            mov dword [rbx+0x34], 0x200
+  6ba27:	e9 34 ff ff ff                  jmp 0x6b960
+
+  6ba30:	0f 1f 40 bb                     jlp		<=
+  6ba34:	c7 43 34 04 00 00 00            mov dword [rbx+0x34], 0x4
+  6ba3b:	e9 20 ff ff ff                  jmp 0x6b960
+
+  6ba40:	0f 1f 40 bb                     jlp		<=
+  6ba44:	c7 43 34 02 00 00 00            mov dword [rbx+0x34], 0x2
+  6ba4b:	e9 10 ff ff ff                  jmp 0x6b960
+
+  6ba50:	0f 1f 40 bb                     jlp		<=
+  6ba54:	0f b6 43 0c                     movzx eax, byte [rbx+0xc]
+  6ba58:	83 e0 01                        and eax, 0x1
+  6ba5b:	3c 01                           cmp al, 0x1
+  6ba5d:	19 c0                           sbb eax, eax
+  6ba5f:	30 c0                           xor al, al
+  6ba61:	05 07 01 00 00                  add eax, 0x107
+  6ba66:	89 43 34                        mov [rbx+0x34], eax
+  6ba69:	e9 f2 fe ff ff                  jmp 0x6b960
+
+  6bac0:	0f 1f 40 bb                     jlp		<=
+  6bac4:	89 fa                           mov edx, edi
+  6bac6:	48 89 f0                        mov rax, rsi
+  6bac9:	e9 21 fd ff ff                  jmp 0x6b7ef
+
+  6baf0:	0f 1f 40 bb                     jlp		<=
+  6baf4:	48 c7 43 38 00 00 00 00         mov qword [rbx+0x38], 0x0
+  6bafc:	e9 5f fe ff ff                  jmp 0x6b960
+
+  6cac0:	0f 1f 40 aa                     clp		<=
+  6cac4:	48 8b 87 e8 00 00 00            mov rax, [rdi+0xe8]
+  6cacb:	48 85 c0                        test rax, rax
+  6cace:	74 20                           jz 0x6caf0
+  6cad0:	48 83 ec 08                     sub rsp, 0x8
+  6cad4:	48 8b bf e0 00 00 00            mov rdi, [rdi+0xe0]
+  6cadb:	ff d0                           call rax
+
+  6cb40:	0f 1f 40 aa                     clp		<=
+  6cb44:	48 83 ec 18                     sub rsp, 0x18
+  6cb48:	48 8b 87 f8 00 00 00            mov rax, [rdi+0xf8]
+  6cb4f:	48 89 74 24 08                  mov [rsp+0x8], rsi
+  6cb54:	48 85 c0                        test rax, rax
+  6cb57:	74 27                           jz 0x6cb80
+  6cb59:	48 8d 74 24 08                  lea rsi, [rsp+0x8]
+  6cb5e:	48 8b bf e0 00 00 00            mov rdi, [rdi+0xe0]
+  6cb65:	ff d0                           call rax
+
+  6cb90:	0f 1f 40 aa                     clp		<=
+  6cb94:	48 8b 97 00 01 00 00            mov rdx, [rdi+0x100]
+  6cb9b:	31 c0                           xor eax, eax
+  6cb9d:	48 85 d2                        test rdx, rdx
+  6cba0:	74 15                           jz 0x6cbb7
+  6cba2:	48 83 ec 08                     sub rsp, 0x8
+  6cba6:	48 8b bf e0 00 00 00            mov rdi, [rdi+0xe0]
+  6cbad:	ff d2                           call rdx
+
+  6e060:	0f 1f 40 aa                     clp		<=
+  6e064:	83 2d d9 d6 2f 00 01            sub dword [rip+0x2fd6d9], 0x1
+  6e06b:	75 45                           jnz 0x6e0b2
+  6e06d:	48 c7 05 d0 d6 2f 00 00 00 00 00               mov qword [rip+0x2fd6d0], 0x0
+  6e078:	83 3d f5 06 30 00 00            cmp dword [rip+0x3006f5], 0x0
+  6e07f:	74 0b                           jz 0x6e08c
+  6e081:	f0 ff 0d b8 d6 2f 00            lock dec dword [rip+0x2fd6b8]
+  6e088:	75 0a                           jnz 0x6e094
+  6e08a:	eb 26                           jmp 0x6e0b2
+
+  70ef0:	0f 1f 40 aa                     clp		<=
+  70ef4:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  70efb:	53                              push rbx
+  70efc:	48 89 fb                        mov rbx, rdi
+  70eff:	ff 50 20                        call qword [rax+0x20]
+
+  71670:	0f 1f 40 aa                     clp		<=
+  71674:	48 63 ca                        movsxd rcx, edx
+  71677:	4c 8d 04 8e                     lea r8, [rsi+rcx*4]
+  7167b:	4c 39 c6                        cmp rsi, r8
+  7167e:	73 1e                           jae 0x7169e
+  71680:	41 83 78 fc 0a                  cmp dword [r8-0x4], 0xa
+  71685:	49 8d 48 fc                     lea rcx, [r8-0x4]
+  71689:	75 0e                           jnz 0x71699
+  7168b:	eb 1b                           jmp 0x716a8
+
+  71b20:	0f 1f 40 aa                     clp		<=
+  71b24:	53                              push rbx
+  71b25:	48 8b 87 a0 00 00 00            mov rax, [rdi+0xa0]
+  71b2c:	48 89 fb                        mov rbx, rdi
+  71b2f:	48 8b 78 30                     mov rdi, [rax+0x30]
+  71b33:	48 85 ff                        test rdi, rdi
+  71b36:	74 17                           jz 0x71b4f
+  71b38:	f6 43 74 08                     test byte [rbx+0x74], 0x8
+  71b3c:	75 11                           jnz 0x71b4f
+  71b3e:	ff 93 e8 00 00 00               call qword [rbx+0xe8]
+
+  72060:	0f 1f 40 aa                     clp		<=
+  72064:	41 54                           push r12
+  72066:	41 89 f4                        mov r12d, esi
+  72069:	55                              push rbp
+  7206a:	53                              push rbx
+  7206b:	48 89 fb                        mov rbx, rdi
+  7206e:	48 83 ec 20                     sub rsp, 0x20
+  72072:	48 8b af 98 00 00 00            mov rbp, [rdi+0x98]
+  72079:	48 89 ef                        mov rdi, rbp
+  7207c:	ff 55 20                        call qword [rbp+0x20]
+
+  76810:	0f 1f 40 aa                     clp		<=
+  76814:	48 83 ec 08                     sub rsp, 0x8
+  76818:	48 85 ff                        test rdi, rdi
+  7681b:	74 23                           jz 0x76840
+  7681d:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  76824:	ff 50 60                        call qword [rax+0x60]
+
+  76bc0:	0f 1f 40 aa                     clp		<=
+  76bc4:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  76bcb:	53                              push rbx
+  76bcc:	48 89 fb                        mov rbx, rdi
+  76bcf:	ff 90 80 00 00 00               call qword [rax+0x80]
+
+  77360:	0f 1f 40 aa                     clp		<=
+  77364:	41 54                           push r12
+  77366:	55                              push rbp
+  77367:	53                              push rbx
+  77368:	48 89 fb                        mov rbx, rdi
+  7736b:	48 81 ec 90 00 00 00            sub rsp, 0x90
+  77372:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  77379:	48 89 e6                        mov rsi, rsp
+  7737c:	ff 90 90 00 00 00               call qword [rax+0x90]
+
+  775e0:	0f 1f 40 aa                     clp		<=
+  775e4:	55                              push rbp
+  775e5:	53                              push rbx
+  775e6:	48 89 fb                        mov rbx, rdi
+  775e9:	48 81 ec 98 00 00 00            sub rsp, 0x98
+  775f0:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  775f7:	48 89 e6                        mov rsi, rsp
+  775fa:	ff 90 90 00 00 00               call qword [rax+0x90]
+
+  77730:	0f 1f 40 aa                     clp		<=
+  77734:	53                              push rbx
+  77735:	48 89 fb                        mov rbx, rdi
+  77738:	e8 a3 fe ff ff                  call 0x775e0
+  7773d:	0f 1f 40 cc                     rlp		<=
+  77741:	48 8b 83 d8 00 00 00            mov rax, [rbx+0xd8]
+  77748:	48 89 df                        mov rdi, rbx
+  7774b:	ff 50 20                        call qword [rax+0x20]
+
+  79560:	0f 1f 40 aa                     clp		<=
+  79564:	48 83 ec 08                     sub rsp, 0x8
+  79568:	8b 87 c0 00 00 00               mov eax, [rdi+0xc0]
+  7956e:	85 c0                           test eax, eax
+  79570:	75 0a                           jnz 0x7957c
+  79572:	c7 87 c0 00 00 00 ff ff ff ff   mov dword [rdi+0xc0], 0xffffffff
+  7957c:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  79583:	ff 50 18                        call qword [rax+0x18]
+
+  79850:	0f 1f 40 aa                     clp		<=
+  79854:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  7985b:	53                              push rbx
+  7985c:	48 89 fb                        mov rbx, rdi
+  7985f:	ff 50 20                        call qword [rax+0x20]
+
+  79950:	0f 1f 40 aa                     clp		<=
+  79954:	48 83 ec 08                     sub rsp, 0x8
+  79958:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  7995f:	ff 50 40                        call qword [rax+0x40]
+
+  79a20:	0f 1f 40 aa                     clp		<=
+  79a24:	41 54                           push r12
+  79a26:	49 89 d4                        mov r12, rdx
+  79a29:	55                              push rbp
+  79a2a:	48 89 f5                        mov rbp, rsi
+  79a2d:	53                              push rbx
+  79a2e:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  79a35:	48 89 fb                        mov rbx, rdi
+  79a38:	ff 50 60                        call qword [rax+0x60]
+
+  79ae0:	0f 1f 40 aa                     clp		<=
+  79ae4:	48 83 ec 08                     sub rsp, 0x8
+  79ae8:	48 8b 87 d8 00 00 00            mov rax, [rdi+0xd8]
+  79aef:	89 d1                           mov ecx, edx
+  79af1:	31 d2                           xor edx, edx
+  79af3:	ff 50 48                        call qword [rax+0x48]
+
+  79e40:	0f 1f 40 aa                     clp		<=
+  79e44:	4c 63 c2                        movsxd r8, edx
+  79e47:	49 01 f0                        add r8, rsi
+  79e4a:	4c 39 c6                        cmp rsi, r8
+  79e4d:	73 1f                           jae 0x79e6e
+  79e4f:	41 80 78 ff 0a                  cmp byte [r8-0x1], 0xa
+  79e54:	49 8d 48 ff                     lea rcx, [r8-0x1]
+  79e58:	75 0f                           jnz 0x79e69
+  79e5a:	eb 1c                           jmp 0x79e78
+
+  7a660:	0f 1f 40 aa                     clp		<=
+  7a664:	48 8b 47 08                     mov rax, [rdi+0x8]
+  7a668:	48 8b 50 60                     mov rdx, [rax+0x60]
+  7a66c:	48 85 d2                        test rdx, rdx
+  7a66f:	74 1f                           jz 0x7a690
+  7a671:	48 39 d7                        cmp rdi, rdx
+  7a674:	75 12                           jnz 0x7a688
+  7a676:	eb 1a                           jmp 0x7a692
+
+  7aa20:	0f 1f 40 aa                     clp		<=
+  7aa24:	83 2d 59 0d 2f 00 01            sub dword [rip+0x2f0d59], 0x1
+  7aa2b:	75 45                           jnz 0x7aa72
+  7aa2d:	48 c7 05 50 0d 2f 00 00 00 00 00               mov qword [rip+0x2f0d50], 0x0
+  7aa38:	83 3d 35 3d 2f 00 00            cmp dword [rip+0x2f3d35], 0x0
+  7aa3f:	74 0b                           jz 0x7aa4c
+  7aa41:	f0 ff 0d 38 0d 2f 00            lock dec dword [rip+0x2f0d38]
+  7aa48:	75 0a                           jnz 0x7aa54
+  7aa4a:	eb 26                           jmp 0x7aa72
+
+  7aea0:	0f 1f 40 aa                     clp		<=
+  7aea4:	53                              push rbx
+  7aea5:	48 89 fb                        mov rbx, rdi
+  7aea8:	48 8b 7f 38                     mov rdi, [rdi+0x38]
+  7aeac:	48 85 ff                        test rdi, rdi
+  7aeaf:	74 0f                           jz 0x7aec0
+  7aeb1:	f6 03 01                        test byte [rbx], 0x1
+  7aeb4:	75 0a                           jnz 0x7aec0
+  7aeb6:	ff 93 e8 00 00 00               call qword [rbx+0xe8]
+
+  7f600:	0f 1f 40 aa                     clp		<=
+  7f604:	48 8d 05 15 a0 2e 00            lea rax, [rip+0x2ea015]
+  7f60b:	48 89 fa                        mov rdx, rdi
+  7f60e:	48 39 c7                        cmp rdi, rax
+  7f611:	74 7d                           jz 0x7f690
+  7f613:	83 3d 5a f1 2e 00 00            cmp dword [rip+0x2ef15a], 0x0
+  7f61a:	74 07                           jz 0x7f623
+  7f61c:	f0 ff 0a                        lock dec dword [rdx]
+  7f61f:	75 06                           jnz 0x7f627
+  7f621:	eb 1e                           jmp 0x7f641
+
+  807e8:	0f 1f 40 bb                     jlp		<=
+  807ec:	85 db                           test ebx, ebx
+  807ee:	ba 01 00 00 00                  mov edx, 0x1
+  807f3:	7e ab                           jle 0x807a0
+  807f5:	48 89 1d 5c 89 2e 00            mov [rip+0x2e895c], rbx
+  807fc:	eb a2                           jmp 0x807a0
+
+  80800:	0f 1f 40 bb                     jlp		<=
+  80804:	89 1d 62 89 2e 00               mov [rip+0x2e8962], ebx
+  8080a:	c7 05 60 89 2e 00 01 00 00 00   mov dword [rip+0x2e8960], 0x1
+  80814:	ba 01 00 00 00                  mov edx, 0x1
+  80819:	e9 82 ff ff ff                  jmp 0x807a0
+
+  80820:	0f 1f 40 bb                     jlp		<=
+  80824:	31 d2                           xor edx, edx
+  80826:	81 fb 00 00 00 02               cmp ebx, 0x2000000
+  8082c:	0f 87 6e ff ff ff               ja 0x807a0
+  80832:	48 89 1d 17 89 2e 00            mov [rip+0x2e8917], rbx
+  80839:	c7 05 31 89 2e 00 01 00 00 00   mov dword [rip+0x2e8931], 0x1
+  80843:	b2 01                           mov dl, 0x1
+  80845:	e9 56 ff ff ff                  jmp 0x807a0
+
+  80850:	0f 1f 40 bb                     jlp		<=
+  80854:	48 89 1d ed 88 2e 00            mov [rip+0x2e88ed], rbx
+  8085b:	c7 05 0f 89 2e 00 01 00 00 00   mov dword [rip+0x2e890f], 0x1
+  80865:	ba 01 00 00 00                  mov edx, 0x1
+  8086a:	e9 31 ff ff ff                  jmp 0x807a0
+
+  80870:	0f 1f 40 bb                     jlp		<=
+  80874:	48 89 1d c5 88 2e 00            mov [rip+0x2e88c5], rbx
+  8087b:	c7 05 ef 88 2e 00 01 00 00 00   mov dword [rip+0x2e88ef], 0x1
+  80885:	ba 01 00 00 00                  mov edx, 0x1
+  8088a:	e9 11 ff ff ff                  jmp 0x807a0
+
+  80890:	0f 1f 40 bb                     jlp		<=
+  80894:	89 1d c2 af 2e 00               mov [rip+0x2eafc2], ebx
+  8089a:	ba 01 00 00 00                  mov edx, 0x1
+  8089f:	e9 fc fe ff ff                  jmp 0x807a0
+
+  808a8:	0f 1f 40 bb                     jlp		<=
+  808ac:	89 1d 7e 88 2e 00               mov [rip+0x2e887e], ebx
+  808b2:	ba 01 00 00 00                  mov edx, 0x1
+  808b7:	e9 e4 fe ff ff                  jmp 0x807a0
+
+  80ae3:	0f 1f 40 bb                     jlp		<=
+  80ae7:	48 8d 35 e5 50 0b 00            lea rsi, [rip+0xb50e5]
+  80aee:	ba 06 00 00 00                  mov edx, 0x6
+  80af3:	4c 89 f7                        mov rdi, r14
+  80af6:	48 83 c5 0e                     add rbp, 0xe
+  80afa:	e8 c1 80 00 00                  call 0x88bc0
+  80aff:	0f 1f 40 cc                     rlp		<=
+  80b03:	85 c0                           test eax, eax
+  80b05:	4c 0f 44 e5                     cmovz r12, rbp
+  80b09:	e9 a0 fe ff ff                  jmp 0x809ae
+
+  817ba:	0f 1f 40 bb                     jlp		<=
+  817be:	4d 89 f4                        mov r12, r14
+  817c1:	49 c1 ec 0f                     shr r12, 0xf
+  817c5:	49 83 fc 04                     cmp r12, 0x4
+  817c9:	77 1c                           ja 0x817e7
+  817cb:	41 8d 44 24 77                  lea eax, [r12+0x77]
+  817d0:	89 44 24 10                     mov [rsp+0x10], eax
+  817d4:	e9 ec fd ff ff                  jmp 0x815c5
+
+  817e7:	0f 1f 40 bb                     jlp		<=
+  817eb:	4c 89 f0                        mov rax, r14
+  817ee:	b9 7e 00 00 00                  mov ecx, 0x7e
+  817f3:	48 c1 e8 12                     shr rax, 0x12
+  817f7:	8d 50 7c                        lea edx, [rax+0x7c]
+  817fa:	48 83 f8 02                     cmp rax, 0x2
+  817fe:	0f 47 d1                        cmova edx, ecx
+  81801:	89 54 24 10                     mov [rsp+0x10], edx
+  81805:	e9 bb fd ff ff                  jmp 0x815c5
+
+  822e0:	0f 1f 40 aa                     clp		<=
+  822e4:	53                              push rbx
+  822e5:	48 8b 1d 84 95 2e 00            mov rbx, [rip+0x2e9584]
+  822ec:	c7 05 72 95 2e 00 00 00 00 00   mov dword [rip+0x2e9572], 0x0
+  822f6:	48 85 db                        test rbx, rbx
+  822f9:	75 0e                           jnz 0x82309
+  822fb:	eb 2b                           jmp 0x82328
+
+  837e0:	0f 1f 40 aa                     clp		<=
+  837e4:	41 54                           push r12
+  837e6:	49 89 f4                        mov r12, rsi
+  837e9:	55                              push rbp
+  837ea:	53                              push rbx
+  837eb:	48 8b 77 08                     mov rsi, [rdi+0x8]
+  837ef:	48 89 fb                        mov rbx, rdi
+  837f2:	48 85 f6                        test rsi, rsi
+  837f5:	75 20                           jnz 0x83817
+  837f7:	eb 48                           jmp 0x83841
+
+  85ae0:	0f 1f 40 aa                     clp		<=
+  85ae4:	48 89 f8                        mov rax, rdi
+  85ae7:	49 89 f9                        mov r9, rdi
+  85aea:	eb 07                           jmp 0x85af3
+
+  87410:	0f 1f 40 aa                     clp		<=
+  87414:	48 83 fa 03                     cmp rdx, 0x3
+  87418:	48 89 f8                        mov rax, rdi
+  8741b:	48 8d 4f ff                     lea rcx, [rdi-0x1]
+  8741f:	0f 86 8b 00 00 00               jbe 0x874b0
+  87425:	49 89 d1                        mov r9, rdx
+  87428:	49 c1 e9 02                     shr r9, 0x2
+  8742c:	eb 41                           jmp 0x8746f
+
+  89170:	0f 1f 40 aa                     clp		<=
+  89174:	48 89 f8                        mov rax, rdi
+  89177:	48 89 f2                        mov rdx, rsi
+  8917a:	66 45 0f ef c0                  pxor xmm8, xmm8
+  8917f:	eb 5b                           jmp 0x891dc
+
+  89190:	0f 1f 40 aa                     clp		<=
+  89194:	48 89 c8                        mov rax, rcx
+  89197:	66 44 0f 6e c6                  movd xmm8, esi
+  8919c:	66 45 0f 60 c0                  punpcklbw xmm8, xmm8
+  891a1:	66 45 0f 61 c0                  punpcklwd xmm8, xmm8
+  891a6:	66 45 0f 70 c0 00               pshufd xmm8, xmm8, 0x0
+  891ac:	eb 2e                           jmp 0x891dc
+
+  899e0:	0f 1f 40 aa                     clp		<=
+  899e4:	48 83 fa 03                     cmp rdx, 0x3
+  899e8:	0f 86 8a 00 00 00               jbe 0x89a78
+  899ee:	49 89 d0                        mov r8, rdx
+  899f1:	48 89 f8                        mov rax, rdi
+  899f4:	49 c1 e8 02                     shr r8, 0x2
+  899f8:	eb 3d                           jmp 0x89a37
+
+  8e390:	0f 1f 40 aa                     clp		<=
+  8e394:	48 01 f1                        add rcx, rsi
+  8e397:	eb 1a                           jmp 0x8e3b3
+
+  8e850:	0f 1f 40 aa                     clp		<=
+  8e854:	48 8d 05 f5 21 0a 00            lea rax, [rip+0xa21f5]
+  8e85b:	48 89 d1                        mov rcx, rdx
+  8e85e:	83 e1 07                        and ecx, 0x7
+  8e861:	48 63 0c 88                     movsxd rcx, dword [rax+rcx*4]
+  8e865:	48 01 c8                        add rax, rcx
+  8e868:	ff e0                           jmp rax
+
+  8e8e8:	0f 1f 40 bb                     jlp		<=
+  8e8ec:	48 85 d2                        test rdx, rdx
+  8e8ef:	0f 84 ce 00 00 00               jz 0x8e9c3
+  8e8f5:	48 8b 06                        mov rax, [rsi]
+  8e8f8:	48 83 ef 08                     sub rdi, 0x8
+  8e8fc:	eb ca                           jmp 0x8e8c8
+
+  8e900:	0f 1f 40 bb                     jlp		<=
+  8e904:	48 83 ea 01                     sub rdx, 0x1
+  8e908:	48 8b 0e                        mov rcx, [rsi]
+  8e90b:	0f 84 af 00 00 00               jz 0x8e9c0
+  8e911:	48 83 c6 08                     add rsi, 0x8
+  8e915:	eb ab                           jmp 0x8e8c2
+
+  8e920:	0f 1f 40 bb                     jlp		<=
+  8e924:	48 8b 06                        mov rax, [rsi]
+  8e927:	48 83 c2 06                     add rdx, 0x6
+  8e92b:	48 83 ee 30                     sub rsi, 0x30
+  8e92f:	48 83 ef 38                     sub rdi, 0x38
+  8e933:	e9 70 ff ff ff                  jmp 0x8e8a8
+
+  8e940:	0f 1f 40 bb                     jlp		<=
+  8e944:	48 8b 0e                        mov rcx, [rsi]
+  8e947:	48 83 c2 05                     add rdx, 0x5
+  8e94b:	48 83 ee 28                     sub rsi, 0x28
+  8e94f:	48 83 ef 30                     sub rdi, 0x30
+  8e953:	e9 48 ff ff ff                  jmp 0x8e8a0
+
+  8e960:	0f 1f 40 bb                     jlp		<=
+  8e964:	48 8b 06                        mov rax, [rsi]
+  8e967:	48 83 c2 04                     add rdx, 0x4
+  8e96b:	48 83 ee 20                     sub rsi, 0x20
+  8e96f:	48 83 ef 28                     sub rdi, 0x28
+  8e973:	e9 20 ff ff ff                  jmp 0x8e898
+
+  8e980:	0f 1f 40 bb                     jlp		<=
+  8e984:	48 8b 0e                        mov rcx, [rsi]
+  8e987:	48 83 c2 03                     add rdx, 0x3
+  8e98b:	48 83 ee 18                     sub rsi, 0x18
+  8e98f:	48 83 ef 20                     sub rdi, 0x20
+  8e993:	e9 f8 fe ff ff                  jmp 0x8e890
+
+  8e9a0:	0f 1f 40 bb                     jlp		<=
+  8e9a4:	48 8b 0e                        mov rcx, [rsi]
+  8e9a7:	48 83 c2 01                     add rdx, 0x1
+  8e9ab:	48 83 ee 08                     sub rsi, 0x8
+  8e9af:	48 83 ef 10                     sub rdi, 0x10
+  8e9b3:	e9 18 ff ff ff                  jmp 0x8e8d0
+
+  8eb10:	0f 1f 40 aa                     clp		<=
+  8eb14:	48 8d 05 55 1f 0a 00            lea rax, [rip+0xa1f55]
+  8eb1b:	49 89 d0                        mov r8, rdx
+  8eb1e:	41 83 e0 07                     and r8d, 0x7
+  8eb22:	4e 63 04 80                     movsxd r8, dword [rax+r8*4]
+  8eb26:	4c 01 c0                        add rax, r8
+  8eb29:	ff e0                           jmp rax
+
+  8ebb0:	0f 1f 40 bb                     jlp		<=
+  8ebb4:	48 85 d2                        test rdx, rdx
+  8ebb7:	74 6b                           jz 0x8ec24
+  8ebb9:	4c 8d 46 c0                     lea r8, [rsi-0x40]
+  8ebbd:	48 83 ef 38                     sub rdi, 0x38
+  8ebc1:	48 8b 76 f8                     mov rsi, [rsi-0x8]
+  8ebc5:	48 89 f9                        mov rcx, rdi
+  8ebc8:	4c 89 c0                        mov rax, r8
+  8ebcb:	eb c9                           jmp 0x8eb96
+
+  8ebd0:	0f 1f 40 bb                     jlp		<=
+  8ebd4:	48 83 ef 40                     sub rdi, 0x40
+  8ebd8:	48 83 ea 01                     sub rdx, 0x1
+  8ebdc:	4c 8b 4e f8                     mov r9, [rsi-0x8]
+  8ebe0:	74 3e                           jz 0x8ec20
+  8ebe2:	4c 8d 46 b8                     lea r8, [rsi-0x48]
+  8ebe6:	eb a0                           jmp 0x8eb88
+
+  8ec30:	0f 1f 40 bb                     jlp		<=
+  8ec34:	4c 8d 46 e8                     lea r8, [rsi-0x18]
+  8ec38:	48 83 ef 10                     sub rdi, 0x10
+  8ec3c:	4c 8b 4e f8                     mov r9, [rsi-0x8]
+  8ec40:	48 83 c2 05                     add rdx, 0x5
+  8ec44:	48 89 f9                        mov rcx, rdi
+  8ec47:	4c 89 c0                        mov rax, r8
+  8ec4a:	e9 19 ff ff ff                  jmp 0x8eb68
+
+  8ec50:	0f 1f 40 bb                     jlp		<=
+  8ec54:	4c 8d 46 e0                     lea r8, [rsi-0x20]
+  8ec58:	48 83 ef 18                     sub rdi, 0x18
+  8ec5c:	48 8b 76 f8                     mov rsi, [rsi-0x8]
+  8ec60:	48 83 c2 04                     add rdx, 0x4
+  8ec64:	48 89 f9                        mov rcx, rdi
+  8ec67:	4c 89 c0                        mov rax, r8
+  8ec6a:	e9 f1 fe ff ff                  jmp 0x8eb60
+
+  8ec70:	0f 1f 40 bb                     jlp		<=
+  8ec74:	4c 8d 46 d8                     lea r8, [rsi-0x28]
+  8ec78:	48 83 ef 20                     sub rdi, 0x20
+  8ec7c:	4c 8b 4e f8                     mov r9, [rsi-0x8]
+  8ec80:	48 83 c2 03                     add rdx, 0x3
+  8ec84:	48 89 f9                        mov rcx, rdi
+  8ec87:	4c 89 c0                        mov rax, r8
+  8ec8a:	e9 c9 fe ff ff                  jmp 0x8eb58
+
+  8ec90:	0f 1f 40 bb                     jlp		<=
+  8ec94:	4c 8d 46 c8                     lea r8, [rsi-0x38]
+  8ec98:	48 83 ef 30                     sub rdi, 0x30
+  8ec9c:	4c 8b 4e f8                     mov r9, [rsi-0x8]
+  8eca0:	48 83 c2 01                     add rdx, 0x1
+  8eca4:	48 89 f9                        mov rcx, rdi
+  8eca7:	4c 89 c0                        mov rax, r8
+  8ecaa:	e9 ef fe ff ff                  jmp 0x8eb9e
+
+  8edc7:	0f 1f 40 bb                     jlp		<=
+  8edcb:	89 c1                           mov ecx, eax
+  8edcd:	4d 89 eb                        mov r11, r13
+  8edd0:	48 8b 75 10                     mov rsi, [rbp+0x10]
+  8edd4:	48 d3 e3                        shl rbx, cl
+  8edd7:	44 89 c1                        mov ecx, r8d
+  8edda:	49 d3 eb                        shr r11, cl
+  8eddd:	4c 09 db                        or rbx, r11
+  8ede0:	49 89 5c 24 10                  mov [r12+0x10], rbx
+  8ede5:	e9 77 ff ff ff                  jmp 0x8ed61
+
+  8edf0:	0f 1f 40 bb                     jlp		<=
+  8edf4:	48 8d 6e f0                     lea rbp, [rsi-0x10]
+  8edf8:	4c 8d 67 f8                     lea r12, [rdi-0x8]
+  8edfc:	48 8b 36                        mov rsi, [rsi]
+  8edff:	4d 8b 59 f8                     mov r11, [r9-0x8]
+  8ee03:	48 83 c2 02                     add rdx, 0x2
+  8ee07:	49 89 ea                        mov r10, rbp
+  8ee0a:	4c 89 e7                        mov rdi, r12
+  8ee0d:	e9 6c ff ff ff                  jmp 0x8ed7e
+
+  90ba0:	0f 1f 40 aa                     clp		<=
+  90ba4:	41 54                           push r12
+  90ba6:	48 85 f6                        test rsi, rsi
+  90ba9:	41 89 d4                        mov r12d, edx
+  90bac:	55                              push rbp
+  90bad:	48 89 fd                        mov rbp, rdi
+  90bb0:	53                              push rbx
+  90bb1:	48 89 f3                        mov rbx, rsi
+  90bb4:	75 11                           jnz 0x90bc7
+  90bb6:	eb 33                           jmp 0x90beb
+
+  910a0:	0f 1f 40 aa                     clp		<=
+  910a4:	0f 1f 40 00                     nop [rax]
+  910a8:	48 85 f6                        test rsi, rsi
+  910ab:	74 6a                           jz 0x91117
+  910ad:	49 89 d0                        mov r8, rdx
+  910b0:	48 89 f8                        mov rax, rdi
+  910b3:	eb 06                           jmp 0x910bb
+
+  91170:	0f 1f 40 aa                     clp		<=
+  91174:	e8 27 ff ff ff                  call 0x910a0
+  91179:	0f 1f 40 cc                     rlp		<=
+  9117d:	48 85 c0                        test rax, rax
+  91180:	75 0e                           jnz 0x91190
+  91182:	eb 20                           jmp 0x911a4
+
+  93490:	0f 1f 40 aa                     clp		<=
+  93494:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  93499:	44 8b 5c 24 08                  mov r11d, [rsp+0x8]
+  9349e:	83 f8 08                        cmp eax, 0x8
+  934a1:	77 28                           ja 0x934cb
+  934a3:	4c 8d 15 e6 d5 09 00            lea r10, [rip+0x9d5e6]
+  934aa:	89 c0                           mov eax, eax
+  934ac:	49 63 04 82                     movsxd rax, dword [r10+rax*4]
+  934b0:	49 01 c2                        add r10, rax
+  934b3:	41 ff e2                        jmp r10
+
+  935a0:	0f 1f 40 aa                     clp		<=
+  935a4:	41 83 f9 08                     cmp r9d, 0x8
+  935a8:	77 1d                           ja 0x935c7
+  935aa:	48 8d 05 03 d5 09 00            lea rax, [rip+0x9d503]
+  935b1:	45 89 c9                        mov r9d, r9d
+  935b4:	4e 63 0c 88                     movsxd r9, dword [rax+r9*4]
+  935b8:	4c 01 c8                        add rax, r9
+  935bb:	ff e0                           jmp rax
+
+  93650:	0f 1f 40 aa                     clp		<=
+  93654:	41 83 f9 08                     cmp r9d, 0x8
+  93658:	77 1d                           ja 0x93677
+  9365a:	48 8d 05 77 d4 09 00            lea rax, [rip+0x9d477]
+  93661:	45 89 c9                        mov r9d, r9d
+  93664:	4e 63 0c 88                     movsxd r9, dword [rax+r9*4]
+  93668:	4c 01 c8                        add rax, r9
+  9366b:	ff e0                           jmp rax
+
+  93700:	0f 1f 40 aa                     clp		<=
+  93704:	0f be 07                        movsx eax, byte [rdi]
+  93707:	84 c0                           test al, al
+  93709:	74 2f                           jz 0x9373a
+  9370b:	39 f0                           cmp eax, esi
+  9370d:	b8 00 00 00 00                  mov eax, 0x0
+  93712:	75 10                           jnz 0x93724
+  93714:	eb 1a                           jmp 0x93730
+
+  93750:	0f 1f 40 aa                     clp		<=
+  93754:	0f be 07                        movsx eax, byte [rdi]
+  93757:	84 c0                           test al, al
+  93759:	74 37                           jz 0x93792
+  9375b:	39 f0                           cmp eax, esi
+  9375d:	74 33                           jz 0x93792
+  9375f:	39 d0                           cmp eax, edx
+  93761:	b8 00 00 00 00                  mov eax, 0x0
+  93766:	75 10                           jnz 0x93778
+  93768:	eb 1a                           jmp 0x93784
+
+  93810:	0f 1f 40 aa                     clp		<=
+  93814:	31 c0                           xor eax, eax
+  93816:	eb 0c                           jmp 0x93824
+
+  93840:	0f 1f 40 aa                     clp		<=
+  93844:	31 c0                           xor eax, eax
+  93846:	eb 0c                           jmp 0x93854
+
+  93870:	0f 1f 40 aa                     clp		<=
+  93874:	0f be 07                        movsx eax, byte [rdi]
+  93877:	84 c0                           test al, al
+  93879:	75 14                           jnz 0x9388f
+  9387b:	eb 23                           jmp 0x938a0
+
+  93930:	0f 1f 40 bb                     jlp		<=
+  93934:	84 c9                           test cl, cl
+  93936:	74 3d                           jz 0x93975
+  93938:	48 8d 48 01                     lea rcx, [rax+0x1]
+  9393c:	eb 0e                           jmp 0x9394c
+
+  94648:	0f 1f 40 bb                     jlp		<=
+  9464c:	89 c8                           mov eax, ecx
+  9464e:	48 8d 15 cf c4 09 00            lea rdx, [rip+0x9c4cf]
+  94655:	c1 e8 0c                        shr eax, 0xc
+  94658:	83 e0 0f                        and eax, 0xf
+  9465b:	48 63 34 82                     movsxd rsi, dword [rdx+rax*4]
+  9465f:	48 01 f2                        add rdx, rsi
+  94662:	ff e2                           jmp rdx
+
+  94688:	0f 1f 40 bb                     jlp		<=
+  9468c:	89 d0                           mov eax, edx
+  9468e:	48 8d 0d cf c4 09 00            lea rcx, [rip+0x9c4cf]
+  94695:	c1 e8 0c                        shr eax, 0xc
+  94698:	83 e0 0f                        and eax, 0xf
+  9469b:	48 63 34 81                     movsxd rsi, dword [rcx+rax*4]
+  9469f:	48 01 f1                        add rcx, rsi
+  946a2:	ff e1                           jmp rcx
+
+  947c0:	0f 1f 40 aa                     clp		<=
+  947c4:	48 39 f7                        cmp rdi, rsi
+  947c7:	74 2f                           jz 0x947f8
+  947c9:	48 8b 52 70                     mov rdx, [rdx+0x70]
+  947cd:	eb 0a                           jmp 0x947d9
+
+  94800:	0f 1f 40 aa                     clp		<=
+  94804:	48 39 f7                        cmp rdi, rsi
+  94807:	74 3f                           jz 0x94848
+  94809:	48 85 d2                        test rdx, rdx
+  9480c:	74 3a                           jz 0x94848
+  9480e:	48 8b 49 70                     mov rcx, [rcx+0x70]
+  94812:	eb 13                           jmp 0x94827
+
+  94850:	0f 1f 40 aa                     clp		<=
+  94854:	48 89 f8                        mov rax, rdi
+  94857:	48 89 fa                        mov rdx, rdi
+  9485a:	eb 07                           jmp 0x94863
+
+  95a70:	0f 1f 40 aa                     clp		<=
+  95a74:	48 89 f8                        mov rax, rdi
+  95a77:	49 89 f9                        mov r9, rdi
+  95a7a:	eb 07                           jmp 0x95a83
+
+  95b40:	0f 1f 40 aa                     clp		<=
+  95b44:	48 83 fa 03                     cmp rdx, 0x3
+  95b48:	76 66                           jbe 0x95bb0
+  95b4a:	48 89 d1                        mov rcx, rdx
+  95b4d:	48 c1 e9 02                     shr rcx, 0x2
+  95b51:	eb 47                           jmp 0x95b9a
+
+  95c00:	0f 1f 40 aa                     clp		<=
+  95c04:	48 83 fa 03                     cmp rdx, 0x3
+  95c08:	48 89 f8                        mov rax, rdi
+  95c0b:	48 8d 4f fc                     lea rcx, [rdi-0x4]
+  95c0f:	0f 86 8b 00 00 00               jbe 0x95ca0
+  95c15:	49 89 d1                        mov r9, rdx
+  95c18:	49 c1 e9 02                     shr r9, 0x2
+  95c1c:	eb 3e                           jmp 0x95c5c
+
+  95d00:	0f 1f 40 aa                     clp		<=
+  95d04:	55                              push rbp
+  95d05:	48 89 f5                        mov rbp, rsi
+  95d08:	53                              push rbx
+  95d09:	48 89 fb                        mov rbx, rdi
+  95d0c:	48 83 ec 08                     sub rsp, 0x8
+  95d10:	8b 37                           mov esi, [rdi]
+  95d12:	85 f6                           test esi, esi
+  95d14:	75 14                           jnz 0x95d2a
+  95d16:	eb 2d                           jmp 0x95d45
+
+  96180:	0f 1f 40 aa                     clp		<=
+  96184:	8b 16                           mov edx, [rsi]
+  96186:	48 89 f8                        mov rax, rdi
+  96189:	85 d2                           test edx, edx
+  9618b:	0f 84 8f 00 00 00               jz 0x96220
+  96191:	48 83 ef 04                     sub rdi, 0x4
+  96195:	eb 11                           jmp 0x961a8
+
+  96290:	0f 1f 40 aa                     clp		<=
+  96294:	eb 25                           jmp 0x962bb
+
+  96320:	0f 1f 40 aa                     clp		<=
+  96324:	eb 3e                           jmp 0x96364
+
+  964b0:	0f 1f 40 aa                     clp		<=
+  964b4:	48 83 fa 03                     cmp rdx, 0x3
+  964b8:	0f 86 9a 00 00 00               jbe 0x96558
+  964be:	49 89 d0                        mov r8, rdx
+  964c1:	48 89 f8                        mov rax, rdi
+  964c4:	49 c1 e8 02                     shr r8, 0x2
+  964c8:	eb 3a                           jmp 0x96504
+
+  977b0:	0f 1f 40 aa                     clp		<=
+  977b4:	8b 17                           mov edx, [rdi]
+  977b6:	48 89 f8                        mov rax, rdi
+  977b9:	85 d2                           test edx, edx
+  977bb:	74 19                           jz 0x977d6
+  977bd:	39 f2                           cmp edx, esi
+  977bf:	75 0b                           jnz 0x977cc
+  977c1:	eb 15                           jmp 0x977d8
+
+  a1160:	0f 1f 40 aa                     clp		<=
+  a1164:	41 54                           push r12
+  a1166:	48 39 f7                        cmp rdi, rsi
+  a1169:	55                              push rbp
+  a116a:	48 89 fd                        mov rbp, rdi
+  a116d:	53                              push rbx
+  a116e:	48 89 f3                        mov rbx, rsi
+  a1171:	75 0a                           jnz 0xa117d
+  a1173:	eb 3b                           jmp 0xa11b0
+
+  a4580:	0f 1f 40 aa                     clp		<=
+  a4584:	48 83 ec 08                     sub rsp, 0x8
+  a4588:	be 01 00 00 00                  mov esi, 0x1
+  a458d:	31 c0                           xor eax, eax
+  a458f:	83 3d de a1 2c 00 00            cmp dword [rip+0x2ca1de], 0x0
+  a4596:	74 0c                           jz 0xa45a4
+  a4598:	f0 0f b1 35 a0 75 2c 00         lock cmpxchg [rip+0x2c75a0], esi
+  a45a0:	75 0b                           jnz 0xa45ad
+  a45a2:	eb 27                           jmp 0xa45cb
+
+  a46e0:	0f 1f 40 aa                     clp		<=
+  a46e4:	48 83 ec 08                     sub rsp, 0x8
+  a46e8:	be 01 00 00 00                  mov esi, 0x1
+  a46ed:	31 c0                           xor eax, eax
+  a46ef:	83 3d 7e a0 2c 00 00            cmp dword [rip+0x2ca07e], 0x0
+  a46f6:	74 0c                           jz 0xa4704
+  a46f8:	f0 0f b1 35 40 74 2c 00         lock cmpxchg [rip+0x2c7440], esi
+  a4700:	75 0b                           jnz 0xa470d
+  a4702:	eb 27                           jmp 0xa472b
+
+  a7017:	0f 1f 40 bb                     jlp		<=
+  a701b:	41 0f b6 37                     movzx esi, byte [r15]
+  a701f:	4c 89 fa                        mov rdx, r15
+  a7022:	48 0f be c6                     movsx rax, sil
+  a7026:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a702b:	75 0e                           jnz 0xa703b
+  a702d:	e9 ab 24 00 00                  jmp 0xa94dd
+
+  a75f0:	0f 1f 40 bb                     jlp		<=
+  a75f4:	41 0f b6 17                     movzx edx, byte [r15]
+  a75f8:	48 0f be c2                     movsx rax, dl
+  a75fc:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a7601:	75 08                           jnz 0xa760b
+  a7603:	eb 1f                           jmp 0xa7624
+
+  a76a7:	0f 1f 40 bb                     jlp		<=
+  a76ab:	41 0f b6 37                     movzx esi, byte [r15]
+  a76af:	4c 89 fa                        mov rdx, r15
+  a76b2:	48 0f be c6                     movsx rax, sil
+  a76b6:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a76bb:	75 0e                           jnz 0xa76cb
+  a76bd:	e9 8b 1d 00 00                  jmp 0xa944d
+
+  a7840:	0f 1f 40 bb                     jlp		<=
+  a7844:	41 0f b6 37                     movzx esi, byte [r15]
+  a7848:	4c 89 fa                        mov rdx, r15
+  a784b:	48 0f be c6                     movsx rax, sil
+  a784f:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a7854:	75 0d                           jnz 0xa7863
+  a7856:	e9 8a 1c 00 00                  jmp 0xa94e5
+
+  a7993:	0f 1f 40 bb                     jlp		<=
+  a7997:	49 0f be 07                     movsx rax, byte [r15]
+  a799b:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a79a0:	75 11                           jnz 0xa79b3
+  a79a2:	e9 14 f1 ff ff                  jmp 0xa6abb
+
+  a7b2c:	0f 1f 40 bb                     jlp		<=
+  a7b30:	41 0f b6 37                     movzx esi, byte [r15]
+  a7b34:	4c 89 fa                        mov rdx, r15
+  a7b37:	48 0f be c6                     movsx rax, sil
+  a7b3b:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a7b40:	75 11                           jnz 0xa7b53
+  a7b42:	e9 0e 19 00 00                  jmp 0xa9455
+
+  a7d58:	0f 1f 40 bb                     jlp		<=
+  a7d5c:	49 8d 47 01                     lea rax, [r15+0x1]
+  a7d60:	48 89 44 24 68                  mov [rsp+0x68], rax
+  a7d65:	41 80 3f 25                     cmp byte [r15], 0x25
+  a7d69:	0f 84 4c ed ff ff               jz 0xa6abb
+  a7d6f:	e9 2a ee ff ff                  jmp 0xa6b9e
+
+  a7e0f:	0f 1f 40 bb                     jlp		<=
+  a7e13:	41 0f b6 37                     movzx esi, byte [r15]
+  a7e17:	4c 89 fa                        mov rdx, r15
+  a7e1a:	48 0f be c6                     movsx rax, sil
+  a7e1e:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a7e23:	75 0e                           jnz 0xa7e33
+  a7e25:	e9 9f 17 00 00                  jmp 0xa95c9
+
+  a80c0:	0f 1f 40 bb                     jlp		<=
+  a80c4:	41 0f b6 37                     movzx esi, byte [r15]
+  a80c8:	4c 89 fa                        mov rdx, r15
+  a80cb:	48 0f be c6                     movsx rax, sil
+  a80cf:	f6 44 41 01 20                  test byte [rcx+rax*2+0x1], 0x20
+  a80d4:	75 0d                           jnz 0xa80e3
+  a80d6:	e9 7c 14 00 00                  jmp 0xa9557
+
+  a81fb:	0f 1f 40 bb                     jlp		<=
+  a81ff:	0f b6 44 24 71                  movzx eax, byte [rsp+0x71]
+  a8204:	83 e0 18                        and eax, 0x18
+  a8207:	3c 10                           cmp al, 0x10
+  a8209:	0f 84 66 ed ff ff               jz 0xa6f75
+  a820f:	41 0f b6 07                     movzx eax, byte [r15]
+  a8213:	48 0f be d0                     movsx rdx, al
+  a8217:	f6 44 51 01 20                  test byte [rcx+rdx*2+0x1], 0x20
+  a821c:	75 05                           jnz 0xa8223
+  a821e:	eb 1c                           jmp 0xa823c
+
+  aa1e7:	0f 1f 40 bb                     jlp		<=
+  aa1eb:	83 f9 4f                        cmp ecx, 0x4f
+  aa1ee:	0f 84 54 fd ff ff               jz 0xa9f48
+  aa1f4:	83 f9 45                        cmp ecx, 0x45
+  aa1f7:	0f 84 5a 15 00 00               jz 0xab757
+  aa1fd:	48 8b 44 24 30                  mov rax, [rsp+0x30]
+  aa202:	4c 8b b0 88 01 00 00            mov r14, [rax+0x188]
+  aa209:	e9 92 fd ff ff                  jmp 0xa9fa0
+
+  aa57f:	0f 1f 40 bb                     jlp		<=
+  aa583:	48 8b 44 24 30                  mov rax, [rsp+0x30]
+  aa588:	4c 8b b0 98 01 00 00            mov r14, [rax+0x198]
+  aa58f:	48 8d 05 6f a3 08 00            lea rax, [rip+0x8a36f]
+  aa596:	41 80 3e 00                     cmp byte [r14], 0x0
+  aa59a:	4c 0f 44 f0                     cmovz r14, rax
+  aa59e:	e9 fd f9 ff ff                  jmp 0xa9fa0
+
+  aa5e8:	0f 1f 40 bb                     jlp		<=
+  aa5ec:	83 f9 4f                        cmp ecx, 0x4f
+  aa5ef:	0f 84 53 f9 ff ff               jz 0xa9f48
+  aa5f5:	83 f9 45                        cmp ecx, 0x45
+  aa5f8:	0f 84 3e 11 00 00               jz 0xab73c
+  aa5fe:	48 8b 44 24 30                  mov rax, [rsp+0x30]
+  aa603:	4c 8b b0 90 01 00 00            mov r14, [rax+0x190]
+  aa60a:	e9 91 f9 ff ff                  jmp 0xa9fa0
+
+  aa679:	0f 1f 40 bb                     jlp		<=
+  aa67d:	83 f9 45                        cmp ecx, 0x45
+  aa680:	0f 84 c2 f8 ff ff               jz 0xa9f48
+  aa686:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  aa68b:	41 be 02 00 00 00               mov r14d, 0x2
+  aa691:	41 83 ff 02                     cmp r15d, 0x2
+  aa695:	45 0f 4d f7                     cmovge r14d, r15d
+  aa699:	44 8b 28                        mov r13d, [rax]
+  aa69c:	e9 97 fb ff ff                  jmp 0xaa238
+
+  aaa12:	0f 1f 40 bb                     jlp		<=
+  aaa16:	45 31 f6                        xor r14d, r14d
+  aaa19:	e9 a4 f6 ff ff                  jmp 0xaa0c2
+
+  aaaf8:	0f 1f 40 bb                     jlp		<=
+  aaafc:	83 f9 45                        cmp ecx, 0x45
+  aaaff:	0f 84 43 f4 ff ff               jz 0xa9f48
+  aab05:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  aab0a:	41 be 02 00 00 00               mov r14d, 0x2
+  aab10:	41 83 ff 02                     cmp r15d, 0x2
+  aab14:	45 0f 4d f7                     cmovge r14d, r15d
+  aab18:	44 8b 68 08                     mov r13d, [rax+0x8]
+  aab1c:	eb be                           jmp 0xaaadc
+
+  aab4e:	0f 1f 40 bb                     jlp		<=
+  aab52:	83 f9 45                        cmp ecx, 0x45
+  aab55:	0f 84 ed f3 ff ff               jz 0xa9f48
+  aab5b:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  aab60:	41 be 02 00 00 00               mov r14d, 0x2
+  aab66:	41 83 ff 02                     cmp r15d, 0x2
+  aab6a:	45 0f 4d f7                     cmovge r14d, r15d
+  aab6e:	44 8b 68 0c                     mov r13d, [rax+0xc]
+  aab72:	e9 65 ff ff ff                  jmp 0xaaadc
+
+  aab77:	0f 1f 40 bb                     jlp		<=
+  aab7b:	83 f9 45                        cmp ecx, 0x45
+  aab7e:	0f 84 c4 f3 ff ff               jz 0xa9f48
+  aab84:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  aab89:	41 be 02 00 00 00               mov r14d, 0x2
+  aab8f:	41 83 ff 02                     cmp r15d, 0x2
+  aab93:	45 0f 4d f7                     cmovge r14d, r15d
+  aab97:	44 8b 68 0c                     mov r13d, [rax+0xc]
+  aab9b:	e9 98 f6 ff ff                  jmp 0xaa238
+
+  aaba0:	0f 1f 40 bb                     jlp		<=
+  aaba4:	83 f9 4f                        cmp ecx, 0x4f
+  aaba7:	0f 84 9b f3 ff ff               jz 0xa9f48
+  aabad:	83 f9 45                        cmp ecx, 0x45
+  aabb0:	0f 84 e0 0a 00 00               jz 0xab696
+  aabb6:	48 8b 44 24 30                  mov rax, [rsp+0x30]
+  aabbb:	4c 8b b0 80 01 00 00            mov r14, [rax+0x180]
+  aabc2:	e9 d9 f3 ff ff                  jmp 0xa9fa0
+
+  ab17e:	0f 1f 40 bb                     jlp		<=
+  ab182:	83 f9 45                        cmp ecx, 0x45
+  ab185:	0f 84 bd ed ff ff               jz 0xa9f48
+  ab18b:	41 be 02 00 00 00               mov r14d, 0x2
+  ab191:	41 83 ff 02                     cmp r15d, 0x2
+  ab195:	44 8b 6c 24 1c                  mov r13d, [rsp+0x1c]
+  ab19a:	45 0f 4d f7                     cmovge r14d, r15d
+  ab19e:	e9 95 f0 ff ff                  jmp 0xaa238
+
+  ab213:	0f 1f 40 bb                     jlp		<=
+  ab217:	4c 8d 35 02 af 08 00            lea r14, [rip+0x8af02]
+  ab21e:	e9 7d ed ff ff                  jmp 0xa9fa0
+
+  ab223:	0f 1f 40 bb                     jlp		<=
+  ab227:	83 f9 45                        cmp ecx, 0x45
+  ab22a:	0f 84 18 ed ff ff               jz 0xa9f48
+  ab230:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  ab235:	41 be 02 00 00 00               mov r14d, 0x2
+  ab23b:	41 83 ff 02                     cmp r15d, 0x2
+  ab23f:	45 0f 4d f7                     cmovge r14d, r15d
+  ab243:	44 8b 68 08                     mov r13d, [rax+0x8]
+  ab247:	e9 ec ef ff ff                  jmp 0xaa238
+
+  ab24c:	0f 1f 40 bb                     jlp		<=
+  ab250:	85 c9                           test ecx, ecx
+  ab252:	4c 8d 35 be ae 08 00            lea r14, [rip+0x8aebe]
+  ab259:	0f 84 41 ed ff ff               jz 0xa9fa0
+  ab25f:	e9 e4 ec ff ff                  jmp 0xa9f48
+
+  ab264:	0f 1f 40 bb                     jlp		<=
+  ab268:	83 f9 45                        cmp ecx, 0x45
+  ab26b:	0f 84 d7 ec ff ff               jz 0xa9f48
+  ab271:	48 8b 44 24 20                  mov rax, [rsp+0x20]
+  ab276:	41 be 02 00 00 00               mov r14d, 0x2
+  ab27c:	41 83 ff 02                     cmp r15d, 0x2
+  ab280:	45 0f 4d f7                     cmovge r14d, r15d
+  ab284:	44 8b 68 04                     mov r13d, [rax+0x4]
+  ab288:	e9 ab ef ff ff                  jmp 0xaa238
+
+  ac795:	0f 1f 40 bb                     jlp		<=
+  ac799:	45 85 c0                        test r8d, r8d
+  ac79c:	0f 85 3e f9 ff ff               jnz 0xac0e0
+  ac7a2:	48 8d 05 b7 13 09 00            lea rax, [rip+0x913b7]
+  ac7a9:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  ac7b0:	e9 9b f9 ff ff                  jmp 0xac150
+
+  ac7b5:	0f 1f 40 bb                     jlp		<=
+  ac7b9:	41 83 f8 45                     cmp r8d, 0x45
+  ac7bd:	0f 84 1d f9 ff ff               jz 0xac0e0
+  ac7c3:	48 8b 85 18 ff ff ff            mov rax, [rbp-0xe8]
+  ac7ca:	b9 02 00 00 00                  mov ecx, 0x2
+  ac7cf:	41 83 ff 02                     cmp r15d, 0x2
+  ac7d3:	41 0f 4d cf                     cmovge ecx, r15d
+  ac7d7:	44 8b 20                        mov r12d, [rax]
+  ac7da:	e9 81 fc ff ff                  jmp 0xac460
+
+  ac7df:	0f 1f 40 bb                     jlp		<=
+  ac7e3:	48 8d 05 7a 10 09 00            lea rax, [rip+0x9107a]
+  ac7ea:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  ac7f1:	e9 5a f9 ff ff                  jmp 0xac150
+
+  ac7f6:	0f 1f 40 bb                     jlp		<=
+  ac7fa:	41 83 f8 45                     cmp r8d, 0x45
+  ac7fe:	0f 84 dc f8 ff ff               jz 0xac0e0
+  ac804:	48 8b 85 18 ff ff ff            mov rax, [rbp-0xe8]
+  ac80b:	b9 02 00 00 00                  mov ecx, 0x2
+  ac810:	41 83 ff 02                     cmp r15d, 0x2
+  ac814:	41 0f 4d cf                     cmovge ecx, r15d
+  ac818:	44 8b 60 04                     mov r12d, [rax+0x4]
+  ac81c:	e9 3f fc ff ff                  jmp 0xac460
+
+  ac821:	0f 1f 40 bb                     jlp		<=
+  ac825:	41 83 f8 45                     cmp r8d, 0x45
+  ac829:	0f 84 b1 f8 ff ff               jz 0xac0e0
+  ac82f:	48 8b 85 18 ff ff ff            mov rax, [rbp-0xe8]
+  ac836:	b9 02 00 00 00                  mov ecx, 0x2
+  ac83b:	41 83 ff 02                     cmp r15d, 0x2
+  ac83f:	41 0f 4d cf                     cmovge ecx, r15d
+  ac843:	44 8b 60 08                     mov r12d, [rax+0x8]
+  ac847:	e9 14 fc ff ff                  jmp 0xac460
+
+  ac84c:	0f 1f 40 bb                     jlp		<=
+  ac850:	41 83 f8 4f                     cmp r8d, 0x4f
+  ac854:	0f 84 86 f8 ff ff               jz 0xac0e0
+  ac85a:	41 83 f8 45                     cmp r8d, 0x45
+  ac85e:	0f 84 d4 11 00 00               jz 0xada38
+  ac864:	48 8b 85 00 ff ff ff            mov rax, [rbp-0x100]
+  ac86b:	48 8b 80 28 03 00 00            mov rax, [rax+0x328]
+  ac872:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  ac879:	e9 d2 f8 ff ff                  jmp 0xac150
+
+  ac87e:	0f 1f 40 bb                     jlp		<=
+  ac882:	41 83 f8 45                     cmp r8d, 0x45
+  ac886:	0f 84 54 f8 ff ff               jz 0xac0e0
+  ac88c:	48 8b 85 18 ff ff ff            mov rax, [rbp-0xe8]
+  ac893:	b9 01 00 00 00                  mov ecx, 0x1
+  ac898:	45 85 ff                        test r15d, r15d
+  ac89b:	41 0f 4f cf                     cmovg ecx, r15d
+  ac89f:	44 8b 60 18                     mov r12d, [rax+0x18]
+  ac8a3:	e9 b8 fb ff ff                  jmp 0xac460
+
+  aca55:	0f 1f 40 bb                     jlp		<=
+  aca59:	48 8b 85 00 ff ff ff            mov rax, [rbp-0x100]
+  aca60:	48 8b 80 38 03 00 00            mov rax, [rax+0x338]
+  aca67:	8b 10                           mov edx, [rax]
+  aca69:	48 89 c6                        mov rsi, rax
+  aca6c:	48 8d 05 5d 10 09 00            lea rax, [rip+0x9105d]
+  aca73:	85 d2                           test edx, edx
+  aca75:	48 0f 45 c6                     cmovnz rax, rsi
+  aca79:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  aca80:	e9 cb f6 ff ff                  jmp 0xac150
+
+  acbd9:	0f 1f 40 bb                     jlp		<=
+  acbdd:	41 83 f8 4f                     cmp r8d, 0x4f
+  acbe1:	0f 84 f9 f4 ff ff               jz 0xac0e0
+  acbe7:	41 83 f8 45                     cmp r8d, 0x45
+  acbeb:	0f 84 61 0d 00 00               jz 0xad952
+  acbf1:	48 8b 85 00 ff ff ff            mov rax, [rbp-0x100]
+  acbf8:	48 8b 80 30 03 00 00            mov rax, [rax+0x330]
+  acbff:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  acc06:	e9 45 f5 ff ff                  jmp 0xac150
+
+  ad05c:	0f 1f 40 bb                     jlp		<=
+  ad060:	31 c9                           xor ecx, ecx
+  ad062:	e9 42 f2 ff ff                  jmp 0xac2a9
+
+  ad067:	0f 1f 40 bb                     jlp		<=
+  ad06b:	41 83 f8 4f                     cmp r8d, 0x4f
+  ad06f:	0f 84 6b f0 ff ff               jz 0xac0e0
+  ad075:	41 83 f8 45                     cmp r8d, 0x45
+  ad079:	0f 84 f7 08 00 00               jz 0xad976
+  ad07f:	48 8b 85 00 ff ff ff            mov rax, [rbp-0x100]
+  ad086:	48 8b 80 20 03 00 00            mov rax, [rax+0x320]
+  ad08d:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  ad094:	e9 b7 f0 ff ff                  jmp 0xac150
+
+  ad197:	0f 1f 40 bb                     jlp		<=
+  ad19b:	45 85 c0                        test r8d, r8d
+  ad19e:	0f 85 3c ef ff ff               jnz 0xac0e0
+  ad1a4:	48 8d 05 d5 08 09 00            lea rax, [rip+0x908d5]
+  ad1ab:	48 89 85 e0 fe ff ff            mov [rbp-0x120], rax
+  ad1b2:	e9 99 ef ff ff                  jmp 0xac150
+
+  ad22d:	0f 1f 40 bb                     jlp		<=
+  ad231:	41 83 f8 45                     cmp r8d, 0x45
+  ad235:	0f 84 a5 ee ff ff               jz 0xac0e0
+  ad23b:	48 8b 85 18 ff ff ff            mov rax, [rbp-0xe8]
+  ad242:	b9 02 00 00 00                  mov ecx, 0x2
+  ad247:	41 83 ff 02                     cmp r15d, 0x2
+  ad24b:	41 0f 4d cf                     cmovge ecx, r15d
+  ad24f:	44 8b 60 0c                     mov r12d, [rax+0xc]
+  ad253:	eb 88                           jmp 0xad1dd
+
+  ad255:	0f 1f 40 bb                     jlp		<=
+  ad259:	41 83 f8 45                     cmp r8d, 0x45
+  ad25d:	0f 84 7d ee ff ff               jz 0xac0e0
+  ad263:	48 8b 85 18 ff ff ff            mov rax, [rbp-0xe8]
+  ad26a:	b9 02 00 00 00                  mov ecx, 0x2
+  ad26f:	41 83 ff 02                     cmp r15d, 0x2
+  ad273:	41 0f 4d cf                     cmovge ecx, r15d
+  ad277:	44 8b 60 0c                     mov r12d, [rax+0xc]
+  ad27b:	e9 e0 f1 ff ff                  jmp 0xac460
+
+  ad2b4:	0f 1f 40 bb                     jlp		<=
+  ad2b8:	41 83 f8 45                     cmp r8d, 0x45
+  ad2bc:	0f 84 1e ee ff ff               jz 0xac0e0
+  ad2c2:	b9 02 00 00 00                  mov ecx, 0x2
+  ad2c7:	41 83 ff 02                     cmp r15d, 0x2
+  ad2cb:	44 8b a5 24 ff ff ff            mov r12d, [rbp-0xdc]
+  ad2d2:	41 0f 4d cf                     cmovge ecx, r15d
+  ad2d6:	e9 02 ff ff ff                  jmp 0xad1dd
+
+  aee70:	0f 1f 40 aa                     clp		<=
+  aee74:	53                              push rbx
+  aee75:	be 01 00 00 00                  mov esi, 0x1
+  aee7a:	48 89 fb                        mov rbx, rdi
+  aee7d:	31 c0                           xor eax, eax
+  aee7f:	83 3d ee f8 2b 00 00            cmp dword [rip+0x2bf8ee], 0x0
+  aee86:	74 09                           jz 0xaee91
+  aee88:	f0 0f b1 73 04                  lock cmpxchg [rbx+0x4], esi
+  aee8d:	75 08                           jnz 0xaee97
+  aee8f:	eb 21                           jmp 0xaeeb2
+
+  afed0:	0f 1f 40 aa                     clp		<=
+  afed4:	48 83 ec 08                     sub rsp, 0x8
+  afed8:	be 01 00 00 00                  mov esi, 0x1
+  afedd:	31 c0                           xor eax, eax
+  afedf:	83 3d 8e e8 2b 00 00            cmp dword [rip+0x2be88e], 0x0
+  afee6:	74 0c                           jz 0xafef4
+  afee8:	f0 0f b1 35 90 bd 2b 00         lock cmpxchg [rip+0x2bbd90], esi
+  afef0:	75 0b                           jnz 0xafefd
+  afef2:	eb 27                           jmp 0xaff1b
+
+  b0560:	0f 1f 40 aa                     clp		<=
+  b0564:	48 83 ec 18                     sub rsp, 0x18
+  b0568:	be 01 00 00 00                  mov esi, 0x1
+  b056d:	31 c0                           xor eax, eax
+  b056f:	83 3d fe e1 2b 00 00            cmp dword [rip+0x2be1fe], 0x0
+  b0576:	74 0c                           jz 0xb0584
+  b0578:	f0 0f b1 35 90 b7 2b 00         lock cmpxchg [rip+0x2bb790], esi
+  b0580:	75 0b                           jnz 0xb058d
+  b0582:	eb 27                           jmp 0xb05ab
+
+  b16f0:	0f 1f 40 aa                     clp		<=
+  b16f4:	48 83 ec 08                     sub rsp, 0x8
+  b16f8:	be 01 00 00 00                  mov esi, 0x1
+  b16fd:	31 c0                           xor eax, eax
+  b16ff:	83 3d 6e d0 2b 00 00            cmp dword [rip+0x2bd06e], 0x0
+  b1706:	74 0c                           jz 0xb1714
+  b1708:	f0 0f b1 35 e0 a6 2b 00         lock cmpxchg [rip+0x2ba6e0], esi
+  b1710:	75 0b                           jnz 0xb171d
+  b1712:	eb 27                           jmp 0xb173b
+
+  b1b10:	0f 1f 40 aa                     clp		<=
+  b1b14:	48 83 ec 18                     sub rsp, 0x18
+  b1b18:	be 01 00 00 00                  mov esi, 0x1
+  b1b1d:	31 c0                           xor eax, eax
+  b1b1f:	83 3d 4e cc 2b 00 00            cmp dword [rip+0x2bcc4e], 0x0
+  b1b26:	74 0c                           jz 0xb1b34
+  b1b28:	f0 0f b1 35 50 a3 2b 00         lock cmpxchg [rip+0x2ba350], esi
+  b1b30:	75 0b                           jnz 0xb1b3d
+  b1b32:	eb 27                           jmp 0xb1b5b
+
+  b31a0:	0f 1f 40 aa                     clp		<=
+  b31a4:	48 63 d7                        movsxd rdx, edi
+  b31a7:	4c 8b 15 ba 5c 2b 00            mov r10, [rip+0x2b5cba]
+  b31ae:	41 b9 e7 00 00 00               mov r9d, 0xe7
+  b31b4:	41 b8 3c 00 00 00               mov r8d, 0x3c
+  b31ba:	eb 15                           jmp 0xb31d1
+
+  b49d0:	0f 1f 40 bb                     jlp		<=
+  b49d4:	b8 01 00 00 00                  mov eax, 0x1
+  b49d9:	e9 e7 fe ff ff                  jmp 0xb48c5
+
+  b49e0:	0f 1f 40 bb                     jlp		<=
+  b49e4:	b8 ff 00 00 00                  mov eax, 0xff
+  b49e9:	e9 d7 fe ff ff                  jmp 0xb48c5
+
+  b49f0:	0f 1f 40 bb                     jlp		<=
+  b49f4:	b8 00 10 00 00                  mov eax, 0x1000
+  b49f9:	e9 c7 fe ff ff                  jmp 0xb48c5
+
+  b4a00:	0f 1f 40 bb                     jlp		<=
+  b4a04:	48 89 e6                        mov rsi, rsp
+  b4a07:	48 89 df                        mov rdi, rbx
+  b4a0a:	e8 01 1c 02 00                  call 0xd6610
+  b4a0f:	0f 1f 40 cc                     rlp		<=
+  b4a13:	89 c2                           mov edx, eax
+  b4a15:	48 c7 c0 ff ff ff ff            mov rax, 0xffffffffffffffff
+  b4a1c:	85 d2                           test edx, edx
+  b4a1e:	48 0f 49 44 24 08               cmovns rax, [rsp+0x8]
+  b4a24:	e9 9c fe ff ff                  jmp 0xb48c5
+
+  b4a30:	0f 1f 40 bb                     jlp		<=
+  b4a34:	31 c0                           xor eax, eax
+  b4a36:	e9 8a fe ff ff                  jmp 0xb48c5
+
+  b4a60:	0f 1f 40 bb                     jlp		<=
+  b4a64:	b8 20 00 00 00                  mov eax, 0x20
+  b4a69:	e9 57 fe ff ff                  jmp 0xb48c5
+
+  b4a70:	0f 1f 40 bb                     jlp		<=
+  b4a74:	48 89 e6                        mov rsi, rsp
+  b4a77:	48 89 df                        mov rdi, rbx
+  b4a7a:	e8 91 1b 02 00                  call 0xd6610
+  b4a7f:	0f 1f 40 cc                     rlp		<=
+  b4a83:	89 c2                           mov edx, eax
+  b4a85:	48 c7 c0 ff ff ff ff            mov rax, 0xffffffffffffffff
+  b4a8c:	85 d2                           test edx, edx
+  b4a8e:	48 0f 49 04 24                  cmovns rax, [rsp]
+  b4a93:	e9 2d fe ff ff                  jmp 0xb48c5
+
+  b4de4:	0f 1f 40 bb                     jlp		<=
+  b4de8:	e8 43 7d 02 00                  call 0xdcb30
+  b4ded:	0f 1f 40 cc                     rlp		<=
+  b4df1:	48 98                           cdqe
+  b4df3:	e9 58 ff ff ff                  jmp 0xb4d50
+
+  b4df8:	0f 1f 40 bb                     jlp		<=
+  b4dfc:	b8 20 00 00 00                  mov eax, 0x20
+  b4e01:	e9 4a ff ff ff                  jmp 0xb4d50
+
+  b4e06:	0f 1f 40 bb                     jlp		<=
+  b4e0a:	48 8d 3d 14 15 08 00            lea rdi, [rip+0x81514]
+  b4e11:	e8 fa fc ff ff                  call 0xb4b10
+  b4e16:	0f 1f 40 cc                     rlp		<=
+  b4e1a:	e9 31 ff ff ff                  jmp 0xb4d50
+
+  b4e1f:	0f 1f 40 bb                     jlp		<=
+  b4e23:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b4e28:	e9 23 ff ff ff                  jmp 0xb4d50
+
+  b4e2d:	0f 1f 40 bb                     jlp		<=
+  b4e31:	48 8d 3d e1 14 08 00            lea rdi, [rip+0x814e1]
+  b4e38:	e8 d3 fc ff ff                  call 0xb4b10
+  b4e3d:	0f 1f 40 cc                     rlp		<=
+  b4e41:	e9 0a ff ff ff                  jmp 0xb4d50
+
+  b4e46:	0f 1f 40 bb                     jlp		<=
+  b4e4a:	b8 69 10 03 00                  mov eax, 0x31069
+  b4e4f:	e9 fc fe ff ff                  jmp 0xb4d50
+
+  b4e54:	0f 1f 40 bb                     jlp		<=
+  b4e58:	b8 63 00 00 00                  mov eax, 0x63
+  b4e5d:	e9 ee fe ff ff                  jmp 0xb4d50
+
+  b4e62:	0f 1f 40 bb                     jlp		<=
+  b4e66:	b8 00 08 00 00                  mov eax, 0x800
+  b4e6b:	e9 e0 fe ff ff                  jmp 0xb4d50
+
+  b4e70:	0f 1f 40 bb                     jlp		<=
+  b4e74:	b8 63 00 00 00                  mov eax, 0x63
+  b4e79:	e9 d2 fe ff ff                  jmp 0xb4d50
+
+  b4e7e:	0f 1f 40 bb                     jlp		<=
+  b4e82:	b8 e8 03 00 00                  mov eax, 0x3e8
+  b4e87:	e9 c4 fe ff ff                  jmp 0xb4d50
+
+  b4e8c:	0f 1f 40 bb                     jlp		<=
+  b4e90:	b8 ff 00 00 00                  mov eax, 0xff
+  b4e95:	e9 b6 fe ff ff                  jmp 0xb4d50
+
+  b4e9a:	0f 1f 40 bb                     jlp		<=
+  b4e9e:	b8 20 00 00 00                  mov eax, 0x20
+  b4ea3:	e9 a8 fe ff ff                  jmp 0xb4d50
+
+  b4ea8:	0f 1f 40 bb                     jlp		<=
+  b4eac:	b8 00 08 00 00                  mov eax, 0x800
+  b4eb1:	e9 9a fe ff ff                  jmp 0xb4d50
+
+  b4eb6:	0f 1f 40 bb                     jlp		<=
+  b4eba:	b8 ff 7f 00 00                  mov eax, 0x7fff
+  b4ebf:	e9 8c fe ff ff                  jmp 0xb4d50
+
+  b4ec4:	0f 1f 40 bb                     jlp		<=
+  b4ec8:	b8 00 08 00 00                  mov eax, 0x800
+  b4ecd:	e9 7e fe ff ff                  jmp 0xb4d50
+
+  b4ed2:	0f 1f 40 bb                     jlp		<=
+  b4ed6:	b8 69 10 03 00                  mov eax, 0x31069
+  b4edb:	e9 70 fe ff ff                  jmp 0xb4d50
+
+  b4ee0:	0f 1f 40 bb                     jlp		<=
+  b4ee4:	b8 69 10 03 00                  mov eax, 0x31069
+  b4ee9:	e9 62 fe ff ff                  jmp 0xb4d50
+
+  b4eee:	0f 1f 40 bb                     jlp		<=
+  b4ef2:	b8 69 10 03 00                  mov eax, 0x31069
+  b4ef7:	e9 54 fe ff ff                  jmp 0xb4d50
+
+  b4efc:	0f 1f 40 bb                     jlp		<=
+  b4f00:	b8 69 10 03 00                  mov eax, 0x31069
+  b4f05:	e9 46 fe ff ff                  jmp 0xb4d50
+
+  b4f0a:	0f 1f 40 bb                     jlp		<=
+  b4f0e:	b8 69 10 03 00                  mov eax, 0x31069
+  b4f13:	e9 38 fe ff ff                  jmp 0xb4d50
+
+  b4f18:	0f 1f 40 bb                     jlp		<=
+  b4f1c:	b8 69 10 03 00                  mov eax, 0x31069
+  b4f21:	e9 2a fe ff ff                  jmp 0xb4d50
+
+  b4f26:	0f 1f 40 bb                     jlp		<=
+  b4f2a:	b8 69 10 03 00                  mov eax, 0x31069
+  b4f2f:	e9 1c fe ff ff                  jmp 0xb4d50
+
+  b4f34:	0f 1f 40 bb                     jlp		<=
+  b4f38:	b8 69 10 03 00                  mov eax, 0x31069
+  b4f3d:	e9 0e fe ff ff                  jmp 0xb4d50
+
+  b4f42:	0f 1f 40 bb                     jlp		<=
+  b4f46:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b4f4b:	e9 00 fe ff ff                  jmp 0xb4d50
+
+  b4f50:	0f 1f 40 bb                     jlp		<=
+  b4f54:	48 8d 3d ca 13 08 00            lea rdi, [rip+0x813ca]
+  b4f5b:	e8 b0 fb ff ff                  call 0xb4b10
+  b4f60:	0f 1f 40 cc                     rlp		<=
+  b4f64:	e9 e7 fd ff ff                  jmp 0xb4d50
+
+  b4f69:	0f 1f 40 bb                     jlp		<=
+  b4f6d:	b8 01 00 00 00                  mov eax, 0x1
+  b4f72:	e9 d9 fd ff ff                  jmp 0xb4d50
+
+  b4f77:	0f 1f 40 bb                     jlp		<=
+  b4f7b:	b8 01 00 00 00                  mov eax, 0x1
+  b4f80:	e9 cb fd ff ff                  jmp 0xb4d50
+
+  b4f85:	0f 1f 40 bb                     jlp		<=
+  b4f89:	b8 01 00 00 00                  mov eax, 0x1
+  b4f8e:	e9 bd fd ff ff                  jmp 0xb4d50
+
+  b4f93:	0f 1f 40 bb                     jlp		<=
+  b4f97:	b8 40 00 00 00                  mov eax, 0x40
+  b4f9c:	e9 af fd ff ff                  jmp 0xb4d50
+
+  b4fa1:	0f 1f 40 bb                     jlp		<=
+  b4fa5:	b8 00 04 00 00                  mov eax, 0x400
+  b4faa:	e9 a1 fd ff ff                  jmp 0xb4d50
+
+  b4faf:	0f 1f 40 bb                     jlp		<=
+  b4fb3:	b8 69 10 03 00                  mov eax, 0x31069
+  b4fb8:	e9 93 fd ff ff                  jmp 0xb4d50
+
+  b4fbd:	0f 1f 40 bb                     jlp		<=
+  b4fc1:	b8 01 00 00 00                  mov eax, 0x1
+  b4fc6:	e9 85 fd ff ff                  jmp 0xb4d50
+
+  b4fcb:	0f 1f 40 bb                     jlp		<=
+  b4fcf:	b8 69 10 03 00                  mov eax, 0x31069
+  b4fd4:	e9 77 fd ff ff                  jmp 0xb4d50
+
+  b4fd9:	0f 1f 40 bb                     jlp		<=
+  b4fdd:	b8 69 10 03 00                  mov eax, 0x31069
+  b4fe2:	e9 69 fd ff ff                  jmp 0xb4d50
+
+  b4fe7:	0f 1f 40 bb                     jlp		<=
+  b4feb:	b8 69 10 03 00                  mov eax, 0x31069
+  b4ff0:	e9 5b fd ff ff                  jmp 0xb4d50
+
+  b4ff5:	0f 1f 40 bb                     jlp		<=
+  b4ff9:	b8 69 10 03 00                  mov eax, 0x31069
+  b4ffe:	e9 4d fd ff ff                  jmp 0xb4d50
+
+  b5003:	0f 1f 40 bb                     jlp		<=
+  b5007:	b8 69 10 03 00                  mov eax, 0x31069
+  b500c:	e9 3f fd ff ff                  jmp 0xb4d50
+
+  b5011:	0f 1f 40 bb                     jlp		<=
+  b5015:	b8 69 10 03 00                  mov eax, 0x31069
+  b501a:	e9 31 fd ff ff                  jmp 0xb4d50
+
+  b501f:	0f 1f 40 bb                     jlp		<=
+  b5023:	b8 69 10 03 00                  mov eax, 0x31069
+  b5028:	e9 23 fd ff ff                  jmp 0xb4d50
+
+  b502d:	0f 1f 40 bb                     jlp		<=
+  b5031:	b8 69 10 03 00                  mov eax, 0x31069
+  b5036:	e9 15 fd ff ff                  jmp 0xb4d50
+
+  b503b:	0f 1f 40 bb                     jlp		<=
+  b503f:	b8 69 10 03 00                  mov eax, 0x31069
+  b5044:	e9 07 fd ff ff                  jmp 0xb4d50
+
+  b5049:	0f 1f 40 bb                     jlp		<=
+  b504d:	48 8d 3d c5 12 08 00            lea rdi, [rip+0x812c5]
+  b5054:	e8 b7 fa ff ff                  call 0xb4b10
+  b5059:	0f 1f 40 cc                     rlp		<=
+  b505d:	e9 ee fc ff ff                  jmp 0xb4d50
+
+  b5062:	0f 1f 40 bb                     jlp		<=
+  b5066:	b8 69 10 03 00                  mov eax, 0x31069
+  b506b:	e9 e0 fc ff ff                  jmp 0xb4d50
+
+  b5070:	0f 1f 40 bb                     jlp		<=
+  b5074:	b8 14 00 00 00                  mov eax, 0x14
+  b5079:	e9 d2 fc ff ff                  jmp 0xb4d50
+
+  b507e:	0f 1f 40 bb                     jlp		<=
+  b5082:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b5087:	e9 c4 fc ff ff                  jmp 0xb4d50
+
+  b508c:	0f 1f 40 bb                     jlp		<=
+  b5090:	b8 01 00 00 00                  mov eax, 0x1
+  b5095:	e9 b6 fc ff ff                  jmp 0xb4d50
+
+  b509a:	0f 1f 40 bb                     jlp		<=
+  b509e:	b8 00 80 00 00                  mov eax, 0x8000
+  b50a3:	e9 a8 fc ff ff                  jmp 0xb4d50
+
+  b50a8:	0f 1f 40 bb                     jlp		<=
+  b50ac:	b8 69 10 03 00                  mov eax, 0x31069
+  b50b1:	e9 9a fc ff ff                  jmp 0xb4d50
+
+  b50b6:	0f 1f 40 bb                     jlp		<=
+  b50ba:	e8 c1 f4 fe ff                  call 0xa4580
+  b50bf:	0f 1f 40 cc                     rlp		<=
+  b50c3:	48 89 c2                        mov rdx, rax
+  b50c6:	b8 06 00 00 00                  mov eax, 0x6
+  b50cb:	48 83 fa 06                     cmp rdx, 0x6
+  b50cf:	0f 8e 7b fc ff ff               jle 0xb4d50
+  b50d5:	e8 a6 f4 fe ff                  call 0xa4580
+  b50da:	0f 1f 40 cc                     rlp		<=
+  b50de:	e9 6d fc ff ff                  jmp 0xb4d50
+
+  b50e3:	0f 1f 40 bb                     jlp		<=
+  b50e7:	b8 01 00 00 00                  mov eax, 0x1
+  b50ec:	e9 5f fc ff ff                  jmp 0xb4d50
+
+  b50f1:	0f 1f 40 bb                     jlp		<=
+  b50f5:	b8 01 00 00 00                  mov eax, 0x1
+  b50fa:	e9 51 fc ff ff                  jmp 0xb4d50
+
+  b50ff:	0f 1f 40 bb                     jlp		<=
+  b5103:	b8 69 10 03 00                  mov eax, 0x31069
+  b5108:	e9 43 fc ff ff                  jmp 0xb4d50
+
+  b510d:	0f 1f 40 bb                     jlp		<=
+  b5111:	b8 69 10 03 00                  mov eax, 0x31069
+  b5116:	e9 35 fc ff ff                  jmp 0xb4d50
+
+  b511b:	0f 1f 40 bb                     jlp		<=
+  b511f:	b8 69 10 03 00                  mov eax, 0x31069
+  b5124:	e9 27 fc ff ff                  jmp 0xb4d50
+
+  b5129:	0f 1f 40 bb                     jlp		<=
+  b512d:	b8 69 10 03 00                  mov eax, 0x31069
+  b5132:	e9 19 fc ff ff                  jmp 0xb4d50
+
+  b5137:	0f 1f 40 bb                     jlp		<=
+  b513b:	b8 69 10 03 00                  mov eax, 0x31069
+  b5140:	e9 0b fc ff ff                  jmp 0xb4d50
+
+  b5145:	0f 1f 40 bb                     jlp		<=
+  b5149:	e8 c2 df 02 00                  call 0xe3110
+  b514e:	0f 1f 40 cc                     rlp		<=
+  b5152:	48 98                           cdqe
+  b5154:	e9 f7 fb ff ff                  jmp 0xb4d50
+
+  b5159:	0f 1f 40 bb                     jlp		<=
+  b515d:	b8 00 00 01 00                  mov eax, 0x10000
+  b5162:	e9 e9 fb ff ff                  jmp 0xb4d50
+
+  b5167:	0f 1f 40 bb                     jlp		<=
+  b516b:	e8 00 7a 02 00                  call 0xdcb70
+  b5170:	0f 1f 40 cc                     rlp		<=
+  b5174:	48 98                           cdqe
+  b5176:	e9 d5 fb ff ff                  jmp 0xb4d50
+
+  b517b:	0f 1f 40 bb                     jlp		<=
+  b517f:	b8 10 00 00 00                  mov eax, 0x10
+  b5184:	e9 c7 fb ff ff                  jmp 0xb4d50
+
+  b5189:	0f 1f 40 bb                     jlp		<=
+  b518d:	48 c7 c0 ff ff ff ff            mov rax, 0xffffffffffffffff
+  b5194:	e9 b7 fb ff ff                  jmp 0xb4d50
+
+  b5199:	0f 1f 40 bb                     jlp		<=
+  b519d:	e8 be 0f 02 00                  call 0xd6160
+  b51a2:	0f 1f 40 cc                     rlp		<=
+  b51a6:	e9 a5 fb ff ff                  jmp 0xb4d50
+
+  b51ab:	0f 1f 40 bb                     jlp		<=
+  b51af:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b51b4:	e9 97 fb ff ff                  jmp 0xb4d50
+
+  b51b9:	0f 1f 40 bb                     jlp		<=
+  b51bd:	48 8d 3d 61 11 08 00            lea rdi, [rip+0x81161]
+  b51c4:	e8 47 f9 ff ff                  call 0xb4b10
+  b51c9:	0f 1f 40 cc                     rlp		<=
+  b51cd:	e9 7e fb ff ff                  jmp 0xb4d50
+
+  b51d2:	0f 1f 40 bb                     jlp		<=
+  b51d6:	48 8d 3d 3c 11 08 00            lea rdi, [rip+0x8113c]
+  b51dd:	e8 2e f9 ff ff                  call 0xb4b10
+  b51e2:	0f 1f 40 cc                     rlp		<=
+  b51e6:	e9 65 fb ff ff                  jmp 0xb4d50
+
+  b51eb:	0f 1f 40 bb                     jlp		<=
+  b51ef:	b8 69 10 03 00                  mov eax, 0x31069
+  b51f4:	e9 57 fb ff ff                  jmp 0xb4d50
+
+  b51f9:	0f 1f 40 bb                     jlp		<=
+  b51fd:	b8 01 00 00 00                  mov eax, 0x1
+  b5202:	e9 49 fb ff ff                  jmp 0xb4d50
+
+  b5207:	0f 1f 40 bb                     jlp		<=
+  b520b:	b8 69 10 03 00                  mov eax, 0x31069
+  b5210:	e9 3b fb ff ff                  jmp 0xb4d50
+
+  b5215:	0f 1f 40 bb                     jlp		<=
+  b5219:	b8 69 10 03 00                  mov eax, 0x31069
+  b521e:	e9 2d fb ff ff                  jmp 0xb4d50
+
+  b5223:	0f 1f 40 bb                     jlp		<=
+  b5227:	b8 00 04 00 00                  mov eax, 0x400
+  b522c:	e9 1f fb ff ff                  jmp 0xb4d50
+
+  b5231:	0f 1f 40 bb                     jlp		<=
+  b5235:	b8 00 04 00 00                  mov eax, 0x400
+  b523a:	e9 11 fb ff ff                  jmp 0xb4d50
+
+  b523f:	0f 1f 40 bb                     jlp		<=
+  b5243:	b8 00 01 00 00                  mov eax, 0x100
+  b5248:	e9 03 fb ff ff                  jmp 0xb4d50
+
+  b524d:	0f 1f 40 bb                     jlp		<=
+  b5251:	b8 20 00 00 00                  mov eax, 0x20
+  b5256:	e9 f5 fa ff ff                  jmp 0xb4d50
+
+  b525b:	0f 1f 40 bb                     jlp		<=
+  b525f:	b8 04 00 00 00                  mov eax, 0x4
+  b5264:	e9 e7 fa ff ff                  jmp 0xb4d50
+
+  b5269:	0f 1f 40 bb                     jlp		<=
+  b526d:	b8 00 04 00 00                  mov eax, 0x400
+  b5272:	e9 d9 fa ff ff                  jmp 0xb4d50
+
+  b5277:	0f 1f 40 bb                     jlp		<=
+  b527b:	b8 00 40 00 00                  mov eax, 0x4000
+  b5280:	e9 cb fa ff ff                  jmp 0xb4d50
+
+  b5285:	0f 1f 40 bb                     jlp		<=
+  b5289:	b8 01 00 00 00                  mov eax, 0x1
+  b528e:	e9 bd fa ff ff                  jmp 0xb4d50
+
+  b5293:	0f 1f 40 bb                     jlp		<=
+  b5297:	b8 69 10 03 00                  mov eax, 0x31069
+  b529c:	e9 af fa ff ff                  jmp 0xb4d50
+
+  b52a1:	0f 1f 40 bb                     jlp		<=
+  b52a5:	b8 69 10 03 00                  mov eax, 0x31069
+  b52aa:	e9 a1 fa ff ff                  jmp 0xb4d50
+
+  b52af:	0f 1f 40 bb                     jlp		<=
+  b52b3:	b8 69 10 03 00                  mov eax, 0x31069
+  b52b8:	e9 93 fa ff ff                  jmp 0xb4d50
+
+  b52bd:	0f 1f 40 bb                     jlp		<=
+  b52c1:	b8 69 10 03 00                  mov eax, 0x31069
+  b52c6:	e9 85 fa ff ff                  jmp 0xb4d50
+
+  b52cb:	0f 1f 40 bb                     jlp		<=
+  b52cf:	b8 69 10 03 00                  mov eax, 0x31069
+  b52d4:	e9 77 fa ff ff                  jmp 0xb4d50
+
+  b52d9:	0f 1f 40 bb                     jlp		<=
+  b52dd:	b8 69 10 03 00                  mov eax, 0x31069
+  b52e2:	e9 69 fa ff ff                  jmp 0xb4d50
+
+  b52e7:	0f 1f 40 bb                     jlp		<=
+  b52eb:	e8 70 da 02 00                  call 0xe2d60
+  b52f0:	0f 1f 40 cc                     rlp		<=
+  b52f4:	48 98                           cdqe
+  b52f6:	e9 55 fa ff ff                  jmp 0xb4d50
+
+  b52fb:	0f 1f 40 bb                     jlp		<=
+  b52ff:	90                              nop
+  b5300:	e8 7b d7 02 00                  call 0xe2a80
+  b5305:	0f 1f 40 cc                     rlp		<=
+  b5309:	48 98                           cdqe
+  b530b:	e9 40 fa ff ff                  jmp 0xb4d50
+
+  b5310:	0f 1f 40 bb                     jlp		<=
+  b5314:	e8 17 db 02 00                  call 0xe2e30
+  b5319:	0f 1f 40 cc                     rlp		<=
+  b531d:	0f 1f 00                        nop [rax]
+  b5320:	e9 2b fa ff ff                  jmp 0xb4d50
+
+  b5325:	0f 1f 40 bb                     jlp		<=
+  b5329:	0f 1f 80 00 00 00 00            nop [rax]
+  b5330:	e8 1b db 02 00                  call 0xe2e50
+  b5335:	0f 1f 40 cc                     rlp		<=
+  b5339:	0f 1f 80 00 00 00 00            nop [rax]
+  b5340:	e9 0b fa ff ff                  jmp 0xb4d50
+
+  b5345:	0f 1f 40 bb                     jlp		<=
+  b5349:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b534e:	66 90                           nop
+  b5350:	e9 fb f9 ff ff                  jmp 0xb4d50
+
+  b5355:	0f 1f 40 bb                     jlp		<=
+  b5359:	b8 00 20 00 00                  mov eax, 0x2000
+  b535e:	e9 ed f9 ff ff                  jmp 0xb4d50
+
+  b5363:	0f 1f 40 bb                     jlp		<=
+  b5367:	b8 bc 02 00 00                  mov eax, 0x2bc
+  b536c:	e9 df f9 ff ff                  jmp 0xb4d50
+
+  b5371:	0f 1f 40 bb                     jlp		<=
+  b5375:	b8 04 00 00 00                  mov eax, 0x4
+  b537a:	e9 d1 f9 ff ff                  jmp 0xb4d50
+
+  b537f:	0f 1f 40 bb                     jlp		<=
+  b5383:	b8 01 00 00 00                  mov eax, 0x1
+  b5388:	e9 c3 f9 ff ff                  jmp 0xb4d50
+
+  b538d:	0f 1f 40 bb                     jlp		<=
+  b5391:	b8 01 00 00 00                  mov eax, 0x1
+  b5396:	e9 b5 f9 ff ff                  jmp 0xb4d50
+
+  b539b:	0f 1f 40 bb                     jlp		<=
+  b539f:	b8 01 00 00 00                  mov eax, 0x1
+  b53a4:	e9 a7 f9 ff ff                  jmp 0xb4d50
+
+  b53a9:	0f 1f 40 bb                     jlp		<=
+  b53ad:	b8 01 00 00 00                  mov eax, 0x1
+  b53b2:	e9 99 f9 ff ff                  jmp 0xb4d50
+
+  b53b7:	0f 1f 40 bb                     jlp		<=
+  b53bb:	b8 69 10 03 00                  mov eax, 0x31069
+  b53c0:	e9 8b f9 ff ff                  jmp 0xb4d50
+
+  b53c5:	0f 1f 40 bb                     jlp		<=
+  b53c9:	b8 01 00 00 00                  mov eax, 0x1
+  b53ce:	e9 7d f9 ff ff                  jmp 0xb4d50
+
+  b53d3:	0f 1f 40 bb                     jlp		<=
+  b53d7:	b8 69 10 03 00                  mov eax, 0x31069
+  b53dc:	e9 6f f9 ff ff                  jmp 0xb4d50
+
+  b53e1:	0f 1f 40 bb                     jlp		<=
+  b53e5:	b8 01 00 00 00                  mov eax, 0x1
+  b53ea:	e9 61 f9 ff ff                  jmp 0xb4d50
+
+  b53ef:	0f 1f 40 bb                     jlp		<=
+  b53f3:	b8 01 00 00 00                  mov eax, 0x1
+  b53f8:	e9 53 f9 ff ff                  jmp 0xb4d50
+
+  b53fd:	0f 1f 40 bb                     jlp		<=
+  b5401:	b8 01 00 00 00                  mov eax, 0x1
+  b5406:	e9 45 f9 ff ff                  jmp 0xb4d50
+
+  b540b:	0f 1f 40 bb                     jlp		<=
+  b540f:	b8 08 00 00 00                  mov eax, 0x8
+  b5414:	e9 37 f9 ff ff                  jmp 0xb4d50
+
+  b5419:	0f 1f 40 bb                     jlp		<=
+  b541d:	b8 7f 00 00 00                  mov eax, 0x7f
+  b5422:	e9 29 f9 ff ff                  jmp 0xb4d50
+
+  b5427:	0f 1f 40 bb                     jlp		<=
+  b542b:	48 c7 c0 80 ff ff ff            mov rax, 0xffffffffffffff80
+  b5432:	e9 19 f9 ff ff                  jmp 0xb4d50
+
+  b5437:	0f 1f 40 bb                     jlp		<=
+  b543b:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b5440:	e9 0b f9 ff ff                  jmp 0xb4d50
+
+  b5445:	0f 1f 40 bb                     jlp		<=
+  b5449:	48 c7 c0 00 00 00 80            mov rax, 0xffffffff80000000
+  b5450:	e9 fb f8 ff ff                  jmp 0xb4d50
+
+  b5455:	0f 1f 40 bb                     jlp		<=
+  b5459:	b8 40 00 00 00                  mov eax, 0x40
+  b545e:	e9 ed f8 ff ff                  jmp 0xb4d50
+
+  b5463:	0f 1f 40 bb                     jlp		<=
+  b5467:	b8 20 00 00 00                  mov eax, 0x20
+  b546c:	e9 df f8 ff ff                  jmp 0xb4d50
+
+  b5471:	0f 1f 40 bb                     jlp		<=
+  b5475:	b8 10 00 00 00                  mov eax, 0x10
+  b547a:	e9 d1 f8 ff ff                  jmp 0xb4d50
+
+  b547f:	0f 1f 40 bb                     jlp		<=
+  b5483:	b8 14 00 00 00                  mov eax, 0x14
+  b5488:	e9 c3 f8 ff ff                  jmp 0xb4d50
+
+  b548d:	0f 1f 40 bb                     jlp		<=
+  b5491:	b8 ff 7f 00 00                  mov eax, 0x7fff
+  b5496:	e9 b5 f8 ff ff                  jmp 0xb4d50
+
+  b549b:	0f 1f 40 bb                     jlp		<=
+  b549f:	b8 7f 00 00 00                  mov eax, 0x7f
+  b54a4:	e9 a7 f8 ff ff                  jmp 0xb4d50
+
+  b54a9:	0f 1f 40 bb                     jlp		<=
+  b54ad:	48 c7 c0 80 ff ff ff            mov rax, 0xffffffffffffff80
+  b54b4:	e9 97 f8 ff ff                  jmp 0xb4d50
+
+  b54b9:	0f 1f 40 bb                     jlp		<=
+  b54bd:	b8 ff 7f 00 00                  mov eax, 0x7fff
+  b54c2:	e9 89 f8 ff ff                  jmp 0xb4d50
+
+  b54c7:	0f 1f 40 bb                     jlp		<=
+  b54cb:	48 c7 c0 00 80 ff ff            mov rax, 0xffffffffffff8000
+  b54d2:	e9 79 f8 ff ff                  jmp 0xb4d50
+
+  b54d7:	0f 1f 40 bb                     jlp		<=
+  b54db:	b8 ff 00 00 00                  mov eax, 0xff
+  b54e0:	e9 6b f8 ff ff                  jmp 0xb4d50
+
+  b54e5:	0f 1f 40 bb                     jlp		<=
+  b54e9:	b8 ff ff ff ff                  mov eax, 0xffffffff
+  b54ee:	e9 5d f8 ff ff                  jmp 0xb4d50
+
+  b54f3:	0f 1f 40 bb                     jlp		<=
+  b54f7:	b8 69 10 03 00                  mov eax, 0x31069
+  b54fc:	e9 4f f8 ff ff                  jmp 0xb4d50
+
+  b5501:	0f 1f 40 bb                     jlp		<=
+  b5505:	b8 ff ff 00 00                  mov eax, 0xffff
+  b550a:	e9 41 f8 ff ff                  jmp 0xb4d50
+
+  b550f:	0f 1f 40 bb                     jlp		<=
+  b5513:	b8 00 10 00 00                  mov eax, 0x1000
+  b5518:	e9 33 f8 ff ff                  jmp 0xb4d50
+
+  b551d:	0f 1f 40 bb                     jlp		<=
+  b5521:	b8 00 08 00 00                  mov eax, 0x800
+  b5526:	e9 25 f8 ff ff                  jmp 0xb4d50
+
+  b552b:	0f 1f 40 bb                     jlp		<=
+  b552f:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b5534:	e9 17 f8 ff ff                  jmp 0xb4d50
+
+  b5539:	0f 1f 40 bb                     jlp		<=
+  b553d:	b8 ff ff ff 7f                  mov eax, 0x7fffffff
+  b5542:	e9 09 f8 ff ff                  jmp 0xb4d50
+
+  b5547:	0f 1f 40 bb                     jlp		<=
+  b554b:	48 8b 05 16 39 2b 00            mov rax, [rip+0x2b3916]
+  b5552:	64 c7 00 16 00 00 00            mov dword [fs:rax], 0x16
+  b5559:	48 c7 c0 ff ff ff ff            mov rax, 0xffffffffffffffff
+  b5560:	e9 eb f7 ff ff                  jmp 0xb4d50
+
+  b56b0:	0f 1f 40 bb                     jlp		<=
+  b56b4:	b8 01 00 00 00                  mov eax, 0x1
+  b56b9:	e9 f6 fe ff ff                  jmp 0xb55b4
+
+  b56c0:	0f 1f 40 bb                     jlp		<=
+  b56c4:	b8 ff 00 00 00                  mov eax, 0xff
+  b56c9:	e9 e6 fe ff ff                  jmp 0xb55b4
+
+  b56d0:	0f 1f 40 bb                     jlp		<=
+  b56d4:	b8 00 10 00 00                  mov eax, 0x1000
+  b56d9:	e9 d6 fe ff ff                  jmp 0xb55b4
+
+  b56e0:	0f 1f 40 bb                     jlp		<=
+  b56e4:	48 89 e6                        mov rsi, rsp
+  b56e7:	89 df                           mov edi, ebx
+  b56e9:	e8 72 0f 02 00                  call 0xd6660
+  b56ee:	0f 1f 40 cc                     rlp		<=
+  b56f2:	89 c2                           mov edx, eax
+  b56f4:	48 c7 c0 ff ff ff ff            mov rax, 0xffffffffffffffff
+  b56fb:	85 d2                           test edx, edx
+  b56fd:	48 0f 49 44 24 08               cmovns rax, [rsp+0x8]
+  b5703:	e9 ac fe ff ff                  jmp 0xb55b4
+
+  b5710:	0f 1f 40 bb                     jlp		<=
+  b5714:	31 c0                           xor eax, eax
+  b5716:	e9 99 fe ff ff                  jmp 0xb55b4
+
+  b5740:	0f 1f 40 bb                     jlp		<=
+  b5744:	b8 20 00 00 00                  mov eax, 0x20
+  b5749:	e9 66 fe ff ff                  jmp 0xb55b4
+
+  b5750:	0f 1f 40 bb                     jlp		<=
+  b5754:	48 89 e6                        mov rsi, rsp
+  b5757:	89 df                           mov edi, ebx
+  b5759:	e8 02 0f 02 00                  call 0xd6660
+  b575e:	0f 1f 40 cc                     rlp		<=
+  b5762:	89 c2                           mov edx, eax
+  b5764:	48 c7 c0 ff ff ff ff            mov rax, 0xffffffffffffffff
+  b576b:	85 d2                           test edx, edx
+  b576d:	48 0f 49 04 24                  cmovns rax, [rsp]
+  b5772:	e9 3d fe ff ff                  jmp 0xb55b4
+
+  bbab0:	0f 1f 40 aa                     clp		<=
+  bbab4:	41 54                           push r12
+  bbab6:	49 89 f4                        mov r12, rsi
+  bbab9:	55                              push rbp
+  bbaba:	48 89 d5                        mov rbp, rdx
+  bbabd:	53                              push rbx
+  bbabe:	48 89 fb                        mov rbx, rdi
+  bbac1:	eb 08                           jmp 0xbbacb
+
+  bbb20:	0f 1f 40 aa                     clp		<=
+  bbb24:	41 54                           push r12
+  bbb26:	49 89 f4                        mov r12, rsi
+  bbb29:	55                              push rbp
+  bbb2a:	48 89 d5                        mov rbp, rdx
+  bbb2d:	53                              push rbx
+  bbb2e:	48 89 fb                        mov rbx, rdi
+  bbb31:	eb 08                           jmp 0xbbb3b
+
+  bcc60:	0f 1f 40 aa                     clp		<=
+  bcc64:	44 8b 4f 34                     mov r9d, [rdi+0x34]
+  bcc68:	44 39 4f 40                     cmp [rdi+0x40], r9d
+  bcc6c:	44 0f 4e 4f 40                  cmovle r9d, [rdi+0x40]
+  bcc71:	8b 47 2c                        mov eax, [rdi+0x2c]
+  bcc74:	41 39 c1                        cmp r9d, eax
+  bcc77:	7e 71                           jle 0xbccea
+  bcc79:	48 63 d0                        movsxd rdx, eax
+  bcc7c:	4c 8b 15 7d c1 2a 00            mov r10, [rip+0x2ac17d]
+  bcc83:	eb 26                           jmp 0xbccab
+
+  bd148:	0f 1f 40 bb                     jlp		<=
+  bd14c:	48 8b 3f                        mov rdi, [rdi]
+  bd14f:	e8 4c ff ff ff                  call 0xbd0a0
+  bd154:	0f 1f 40 cc                     rlp		<=
+  bd158:	eb d0                           jmp 0xbd12a
+
+  bdc90:	0f 1f 40 aa                     clp		<=
+  bdc94:	85 ff                           test edi, edi
+  bdc96:	7e 50                           jle 0xbdce8
+  bdc98:	83 ef 01                        sub edi, 0x1
+  bdc9b:	48 8b 36                        mov rsi, [rsi]
+  bdc9e:	31 c9                           xor ecx, ecx
+  bdca0:	eb 09                           jmp 0xbdcab
+
+  bde40:	0f 1f 40 aa                     clp		<=
+  bde44:	41 89 f8                        mov r8d, edi
+  bde47:	31 c0                           xor eax, eax
+  bde49:	eb 08                           jmp 0xbde53
+
+  c5f90:	0f 1f 40 bb                     jlp		<=
+  c5f94:	80 e6 08                        and dh, 0x8
+  c5f97:	b8 01 00 00 00                  mov eax, 0x1
+  c5f9c:	0f 84 c4 fe ff ff               jz 0xc5e66
+  c5fa2:	c6 45 08 0a                     mov byte [rbp+0x8], 0xa
+  c5fa6:	b8 01 00 00 00                  mov eax, 0x1
+  c5fab:	e9 b6 fe ff ff                  jmp 0xc5e66
+
+  c6010:	0f 1f 40 bb                     jlp		<=
+  c6014:	80 e6 20                        and dh, 0x20
+  c6017:	b8 01 00 00 00                  mov eax, 0x1
+  c601c:	0f 84 44 fe ff ff               jz 0xc5e66
+  c6022:	c6 45 08 08                     mov byte [rbp+0x8], 0x8
+  c6026:	e9 3b fe ff ff                  jmp 0xc5e66
+
+  c6030:	0f 1f 40 bb                     jlp		<=
+  c6034:	80 e6 20                        and dh, 0x20
+  c6037:	b8 01 00 00 00                  mov eax, 0x1
+  c603c:	0f 84 24 fe ff ff               jz 0xc5e66
+  c6042:	c6 45 08 09                     mov byte [rbp+0x8], 0x9
+  c6046:	e9 1b fe ff ff                  jmp 0xc5e66
+
+  c6050:	0f 1f 40 bb                     jlp		<=
+  c6054:	c6 45 08 0b                     mov byte [rbp+0x8], 0xb
+  c6058:	b8 01 00 00 00                  mov eax, 0x1
+  c605d:	e9 04 fe ff ff                  jmp 0xc5e66
+
+  c6068:	0f 1f 40 bb                     jlp		<=
+  c606c:	f7 c2 02 04 00 00               test edx, 0x402
+  c6072:	b8 01 00 00 00                  mov eax, 0x1
+  c6077:	0f 85 e9 fd ff ff               jnz 0xc5e66
+  c607d:	c6 45 08 12                     mov byte [rbp+0x8], 0x12
+  c6081:	e9 e0 fd ff ff                  jmp 0xc5e66
+
+  c6090:	0f 1f 40 bb                     jlp		<=
+  c6094:	c6 45 08 05                     mov byte [rbp+0x8], 0x5
+  c6098:	b8 01 00 00 00                  mov eax, 0x1
+  c609d:	e9 c4 fd ff ff                  jmp 0xc5e66
+
+  c60a8:	0f 1f 40 bb                     jlp		<=
+  c60ac:	f7 c2 02 04 00 00               test edx, 0x402
+  c60b2:	b8 01 00 00 00                  mov eax, 0x1
+  c60b7:	0f 85 a9 fd ff ff               jnz 0xc5e66
+  c60bd:	c6 45 08 13                     mov byte [rbp+0x8], 0x13
+  c60c1:	e9 a0 fd ff ff                  jmp 0xc5e66
+
+  c60d0:	0f 1f 40 bb                     jlp		<=
+  c60d4:	c6 45 08 14                     mov byte [rbp+0x8], 0x14
+  c60d8:	b8 01 00 00 00                  mov eax, 0x1
+  c60dd:	e9 84 fd ff ff                  jmp 0xc5e66
+
+  c6138:	0f 1f 40 bb                     jlp		<=
+  c613c:	81 e2 00 12 00 00               and edx, 0x1200
+  c6142:	b8 01 00 00 00                  mov eax, 0x1
+  c6147:	48 81 fa 00 12 00 00            cmp rdx, 0x1200
+  c614e:	0f 85 12 fd ff ff               jnz 0xc5e66
+  c6154:	c6 45 08 17                     mov byte [rbp+0x8], 0x17
+  c6158:	e9 09 fd ff ff                  jmp 0xc5e66
+
+  c6160:	0f 1f 40 bb                     jlp		<=
+  c6164:	81 e2 00 84 00 00               and edx, 0x8400
+  c616a:	48 81 fa 00 80 00 00            cmp rdx, 0x8000
+  c6171:	0f 84 2b fe ff ff               jz 0xc5fa2
+  c6177:	0f 1f 40 bb                     jlp		<=
+  c617b:	b8 01 00 00 00                  mov eax, 0x1
+  c6180:	e9 e1 fc ff ff                  jmp 0xc5e66
+
+  c6188:	0f 1f 40 bb                     jlp		<=
+  c618c:	81 e2 00 12 00 00               and edx, 0x1200
+  c6192:	b8 01 00 00 00                  mov eax, 0x1
+  c6197:	48 81 fa 00 12 00 00            cmp rdx, 0x1200
+  c619e:	0f 85 c2 fc ff ff               jnz 0xc5e66
+  c61a4:	c6 45 08 18                     mov byte [rbp+0x8], 0x18
+  c61a8:	e9 b9 fc ff ff                  jmp 0xc5e66
+
+  c61ad:	0f 1f 40 bb                     jlp		<=
+  c61b1:	81 e2 00 12 00 00               and edx, 0x1200
+  c61b7:	b8 02 00 00 00                  mov eax, 0x2
+  c61bc:	48 81 fa 00 02 00 00            cmp rdx, 0x200
+  c61c3:	0f 85 9d fc ff ff               jnz 0xc5e66
+  c61c9:	eb d9                           jmp 0xc61a4
+
+  c61cb:	0f 1f 40 bb                     jlp		<=
+  c61cf:	80 e6 84                        and dh, 0x84
+  c61d2:	b8 02 00 00 00                  mov eax, 0x2
+  c61d7:	0f 85 89 fc ff ff               jnz 0xc5e66
+  c61dd:	c6 45 08 0a                     mov byte [rbp+0x8], 0xa
+  c61e1:	e9 80 fc ff ff                  jmp 0xc5e66
+
+  c61e6:	0f 1f 40 bb                     jlp		<=
+  c61ea:	81 e2 00 12 00 00               and edx, 0x1200
+  c61f0:	b8 02 00 00 00                  mov eax, 0x2
+  c61f5:	48 81 fa 00 02 00 00            cmp rdx, 0x200
+  c61fc:	0f 85 64 fc ff ff               jnz 0xc5e66
+  c6202:	e9 4d ff ff ff                  jmp 0xc6154
+
+  c6207:	0f 1f 40 bb                     jlp		<=
+  c620b:	f7 c2 00 00 08 00               test edx, 0x80000
+  c6211:	b8 02 00 00 00                  mov eax, 0x2
+  c6216:	0f 85 4a fc ff ff               jnz 0xc5e66
+  c621c:	c6 45 08 20                     mov byte [rbp+0x8], 0x20
+  c6220:	e9 41 fc ff ff                  jmp 0xc5e66
+
+  c6225:	0f 1f 40 bb                     jlp		<=
+  c6229:	f7 c2 00 00 08 00               test edx, 0x80000
+  c622f:	b8 02 00 00 00                  mov eax, 0x2
+  c6234:	0f 85 2c fc ff ff               jnz 0xc5e66
+  c623a:	c6 45 08 22                     mov byte [rbp+0x8], 0x22
+  c623e:	e9 23 fc ff ff                  jmp 0xc5e66
+
+  c6243:	0f 1f 40 bb                     jlp		<=
+  c6247:	f7 c2 00 00 08 00               test edx, 0x80000
+  c624d:	b8 02 00 00 00                  mov eax, 0x2
+  c6252:	0f 85 0e fc ff ff               jnz 0xc5e66
+  c6258:	c6 45 08 0c                     mov byte [rbp+0x8], 0xc
+  c625c:	c7 45 00 00 01 00 00            mov dword [rbp], 0x100
+  c6263:	e9 fe fb ff ff                  jmp 0xc5e66
+
+  c6268:	0f 1f 40 bb                     jlp		<=
+  c626c:	f7 c2 00 00 08 00               test edx, 0x80000
+  c6272:	b8 02 00 00 00                  mov eax, 0x2
+  c6277:	0f 85 e9 fb ff ff               jnz 0xc5e66
+  c627d:	c6 45 08 0c                     mov byte [rbp+0x8], 0xc
+  c6281:	c7 45 00 40 00 00 00            mov dword [rbp], 0x40
+  c6288:	e9 d9 fb ff ff                  jmp 0xc5e66
+
+  c628d:	0f 1f 40 bb                     jlp		<=
+  c6291:	f7 c2 00 00 08 00               test edx, 0x80000
+  c6297:	b8 02 00 00 00                  mov eax, 0x2
+  c629c:	0f 85 c4 fb ff ff               jnz 0xc5e66
+  c62a2:	c6 45 08 21                     mov byte [rbp+0x8], 0x21
+  c62a6:	e9 bb fb ff ff                  jmp 0xc5e66
+
+  c62ab:	0f 1f 40 bb                     jlp		<=
+  c62af:	f7 c2 00 00 08 00               test edx, 0x80000
+  c62b5:	b8 02 00 00 00                  mov eax, 0x2
+  c62ba:	0f 85 a6 fb ff ff               jnz 0xc5e66
+  c62c0:	c6 45 08 23                     mov byte [rbp+0x8], 0x23
+  c62c4:	e9 9d fb ff ff                  jmp 0xc5e66
+
+  c62c9:	0f 1f 40 bb                     jlp		<=
+  c62cd:	f7 c2 00 00 08 00               test edx, 0x80000
+  c62d3:	b8 02 00 00 00                  mov eax, 0x2
+  c62d8:	0f 85 88 fb ff ff               jnz 0xc5e66
+  c62de:	c6 45 08 0c                     mov byte [rbp+0x8], 0xc
+  c62e2:	c7 45 00 00 02 00 00            mov dword [rbp], 0x200
+  c62e9:	e9 78 fb ff ff                  jmp 0xc5e66
+
+  c62ee:	0f 1f 40 bb                     jlp		<=
+  c62f2:	81 e2 02 04 00 00               and edx, 0x402
+  c62f8:	b8 02 00 00 00                  mov eax, 0x2
+  c62fd:	48 83 fa 02                     cmp rdx, 0x2
+  c6301:	0f 85 5f fb ff ff               jnz 0xc5e66
+  c6307:	e9 b1 fd ff ff                  jmp 0xc60bd
+
+  c630c:	0f 1f 40 bb                     jlp		<=
+  c6310:	f7 c2 00 00 08 00               test edx, 0x80000
+  c6316:	b8 02 00 00 00                  mov eax, 0x2
+  c631b:	0f 85 45 fb ff ff               jnz 0xc5e66
+  c6321:	c6 45 08 0c                     mov byte [rbp+0x8], 0xc
+  c6325:	c7 45 00 09 00 00 00            mov dword [rbp], 0x9
+  c632c:	e9 35 fb ff ff                  jmp 0xc5e66
+
+  c6331:	0f 1f 40 bb                     jlp		<=
+  c6335:	f7 c2 00 00 08 00               test edx, 0x80000
+  c633b:	b8 02 00 00 00                  mov eax, 0x2
+  c6340:	0f 85 20 fb ff ff               jnz 0xc5e66
+  c6346:	c6 45 08 0c                     mov byte [rbp+0x8], 0xc
+  c634a:	c7 45 00 06 00 00 00            mov dword [rbp], 0x6
+  c6351:	e9 10 fb ff ff                  jmp 0xc5e66
+
+  c6356:	0f 1f 40 bb                     jlp		<=
+  c635a:	80 e6 40                        and dh, 0x40
+  c635d:	b8 02 00 00 00                  mov eax, 0x2
+  c6362:	0f 85 fe fa ff ff               jnz 0xc5e66
+  c6368:	41 0f b6 d5                     movzx edx, r13b
+  c636c:	c6 45 08 04                     mov byte [rbp+0x8], 0x4
+  c6370:	83 ea 31                        sub edx, 0x31
+  c6373:	89 55 00                        mov [rbp], edx
+  c6376:	e9 eb fa ff ff                  jmp 0xc5e66
+
+  c637b:	0f 1f 40 bb                     jlp		<=
+  c637f:	81 e2 02 04 00 00               and edx, 0x402
+  c6385:	b8 02 00 00 00                  mov eax, 0x2
+  c638a:	48 83 fa 02                     cmp rdx, 0x2
+  c638e:	0f 85 d2 fa ff ff               jnz 0xc5e66
+  c6394:	e9 e4 fc ff ff                  jmp 0xc607d
+
+  c6399:	0f 1f 40 bb                     jlp		<=
+  c639d:	80 e6 20                        and dh, 0x20
+  c63a0:	b8 02 00 00 00                  mov eax, 0x2
+  c63a5:	0f 85 bb fa ff ff               jnz 0xc5e66
+  c63ab:	e9 92 fc ff ff                  jmp 0xc6042
+
+  c63b0:	0f 1f 40 bb                     jlp		<=
+  c63b4:	80 e6 20                        and dh, 0x20
+  c63b7:	b8 02 00 00 00                  mov eax, 0x2
+  c63bc:	0f 85 a4 fa ff ff               jnz 0xc5e66
+  c63c2:	e9 5b fc ff ff                  jmp 0xc6022
+
+  c63c7:	0f 1f 40 bb                     jlp		<=
+  c63cb:	f7 c2 00 00 08 00               test edx, 0x80000
+  c63d1:	b8 02 00 00 00                  mov eax, 0x2
+  c63d6:	0f 85 8a fa ff ff               jnz 0xc5e66
+  c63dc:	c6 45 08 0c                     mov byte [rbp+0x8], 0xc
+  c63e0:	c7 45 00 80 00 00 00            mov dword [rbp], 0x80
+  c63e7:	e9 7a fa ff ff                  jmp 0xc5e66
+
+  c63ec:	0f 1f 40 bb                     jlp		<=
+  c63f0:	b8 02 00 00 00                  mov eax, 0x2
+  c63f5:	e9 6c fa ff ff                  jmp 0xc5e66
+
+  c6b3c:	0f 1f 40 bb                     jlp		<=
+  c6b40:	48 8b 44 24 58                  mov rax, [rsp+0x58]
+  c6b45:	c7 00 05 00 00 00               mov dword [rax], 0x5
+  c6b4b:	31 c0                           xor eax, eax
+  c6b4d:	e9 17 fe ff ff                  jmp 0xc6969
+
+  c6c9c:	0f 1f 40 bb                     jlp		<=
+  c6ca0:	48 f7 44 24 50 00 00 02 00      test qword [rsp+0x50], 0x20000
+  c6ca9:	0f 85 3a f9 ff ff               jnz 0xc65e9
+  c6caf:	48 8b 44 24 58                  mov rax, [rsp+0x58]
+  c6cb4:	c7 00 10 00 00 00               mov dword [rax], 0x10
+  c6cba:	31 c0                           xor eax, eax
+  c6cbc:	e9 a8 fc ff ff                  jmp 0xc6969
+
+  c7386:	0f 1f 40 bb                     jlp		<=
+  c738a:	49 63 55 34                     movsxd rdx, dword [r13+0x34]
+  c738e:	3b 54 24 7c                     cmp edx, [rsp+0x7c]
+  c7392:	0f 84 0a 04 00 00               jz 0xc77a2
+  c7398:	49 8b 45 00                     mov rax, [r13]
+  c739c:	8d 4a 01                        lea ecx, [rdx+0x1]
+  c739f:	41 89 4d 34                     mov [r13+0x34], ecx
+  c73a3:	8b 8c 24 e8 00 00 00            mov ecx, [rsp+0xe8]
+  c73aa:	89 0c 90                        mov [rax+rdx*4], ecx
+  c73ad:	e9 68 fe ff ff                  jmp 0xc721a
+
+  c939e:	0f 1f 40 bb                     jlp		<=
+  c93a2:	ba 01 00 00 00                  mov edx, 0x1
+  c93a7:	0f 1f 40 bb                     jlp		<=
+  c93ab:	4d 8d 58 01                     lea r11, [r8+0x1]
+  c93af:	4d 39 d3                        cmp r11, r10
+  c93b2:	0f 84 77 01 00 00               jz 0xc952f
+  c93b8:	4c 89 c1                        mov rcx, r8
+  c93bb:	4d 89 d8                        mov r8, r11
+  c93be:	e9 ea fd ff ff                  jmp 0xc91ad
+
+  c93c3:	0f 1f 40 bb                     jlp		<=
+  c93c7:	48 8b 09                        mov rcx, [rcx]
+  c93ca:	48 83 79 10 00                  cmp qword [rcx+0x10], 0x0
+  c93cf:	0f 85 9b fb ff ff               jnz 0xc8f70
+  c93d5:	48 83 79 18 00                  cmp qword [rcx+0x18], 0x0
+  c93da:	74 cb                           jz 0xc93a7
+  c93dc:	e9 8f fb ff ff                  jmp 0xc8f70
+
+  c93e8:	0f 1f 40 bb                     jlp		<=
+  c93ec:	80 39 00                        cmp byte [rcx], 0x0
+  c93ef:	b9 01 00 00 00                  mov ecx, 0x1
+  c93f4:	0f 48 f9                        cmovs edi, ecx
+  c93f7:	eb ae                           jmp 0xc93a7
+
+  c9bf6:	0f 1f 40 bb                     jlp		<=
+  c9bfa:	31 c0                           xor eax, eax
+  c9bfc:	31 db                           xor ebx, ebx
+  c9bfe:	e9 3d fe ff ff                  jmp 0xc9a40
+
+  c9f48:	0f 1f 40 bb                     jlp		<=
+  c9f4c:	48 83 e5 bf                     and rbp, 0xffffffffffffffbf
+  c9f50:	80 4b 38 80                     or byte [rbx+0x38], 0x80
+  c9f54:	48 81 cd 00 01 00 00            or rbp, 0x100
+  c9f5b:	eb 81                           jmp 0xc9ede
+
+  d01a0:	0f 1f 40 aa                     clp		<=
+  d01a4:	55                              push rbp
+  d01a5:	53                              push rbx
+  d01a6:	48 89 fb                        mov rbx, rdi
+  d01a9:	48 83 ec 08                     sub rsp, 0x8
+  d01ad:	48 85 ff                        test rdi, rdi
+  d01b0:	75 09                           jnz 0xd01bb
+  d01b2:	eb 29                           jmp 0xd01dd
+
+  d5860:	0f 1f 40 aa                     clp		<=
+  d5864:	48 89 f1                        mov rcx, rsi
+  d5867:	45 31 c0                        xor r8d, r8d
+  d586a:	eb 07                           jmp 0xd5873
+
+  d62b0:	0f 1f 40 aa                     clp		<=
+  d62b4:	48 83 ec 08                     sub rsp, 0x8
+  d62b8:	48 89 e7                        mov rdi, rsp
+  d62bb:	31 f6                           xor esi, esi
+  d62bd:	ba 38 00 00 00                  mov edx, 0x38
+  d62c2:	64 48 03 14 25 00 00 00 00      add rdx, [fs:0x0]
+  d62cb:	48 8b 05 76 80 29 00            mov rax, [rip+0x298076]
+  d62d2:	48 c1 c8 11                     ror rax, 0x11
+  d62d6:	64 48 33 04 25 30 00 00 00      xor rax, [fs:0x30]
+  d62df:	ff d0                           call rax
+
+  ddad0:	0f 1f 40 aa                     clp		<=
+  ddad4:	48 89 f8                        mov rax, rdi
+  ddad7:	48 8d 4f 01                     lea rcx, [rdi+0x1]
+  ddadb:	48 89 fa                        mov rdx, rdi
+  ddade:	eb 14                           jmp 0xddaf4
+
+  de850:	0f 1f 40 aa                     clp		<=
+  de854:	0f b6 0f                        movzx ecx, byte [rdi]
+  de857:	0f be d1                        movsx edx, cl
+  de85a:	85 d2                           test edx, edx
+  de85c:	0f 84 d0 00 00 00               jz 0xde932
+  de862:	48 89 fe                        mov rsi, rdi
+  de865:	45 31 c0                        xor r8d, r8d
+  de868:	eb 40                           jmp 0xde8aa
+
+  ded20:	0f 1f 40 aa                     clp		<=
+  ded24:	55                              push rbp
+  ded25:	48 89 fd                        mov rbp, rdi
+  ded28:	53                              push rbx
+  ded29:	48 83 ec 08                     sub rsp, 0x8
+  ded2d:	e8 0e fc ff ff                  call 0xde940
+  ded32:	0f 1f 40 cc                     rlp		<=
+  ded36:	eb 1b                           jmp 0xded53
+
+  df3c0:	0f 1f 40 aa                     clp		<=
+  df3c4:	83 3d a9 f3 28 00 00            cmp dword [rip+0x28f3a9], 0x0
+  df3cb:	74 0b                           jz 0xdf3d8
+  df3cd:	f0 ff 0d 5c ce 28 00            lock dec dword [rip+0x28ce5c]
+  df3d4:	75 0a                           jnz 0xdf3e0
+  df3d6:	eb 26                           jmp 0xdf3fe
+
+  dfdf0:	0f 1f 40 aa                     clp		<=
+  dfdf4:	53                              push rbx
+  dfdf5:	be 01 00 00 00                  mov esi, 0x1
+  dfdfa:	31 c0                           xor eax, eax
+  dfdfc:	83 3d 71 e9 28 00 00            cmp dword [rip+0x28e971], 0x0
+  dfe03:	74 0c                           jz 0xdfe11
+  dfe05:	f0 0f b1 35 23 c4 28 00         lock cmpxchg [rip+0x28c423], esi
+  dfe0d:	75 0b                           jnz 0xdfe1a
+  dfe0f:	eb 27                           jmp 0xdfe38
+
+  e1530:	0f 1f 40 aa                     clp		<=
+  e1534:	41 54                           push r12
+  e1536:	48 85 f6                        test rsi, rsi
+  e1539:	49 89 fc                        mov r12, rdi
+  e153c:	55                              push rbp
+  e153d:	48 89 d5                        mov rbp, rdx
+  e1540:	53                              push rbx
+  e1541:	75 23                           jnz 0xe1566
+  e1543:	eb 29                           jmp 0xe156e
+
+  e78a0:	0f 1f 40 aa                     clp		<=
+  e78a4:	48 83 ec 08                     sub rsp, 0x8
+  e78a8:	be 01 00 00 00                  mov esi, 0x1
+  e78ad:	31 c0                           xor eax, eax
+  e78af:	83 3d be 6e 28 00 00            cmp dword [rip+0x286ebe], 0x0
+  e78b6:	74 0c                           jz 0xe78c4
+  e78b8:	f0 0f b1 35 c8 4c 28 00         lock cmpxchg [rip+0x284cc8], esi
+  e78c0:	75 0b                           jnz 0xe78cd
+  e78c2:	eb 27                           jmp 0xe78eb
+
+  e8360:	0f 1f 40 aa                     clp		<=
+  e8364:	48 83 ec 18                     sub rsp, 0x18
+  e8368:	be 01 00 00 00                  mov esi, 0x1
+  e836d:	31 c0                           xor eax, eax
+  e836f:	83 3d fe 63 28 00 00            cmp dword [rip+0x2863fe], 0x0
+  e8376:	74 0c                           jz 0xe8384
+  e8378:	f0 0f b1 35 38 43 28 00         lock cmpxchg [rip+0x284338], esi
+  e8380:	75 0b                           jnz 0xe838d
+  e8382:	eb 27                           jmp 0xe83ab
+
+  e92b0:	0f 1f 40 aa                     clp		<=
+  e92b4:	48 83 ec 08                     sub rsp, 0x8
+  e92b8:	be 01 00 00 00                  mov esi, 0x1
+  e92bd:	31 c0                           xor eax, eax
+  e92bf:	83 3d ae 54 28 00 00            cmp dword [rip+0x2854ae], 0x0
+  e92c6:	74 0c                           jz 0xe92d4
+  e92c8:	f0 0f b1 35 70 34 28 00         lock cmpxchg [rip+0x283470], esi
+  e92d0:	75 0b                           jnz 0xe92dd
+  e92d2:	eb 27                           jmp 0xe92fb
+
+  e9b60:	0f 1f 40 aa                     clp		<=
+  e9b64:	48 83 ec 18                     sub rsp, 0x18
+  e9b68:	be 01 00 00 00                  mov esi, 0x1
+  e9b6d:	31 c0                           xor eax, eax
+  e9b6f:	83 3d fe 4b 28 00 00            cmp dword [rip+0x284bfe], 0x0
+  e9b76:	74 0c                           jz 0xe9b84
+  e9b78:	f0 0f b1 35 90 2c 28 00         lock cmpxchg [rip+0x282c90], esi
+  e9b80:	75 0b                           jnz 0xe9b8d
+  e9b82:	eb 27                           jmp 0xe9bab
+
+  eb310:	0f 1f 40 aa                     clp		<=
+  eb314:	55                              push rbp
+  eb315:	48 89 fd                        mov rbp, rdi
+  eb318:	53                              push rbx
+  eb319:	48 83 ec 08                     sub rsp, 0x8
+  eb31d:	48 8b 7f 18                     mov rdi, [rdi+0x18]
+  eb321:	48 85 ff                        test rdi, rdi
+  eb324:	75 0d                           jnz 0xeb333
+  eb326:	eb 1d                           jmp 0xeb345
+
+  efe90:	0f 1f 40 aa                     clp		<=
+  efe94:	48 85 f6                        test rsi, rsi
+  efe97:	74 2f                           jz 0xefec8
+  efe99:	48 8b 56 58                     mov rdx, [rsi+0x58]
+  efe9d:	48 8b 42 50                     mov rax, [rdx+0x50]
+  efea1:	48 8b 52 58                     mov rdx, [rdx+0x58]
+  efea5:	48 39 d0                        cmp rax, rdx
+  efea8:	72 0f                           jb 0xefeb9
+  efeaa:	eb 1c                           jmp 0xefec8
+
+  f0ae0:	0f 1f 40 aa                     clp		<=
+  f0ae4:	4c 8b 0d 6d da 27 00            mov r9, [rip+0x27da6d]
+  f0aeb:	55                              push rbp
+  f0aec:	48 89 e5                        mov rbp, rsp
+  f0aef:	4d 85 c9                        test r9, r9
+  f0af2:	74 1d                           jz 0xf0b11
+  f0af4:	49 39 79 20                     cmp [r9+0x20], rdi
+  f0af8:	49 89 fa                        mov r10, rdi
+  f0afb:	75 0c                           jnz 0xf0b09
+  f0afd:	eb 14                           jmp 0xf0b13
+
+  f0e70:	0f 1f 40 aa                     clp		<=
+  f0e74:	48 83 ec 08                     sub rsp, 0x8
+  f0e78:	48 8b 05 99 7f 27 00            mov rax, [rip+0x277f99]
+  f0e7f:	48 8b 00                        mov rax, [rax]
+  f0e82:	48 c1 c8 11                     ror rax, 0x11
+  f0e86:	64 48 33 04 25 30 00 00 00      xor rax, [fs:0x30]
+  f0e8f:	ff d0                           call rax
+
+  f19f0:	0f 1f 40 aa                     clp		<=
+  f19f4:	48 83 ec 08                     sub rsp, 0x8
+  f19f8:	4c 8d 0c 17                     lea r9, [rdi+rdx]
+  f19fc:	48 89 f9                        mov rcx, rdi
+  f19ff:	eb 0a                           jmp 0xf1a0b
+
+  f1bc0:	0f 1f 40 aa                     clp		<=
+  f1bc4:	53                              push rbx
+  f1bc5:	49 89 f9                        mov r9, rdi
+  f1bc8:	48 8d 1c 0f                     lea rbx, [rdi+rcx]
+  f1bcc:	eb 08                           jmp 0xf1bd6
+
+  f33c0:	0f 1f 40 aa                     clp		<=
+  f33c4:	48 83 ec 08                     sub rsp, 0x8
+  f33c8:	48 83 ea 01                     sub rdx, 0x1
+  f33cc:	49 89 f8                        mov r8, rdi
+  f33cf:	eb 0d                           jmp 0xf33de
+
+  f3430:	0f 1f 40 aa                     clp		<=
+  f3434:	48 83 ec 08                     sub rsp, 0x8
+  f3438:	49 89 fa                        mov r10, rdi
+  f343b:	eb 09                           jmp 0xf3446
+
+  f4b50:	0f 1f 40 aa                     clp		<=
+  f4b54:	48 83 ec 08                     sub rsp, 0x8
+  f4b58:	be 01 00 00 00                  mov esi, 0x1
+  f4b5d:	31 c0                           xor eax, eax
+  f4b5f:	83 3d 0e 9c 27 00 00            cmp dword [rip+0x279c0e], 0x0
+  f4b66:	74 0c                           jz 0xf4b74
+  f4b68:	f0 0f b1 35 48 86 27 00         lock cmpxchg [rip+0x278648], esi
+  f4b70:	75 0b                           jnz 0xf4b7d
+  f4b72:	eb 27                           jmp 0xf4b9b
+
+  f62e0:	0f 1f 40 aa                     clp		<=
+  f62e4:	48 83 ec 08                     sub rsp, 0x8
+  f62e8:	be 01 00 00 00                  mov esi, 0x1
+  f62ed:	31 c0                           xor eax, eax
+  f62ef:	83 3d 7e 84 27 00 00            cmp dword [rip+0x27847e], 0x0
+  f62f6:	74 0c                           jz 0xf6304
+  f62f8:	f0 0f b1 35 20 70 27 00         lock cmpxchg [rip+0x277020], esi
+  f6300:	75 0b                           jnz 0xf630d
+  f6302:	eb 27                           jmp 0xf632b
+
+  f63c0:	0f 1f 40 aa                     clp		<=
+  f63c4:	48 83 ec 18                     sub rsp, 0x18
+  f63c8:	41 89 f9                        mov r9d, edi
+  f63cb:	be 01 00 00 00                  mov esi, 0x1
+  f63d0:	31 c0                           xor eax, eax
+  f63d2:	83 3d 9b 83 27 00 00            cmp dword [rip+0x27839b], 0x0
+  f63d9:	74 0c                           jz 0xf63e7
+  f63db:	f0 0f b1 35 45 6f 27 00         lock cmpxchg [rip+0x276f45], esi
+  f63e3:	75 0b                           jnz 0xf63f0
+  f63e5:	eb 27                           jmp 0xf640e
+
+  f6d20:	0f 1f 40 aa                     clp		<=
+  f6d24:	48 83 ec 08                     sub rsp, 0x8
+  f6d28:	be 01 00 00 00                  mov esi, 0x1
+  f6d2d:	31 c0                           xor eax, eax
+  f6d2f:	83 3d 3e 7a 27 00 00            cmp dword [rip+0x277a3e], 0x0
+  f6d36:	74 0c                           jz 0xf6d44
+  f6d38:	f0 0f b1 35 a8 66 27 00         lock cmpxchg [rip+0x2766a8], esi
+  f6d40:	75 0b                           jnz 0xf6d4d
+  f6d42:	eb 27                           jmp 0xf6d6b
+
+  f6e00:	0f 1f 40 aa                     clp		<=
+  f6e04:	48 83 ec 18                     sub rsp, 0x18
+  f6e08:	41 89 f9                        mov r9d, edi
+  f6e0b:	be 01 00 00 00                  mov esi, 0x1
+  f6e10:	31 c0                           xor eax, eax
+  f6e12:	83 3d 5b 79 27 00 00            cmp dword [rip+0x27795b], 0x0
+  f6e19:	74 0c                           jz 0xf6e27
+  f6e1b:	f0 0f b1 35 cd 65 27 00         lock cmpxchg [rip+0x2765cd], esi
+  f6e23:	75 0b                           jnz 0xf6e30
+  f6e25:	eb 27                           jmp 0xf6e4e
+
+  f7770:	0f 1f 40 aa                     clp		<=
+  f7774:	48 83 ec 08                     sub rsp, 0x8
+  f7778:	be 01 00 00 00                  mov esi, 0x1
+  f777d:	31 c0                           xor eax, eax
+  f777f:	83 3d ee 6f 27 00 00            cmp dword [rip+0x276fee], 0x0
+  f7786:	74 0c                           jz 0xf7794
+  f7788:	f0 0f b1 35 08 5d 27 00         lock cmpxchg [rip+0x275d08], esi
+  f7790:	75 0b                           jnz 0xf779d
+  f7792:	eb 27                           jmp 0xf77bb
+
+  f7850:	0f 1f 40 aa                     clp		<=
+  f7854:	48 83 ec 18                     sub rsp, 0x18
+  f7858:	41 89 f9                        mov r9d, edi
+  f785b:	be 01 00 00 00                  mov esi, 0x1
+  f7860:	31 c0                           xor eax, eax
+  f7862:	83 3d 0b 6f 27 00 00            cmp dword [rip+0x276f0b], 0x0
+  f7869:	74 0c                           jz 0xf7877
+  f786b:	f0 0f b1 35 2d 5c 27 00         lock cmpxchg [rip+0x275c2d], esi
+  f7873:	75 0b                           jnz 0xf7880
+  f7875:	eb 27                           jmp 0xf789e
+
+  f87c0:	0f 1f 40 aa                     clp		<=
+  f87c4:	48 83 ec 08                     sub rsp, 0x8
+  f87c8:	be 01 00 00 00                  mov esi, 0x1
+  f87cd:	31 c0                           xor eax, eax
+  f87cf:	83 3d 9e 5f 27 00 00            cmp dword [rip+0x275f9e], 0x0
+  f87d6:	74 0c                           jz 0xf87e4
+  f87d8:	f0 0f b1 35 20 4e 27 00         lock cmpxchg [rip+0x274e20], esi
+  f87e0:	75 0b                           jnz 0xf87ed
+  f87e2:	eb 27                           jmp 0xf880b
+
+  f88a0:	0f 1f 40 aa                     clp		<=
+  f88a4:	48 83 ec 18                     sub rsp, 0x18
+  f88a8:	41 89 f9                        mov r9d, edi
+  f88ab:	be 01 00 00 00                  mov esi, 0x1
+  f88b0:	31 c0                           xor eax, eax
+  f88b2:	83 3d bb 5e 27 00 00            cmp dword [rip+0x275ebb], 0x0
+  f88b9:	74 0c                           jz 0xf88c7
+  f88bb:	f0 0f b1 35 45 4d 27 00         lock cmpxchg [rip+0x274d45], esi
+  f88c3:	75 0b                           jnz 0xf88d0
+  f88c5:	eb 27                           jmp 0xf88ee
+
+  f8b70:	0f 1f 40 aa                     clp		<=
+  f8b74:	48 83 ec 08                     sub rsp, 0x8
+  f8b78:	be 01 00 00 00                  mov esi, 0x1
+  f8b7d:	31 c0                           xor eax, eax
+  f8b7f:	83 3d ee 5b 27 00 00            cmp dword [rip+0x275bee], 0x0
+  f8b86:	74 0c                           jz 0xf8b94
+  f8b88:	f0 0f b1 35 c8 4a 27 00         lock cmpxchg [rip+0x274ac8], esi
+  f8b90:	75 0b                           jnz 0xf8b9d
+  f8b92:	eb 27                           jmp 0xf8bbb
+
+  f8f90:	0f 1f 40 aa                     clp		<=
+  f8f94:	48 83 ec 18                     sub rsp, 0x18
+  f8f98:	41 89 f9                        mov r9d, edi
+  f8f9b:	be 01 00 00 00                  mov esi, 0x1
+  f8fa0:	31 c0                           xor eax, eax
+  f8fa2:	83 3d cb 57 27 00 00            cmp dword [rip+0x2757cb], 0x0
+  f8fa9:	74 0c                           jz 0xf8fb7
+  f8fab:	f0 0f b1 35 05 47 27 00         lock cmpxchg [rip+0x274705], esi
+  f8fb3:	75 0b                           jnz 0xf8fc0
+  f8fb5:	eb 27                           jmp 0xf8fde
+
+  fc5f0:	0f 1f 40 aa                     clp		<=
+  fc5f4:	53                              push rbx
+  fc5f5:	be 01 00 00 00                  mov esi, 0x1
+  fc5fa:	48 89 fb                        mov rbx, rdi
+  fc5fd:	31 c0                           xor eax, eax
+  fc5ff:	83 3d 6e 21 27 00 00            cmp dword [rip+0x27216e], 0x0
+  fc606:	74 0c                           jz 0xfc614
+  fc608:	f0 0f b1 35 48 12 27 00         lock cmpxchg [rip+0x271248], esi
+  fc610:	75 0b                           jnz 0xfc61d
+  fc612:	eb 27                           jmp 0xfc63b
+
+  fc720:	0f 1f 40 aa                     clp		<=
+  fc724:	48 83 ec 08                     sub rsp, 0x8
+  fc728:	be 01 00 00 00                  mov esi, 0x1
+  fc72d:	31 c0                           xor eax, eax
+  fc72f:	83 3d 3e 20 27 00 00            cmp dword [rip+0x27203e], 0x0
+  fc736:	74 0c                           jz 0xfc744
+  fc738:	f0 0f b1 35 18 11 27 00         lock cmpxchg [rip+0x271118], esi
+  fc740:	75 0b                           jnz 0xfc74d
+  fc742:	eb 27                           jmp 0xfc76b
+
+  fd000:	0f 1f 40 aa                     clp		<=
+  fd004:	48 83 ec 18                     sub rsp, 0x18
+  fd008:	be 01 00 00 00                  mov esi, 0x1
+  fd00d:	31 c0                           xor eax, eax
+  fd00f:	83 3d 5e 17 27 00 00            cmp dword [rip+0x27175e], 0x0
+  fd016:	74 0c                           jz 0xfd024
+  fd018:	f0 0f b1 35 40 08 27 00         lock cmpxchg [rip+0x270840], esi
+  fd020:	75 0b                           jnz 0xfd02d
+  fd022:	eb 27                           jmp 0xfd04b
+
+  fd2d0:	0f 1f 40 aa                     clp		<=
+  fd2d4:	48 83 ec 08                     sub rsp, 0x8
+  fd2d8:	be 01 00 00 00                  mov esi, 0x1
+  fd2dd:	31 c0                           xor eax, eax
+  fd2df:	83 3d 8e 14 27 00 00            cmp dword [rip+0x27148e], 0x0
+  fd2e6:	74 0c                           jz 0xfd2f4
+  fd2e8:	f0 0f b1 35 d0 05 27 00         lock cmpxchg [rip+0x2705d0], esi
+  fd2f0:	75 0b                           jnz 0xfd2fd
+  fd2f2:	eb 27                           jmp 0xfd31b
+
+  fe5f0:	0f 1f 40 aa                     clp		<=
+  fe5f4:	55                              push rbp
+  fe5f5:	48 89 fd                        mov rbp, rdi
+  fe5f8:	53                              push rbx
+  fe5f9:	48 89 fb                        mov rbx, rdi
+  fe5fc:	48 83 ec 08                     sub rsp, 0x8
+  fe600:	eb 13                           jmp 0xfe615
+
+  fea40:	0f 1f 40 aa                     clp		<=
+  fea44:	41 54                           push r12
+  fea46:	55                              push rbp
+  fea47:	48 8b 2d 1a a4 26 00            mov rbp, [rip+0x26a41a]
+  fea4e:	53                              push rbx
+  fea4f:	48 8b 7f 10                     mov rdi, [rdi+0x10]
+  fea53:	64 44 8b 65 00                  mov r12d, [fs:rbp]
+  fea58:	48 85 ff                        test rdi, rdi
+  fea5b:	75 06                           jnz 0xfea63
+  fea5d:	eb 15                           jmp 0xfea74
+
+  100160:	0f 1f 40 aa                     clp		<=
+  100164:	48 8d 15 95 2a 03 00            lea rdx, [rip+0x32a95]
+  10016b:	4c 8d 05 e2 2a 03 00            lea r8, [rip+0x32ae2]
+  100172:	b8 ff ff ff ff                  mov eax, 0xffffffff
+  100177:	eb 10                           jmp 0x100189
+
+  103180:	0f 1f 40 aa                     clp		<=
+  103184:	0f b6 17                        movzx edx, byte [rdi]
+  103187:	48 89 f8                        mov rax, rdi
+  10318a:	84 d2                           test dl, dl
+  10318c:	74 32                           jz 0x1031c0
+  10318e:	48 8b 0d 6b 5c 26 00            mov rcx, [rip+0x265c6b]
+  103195:	64 48 8b 31                     mov rsi, [fs:rcx]
+  103199:	eb 1a                           jmp 0x1031b5
+
+  109be0:	0f 1f 40 aa                     clp		<=
+  109be4:	53                              push rbx
+  109be5:	48 8b 5f 18                     mov rbx, [rdi+0x18]
+  109be9:	48 8b 73 68                     mov rsi, [rbx+0x68]
+  109bed:	48 85 f6                        test rsi, rsi
+  109bf0:	7f 1e                           jg 0x109c10
+  109bf2:	eb 15                           jmp 0x109c09
+
+  109c50:	0f 1f 40 aa                     clp		<=
+  109c54:	53                              push rbx
+  109c55:	48 8b 5f 18                     mov rbx, [rdi+0x18]
+  109c59:	48 8b 73 68                     mov rsi, [rbx+0x68]
+  109c5d:	48 85 f6                        test rsi, rsi
+  109c60:	7f 20                           jg 0x109c82
+  109c62:	eb 17                           jmp 0x109c7b
+
+  10bdf0:	0f 1f 40 aa                     clp		<=
+  10bdf4:	48 83 ec 08                     sub rsp, 0x8
+  10bdf8:	48 8b 7f 10                     mov rdi, [rdi+0x10]
+  10bdfc:	48 89 f1                        mov rcx, rsi
+  10bdff:	31 c0                           xor eax, eax
+  10be01:	48 89 d6                        mov rsi, rdx
+  10be04:	c7 87 c8 00 00 00 02 00 00 00   mov dword [rdi+0xc8], 0x2
+  10be0e:	48 81 c7 c8 00 00 00            add rdi, 0xc8
+  10be15:	ff d1                           call rcx
+
+  10bea0:	0f 1f 40 aa                     clp		<=
+  10bea4:	83 fe 0f                        cmp esi, 0xf
+  10bea7:	49 89 d0                        mov r8, rdx
+  10beaa:	48 8b 4f 10                     mov rcx, [rdi+0x10]
+  10beae:	0f 87 cc 01 00 00               ja 0x10c080
+  10beb4:	48 8d 05 45 80 02 00            lea rax, [rip+0x28045]
+  10bebb:	89 f6                           mov esi, esi
+  10bebd:	48 63 14 b0                     movsxd rdx, dword [rax+rsi*4]
+  10bec1:	48 01 d0                        add rax, rdx
+  10bec4:	ff e0                           jmp rax
+
+  10cac0:	0f 1f 40 aa                     clp		<=
+  10cac4:	48 83 ec 08                     sub rsp, 0x8
+  10cac8:	48 8b 7f 40                     mov rdi, [rdi+0x40]
+  10cacc:	48 89 f1                        mov rcx, rsi
+  10cacf:	31 c0                           xor eax, eax
+  10cad1:	48 89 d6                        mov rsi, rdx
+  10cad4:	48 83 c7 10                     add rdi, 0x10
+  10cad8:	ff d1                           call rcx
+
+  10caf0:	0f 1f 40 aa                     clp		<=
+  10caf4:	48 83 ec 08                     sub rsp, 0x8
+  10caf8:	48 8b 7f 40                     mov rdi, [rdi+0x40]
+  10cafc:	48 89 f1                        mov rcx, rsi
+  10caff:	31 c0                           xor eax, eax
+  10cb01:	48 89 d6                        mov rsi, rdx
+  10cb04:	c7 47 10 02 00 00 00            mov dword [rdi+0x10], 0x2
+  10cb0b:	48 83 c7 10                     add rdi, 0x10
+  10cb0f:	ff d1                           call rcx
+
+  10dc70:	0f 1f 40 aa                     clp		<=
+  10dc74:	48 89 f0                        mov rax, rsi
+  10dc77:	48 83 ec 08                     sub rsp, 0x8
+  10dc7b:	48 8b 77 40                     mov rsi, [rdi+0x40]
+  10dc7f:	48 8b 48 08                     mov rcx, [rax+0x8]
+  10dc83:	48 89 c7                        mov rdi, rax
+  10dc86:	8b 96 c8 01 00 00               mov edx, [rsi+0x1c8]
+  10dc8c:	48 83 c6 38                     add rsi, 0x38
+  10dc90:	ff 51 18                        call qword [rcx+0x18]
+
+  10e710:	0f 1f 40 aa                     clp		<=
+  10e714:	41 55                           push r13
+  10e716:	41 54                           push r12
+  10e718:	55                              push rbp
+  10e719:	53                              push rbx
+  10e71a:	48 89 f3                        mov rbx, rsi
+  10e71d:	48 81 ec 38 04 00 00            sub rsp, 0x438
+  10e724:	48 8b 47 08                     mov rax, [rdi+0x8]
+  10e728:	48 8d 74 24 10                  lea rsi, [rsp+0x10]
+  10e72d:	ff 50 10                        call qword [rax+0x10]
+
+  10e868:	0f 1f 40 bb                     jlp		<=
+  10e86c:	48 8d 7c 24 08                  lea rdi, [rsp+0x8]
+  10e871:	48 8d 35 cc 7e 02 00            lea rsi, [rip+0x27ecc]
+  10e878:	48 89 e9                        mov rcx, rbp
+  10e87b:	48 89 da                        mov rdx, rbx
+  10e87e:	31 c0                           xor eax, eax
+  10e880:	e8 3b 3b f4 ff                  call 0x523c0
+  10e885:	0f 1f 40 cc                     rlp		<=
+  10e889:	e9 23 ff ff ff                  jmp 0x10e7b1
+
+  10eb40:	0f 1f 40 aa                     clp		<=
+  10eb44:	48 83 ec 08                     sub rsp, 0x8
+  10eb48:	48 8b 7f 10                     mov rdi, [rdi+0x10]
+  10eb4c:	48 89 f1                        mov rcx, rsi
+  10eb4f:	31 c0                           xor eax, eax
+  10eb51:	48 89 d6                        mov rsi, rdx
+  10eb54:	c7 47 68 02 00 00 00            mov dword [rdi+0x68], 0x2
+  10eb5b:	48 83 c7 68                     add rdi, 0x68
+  10eb5f:	ff d1                           call rcx
+
+  10ebe0:	0f 1f 40 aa                     clp		<=
+  10ebe4:	83 fe 0f                        cmp esi, 0xf
+  10ebe7:	48 8b 4f 10                     mov rcx, [rdi+0x10]
+  10ebeb:	0f 87 47 01 00 00               ja 0x10ed38
+  10ebf1:	48 8d 05 2c 57 02 00            lea rax, [rip+0x2572c]
+  10ebf8:	89 f6                           mov esi, esi
+  10ebfa:	48 63 34 b0                     movsxd rsi, dword [rax+rsi*4]
+  10ebfe:	48 01 f0                        add rax, rsi
+  10ec01:	ff e0                           jmp rax
+
+  10f500:	0f 1f 40 aa                     clp		<=
+  10f504:	48 83 ec 08                     sub rsp, 0x8
+  10f508:	48 8b 7f 10                     mov rdi, [rdi+0x10]
+  10f50c:	48 89 f1                        mov rcx, rsi
+  10f50f:	31 c0                           xor eax, eax
+  10f511:	48 89 d6                        mov rsi, rdx
+  10f514:	c7 47 58 02 00 00 00            mov dword [rdi+0x58], 0x2
+  10f51b:	48 83 c7 58                     add rdi, 0x58
+  10f51f:	ff d1                           call rcx
+
+  10f540:	0f 1f 40 aa                     clp		<=
+  10f544:	83 fe 0f                        cmp esi, 0xf
+  10f547:	48 8b 7f 10                     mov rdi, [rdi+0x10]
+  10f54b:	0f 87 bf 01 00 00               ja 0x10f710
+  10f551:	48 8d 05 0c 4e 02 00            lea rax, [rip+0x24e0c]
+  10f558:	89 f6                           mov esi, esi
+  10f55a:	48 63 0c b0                     movsxd rcx, dword [rax+rsi*4]
+  10f55e:	48 01 c8                        add rax, rcx
+  10f561:	ff e0                           jmp rax
+
+  111af0:	0f 1f 40 aa                     clp		<=
+  111af4:	48 83 ec 68                     sub rsp, 0x68
+  111af8:	48 8b 47 08                     mov rax, [rdi+0x8]
+  111afc:	89 74 24 20                     mov [rsp+0x20], esi
+  111b00:	c7 44 24 08 01 00 00 00         mov dword [rsp+0x8], 0x1
+  111b08:	48 89 e6                        mov rsi, rsp
+  111b0b:	c7 44 24 10 01 00 00 00         mov dword [rsp+0x10], 0x1
+  111b13:	c7 44 24 18 01 00 00 00         mov dword [rsp+0x18], 0x1
+  111b1b:	ff 50 18                        call qword [rax+0x18]
+
+  111b30:	0f 1f 40 aa                     clp		<=
+  111b34:	48 83 ec 68                     sub rsp, 0x68
+  111b38:	48 8b 47 08                     mov rax, [rdi+0x8]
+  111b3c:	c7 44 24 08 01 00 00 00         mov dword [rsp+0x8], 0x1
+  111b44:	c7 44 24 10 01 00 00 00         mov dword [rsp+0x10], 0x1
+  111b4c:	48 89 e6                        mov rsi, rsp
+  111b4f:	c7 44 24 18 01 00 00 00         mov dword [rsp+0x18], 0x1
+  111b57:	c7 44 24 20 05 00 00 00         mov dword [rsp+0x20], 0x5
+  111b5f:	ff 50 18                        call qword [rax+0x18]
+
+  112030:	0f 1f 40 aa                     clp		<=
+  112034:	53                              push rbx
+  112035:	e8 86 f3 ff ff                  call 0x1113c0
+  11203a:	0f 1f 40 cc                     rlp		<=
+  11203e:	48 89 c3                        mov rbx, rax
+  112041:	eb 16                           jmp 0x112059
+
+  112080:	0f 1f 40 aa                     clp		<=
+  112084:	48 83 ec 08                     sub rsp, 0x8
+  112088:	48 8b 7f 40                     mov rdi, [rdi+0x40]
+  11208c:	48 89 f1                        mov rcx, rsi
+  11208f:	31 c0                           xor eax, eax
+  112091:	48 89 d6                        mov rsi, rdx
+  112094:	48 83 c7 10                     add rdi, 0x10
+  112098:	ff d1                           call rcx
+
+  1120b0:	0f 1f 40 aa                     clp		<=
+  1120b4:	48 83 ec 08                     sub rsp, 0x8
+  1120b8:	48 8b 7f 40                     mov rdi, [rdi+0x40]
+  1120bc:	48 89 f1                        mov rcx, rsi
+  1120bf:	31 c0                           xor eax, eax
+  1120c1:	48 89 d6                        mov rsi, rdx
+  1120c4:	c7 47 10 02 00 00 00            mov dword [rdi+0x10], 0x2
+  1120cb:	48 83 c7 10                     add rdi, 0x10
+  1120cf:	ff d1                           call rcx
+
+  1127e0:	0f 1f 40 aa                     clp		<=
+  1127e4:	48 83 ec 08                     sub rsp, 0x8
+  1127e8:	48 8b 7f 48                     mov rdi, [rdi+0x48]
+  1127ec:	48 89 f1                        mov rcx, rsi
+  1127ef:	31 c0                           xor eax, eax
+  1127f1:	48 89 d6                        mov rsi, rdx
+  1127f4:	48 83 c7 10                     add rdi, 0x10
+  1127f8:	ff d1                           call rcx
+
+  112810:	0f 1f 40 aa                     clp		<=
+  112814:	48 83 ec 08                     sub rsp, 0x8
+  112818:	48 8b 7f 48                     mov rdi, [rdi+0x48]
+  11281c:	48 89 f1                        mov rcx, rsi
+  11281f:	31 c0                           xor eax, eax
+  112821:	48 89 d6                        mov rsi, rdx
+  112824:	c7 47 10 02 00 00 00            mov dword [rdi+0x10], 0x2
+  11282b:	48 83 c7 10                     add rdi, 0x10
+  11282f:	ff d1                           call rcx
+
+  113340:	0f 1f 40 aa                     clp		<=
+  113344:	31 c0                           xor eax, eax
+  113346:	85 ff                           test edi, edi
+  113348:	7f 4d                           jg 0x113397
+  11334a:	e9 81 00 00 00                  jmp 0x1133d0
+
+  1138e0:	0f 1f 40 aa                     clp		<=
+  1138e4:	48 83 ec 38                     sub rsp, 0x38
+  1138e8:	48 89 fa                        mov rdx, rdi
+  1138eb:	31 c0                           xor eax, eax
+  1138ed:	c7 04 24 02 00 00 00            mov dword [rsp], 0x2
+  1138f4:	48 89 e7                        mov rdi, rsp
+  1138f7:	ff d2                           call rdx
+
+  1151c0:	0f 1f 40 bb                     jlp		<=
+  1151c4:	31 c0                           xor eax, eax
+  1151c6:	eb c6                           jmp 0x11518e
+
+  1151d0:	0f 1f 40 bb                     jlp		<=
+  1151d4:	48 89 f9                        mov rcx, rdi
+  1151d7:	31 c0                           xor eax, eax
+  1151d9:	eb 9e                           jmp 0x115179
+
+  1151e0:	0f 1f 40 bb                     jlp		<=
+  1151e4:	31 c0                           xor eax, eax
+  1151e6:	eb 82                           jmp 0x11516a
+
+  1151f0:	0f 1f 40 bb                     jlp		<=
+  1151f4:	48 89 f8                        mov rax, rdi
+  1151f7:	31 c9                           xor ecx, ecx
+  1151f9:	e9 5d ff ff ff                  jmp 0x11515b
+
+  115200:	0f 1f 40 bb                     jlp		<=
+  115204:	31 c9                           xor ecx, ecx
+  115206:	e9 41 ff ff ff                  jmp 0x11514c
+
+  115210:	0f 1f 40 bb                     jlp		<=
+  115214:	48 89 f8                        mov rax, rdi
+  115217:	31 c9                           xor ecx, ecx
+  115219:	e9 1f ff ff ff                  jmp 0x11513d
+
+  115220:	0f 1f 40 bb                     jlp		<=
+  115224:	31 c9                           xor ecx, ecx
+  115226:	e9 72 ff ff ff                  jmp 0x11519d
+
+  119630:	0f 1f 40 aa                     clp		<=
+  119634:	48 83 ec 08                     sub rsp, 0x8
+  119638:	ff 15 a2 d4 24 00               call qword [rip+0x24d4a2]
+
+  119660:	0f 1f 40 aa                     clp		<=
+  119664:	55                              push rbp
+  119665:	48 89 fd                        mov rbp, rdi
+  119668:	53                              push rbx
+  119669:	48 89 f3                        mov rbx, rsi
+  11966c:	48 83 ec 08                     sub rsp, 0x8
+  119670:	ff 15 6a d4 24 00               call qword [rip+0x24d46a]
+
+  1196c0:	0f 1f 40 aa                     clp		<=
+  1196c4:	41 54                           push r12
+  1196c6:	49 89 f4                        mov r12, rsi
+  1196c9:	55                              push rbp
+  1196ca:	48 89 fd                        mov rbp, rdi
+  1196cd:	53                              push rbx
+  1196ce:	48 89 d3                        mov rbx, rdx
+  1196d1:	ff 15 09 d4 24 00               call qword [rip+0x24d409]
+
+  119720:	0f 1f 40 aa                     clp		<=
+  119724:	41 54                           push r12
+  119726:	49 89 f4                        mov r12, rsi
+  119729:	55                              push rbp
+  11972a:	48 89 fd                        mov rbp, rdi
+  11972d:	53                              push rbx
+  11972e:	48 89 d3                        mov rbx, rdx
+  119731:	ff 15 a9 d3 24 00               call qword [rip+0x24d3a9]
+
+  119780:	0f 1f 40 aa                     clp		<=
+  119784:	53                              push rbx
+  119785:	48 89 fb                        mov rbx, rdi
+  119788:	ff 15 52 d3 24 00               call qword [rip+0x24d352]
+
+  1197d0:	0f 1f 40 aa                     clp		<=
+  1197d4:	48 83 ec 08                     sub rsp, 0x8
+  1197d8:	be 01 00 00 00                  mov esi, 0x1
+  1197dd:	31 c0                           xor eax, eax
+  1197df:	83 3d 8e 4f 25 00 00            cmp dword [rip+0x254f8e], 0x0
+  1197e6:	74 0c                           jz 0x1197f4
+  1197e8:	f0 0f b1 35 c8 51 25 00         lock cmpxchg [rip+0x2551c8], esi
+  1197f0:	75 0b                           jnz 0x1197fd
+  1197f2:	eb 27                           jmp 0x11981b
+
+  119920:	0f 1f 40 aa                     clp		<=
+  119924:	48 83 ec 08                     sub rsp, 0x8
+  119928:	48 89 fa                        mov rdx, rdi
+  11992b:	be 01 00 00 00                  mov esi, 0x1
+  119930:	31 c0                           xor eax, eax
+  119932:	83 3d 3b 4e 25 00 00            cmp dword [rip+0x254e3b], 0x0
+  119939:	74 0c                           jz 0x119947
+  11993b:	f0 0f b1 35 75 50 25 00         lock cmpxchg [rip+0x255075], esi
+  119943:	75 0b                           jnz 0x119950
+  119945:	eb 27                           jmp 0x11996e
+
+  1199d0:	0f 1f 40 aa                     clp		<=
+  1199d4:	48 83 ec 08                     sub rsp, 0x8
+  1199d8:	be 01 00 00 00                  mov esi, 0x1
+  1199dd:	31 c0                           xor eax, eax
+  1199df:	83 3d 8e 4d 25 00 00            cmp dword [rip+0x254d8e], 0x0
+  1199e6:	74 0c                           jz 0x1199f4
+  1199e8:	f0 0f b1 35 c8 4f 25 00         lock cmpxchg [rip+0x254fc8], esi
+  1199f0:	75 0b                           jnz 0x1199fd
+  1199f2:	eb 27                           jmp 0x119a1b
+
+  11c150:	0f 1f 40 aa                     clp		<=
+  11c154:	0f b7 87 b0 02 00 00            movzx eax, word [rdi+0x2b0]
+  11c15b:	48 2b 37                        sub rsi, [rdi]
+  11c15e:	48 8d 14 c5 00 00 00 00         lea rdx, [rax*8]
+  11c166:	48 c1 e0 06                     shl rax, 0x6
+  11c16a:	48 29 d0                        sub rax, rdx
+  11c16d:	48 83 e8 38                     sub rax, 0x38
+  11c171:	eb 09                           jmp 0x11c17c
+
+  11c1b0:	0f 1f 40 aa                     clp		<=
+  11c1b4:	48 83 ec 08                     sub rsp, 0x8
+  11c1b8:	48 8b 05 a1 cc 24 00            mov rax, [rip+0x24cca1]
+  11c1bf:	48 89 fe                        mov rsi, rdi
+  11c1c2:	48 8b 7c 24 08                  mov rdi, [rsp+0x8]
+  11c1c7:	ff 90 e0 00 00 00               call qword [rax+0xe0]
+
+  11c1e0:	0f 1f 40 aa                     clp		<=
+  11c1e4:	48 8b 05 fd cb 24 00            mov rax, [rip+0x24cbfd]
+  11c1eb:	48 83 b8 70 09 00 00 00         cmp qword [rax+0x970], 0x0
+  11c1f3:	74 21                           jz 0x11c216
+  11c1f5:	48 83 ec 08                     sub rsp, 0x8
+  11c1f9:	48 8b 05 60 cc 24 00            mov rax, [rip+0x24cc60]
+  11c200:	48 89 fe                        mov rsi, rdi
+  11c203:	48 8b 7c 24 08                  mov rdi, [rsp+0x8]
+  11c208:	ff 90 e0 00 00 00               call qword [rax+0xe0]
+
+  11c2e0:	0f 1f 40 aa                     clp		<=
+  11c2e4:	48 83 ec 08                     sub rsp, 0x8
+  11c2e8:	48 8b 05 71 cb 24 00            mov rax, [rip+0x24cb71]
+  11c2ef:	ff 90 00 01 00 00               call qword [rax+0x100]
+
+  11c300:	0f 1f 40 aa                     clp		<=
+  11c304:	48 83 ec 38                     sub rsp, 0x38
+  11c308:	48 8b 05 51 cb 24 00            mov rax, [rip+0x24cb51]
+  11c30f:	48 89 f9                        mov rcx, rdi
+  11c312:	49 89 f0                        mov r8, rsi
+  11c315:	48 c7 44 24 28 00 00 00 00      mov qword [rsp+0x28], 0x0
+  11c31e:	48 8d 54 24 1f                  lea rdx, [rsp+0x1f]
+  11c323:	48 8d 74 24 28                  lea rsi, [rsp+0x28]
+  11c328:	48 8d 7c 24 20                  lea rdi, [rsp+0x20]
+  11c32d:	ff 90 d0 00 00 00               call qword [rax+0xd0]
+
+./exesections/11d430-__libc_freeres_fn: 11d430
+**********************************************************
+  11da40:	0f 1f 40 aa                     clp		<=
+  11da44:	55                              push rbp
+  11da45:	53                              push rbx
+  11da46:	48 83 ec 08                     sub rsp, 0x8
+  11da4a:	48 8b 1d 67 d1 24 00            mov rbx, [rip+0x24d167]
+  11da51:	48 85 db                        test rbx, rbx
+  11da54:	75 0d                           jnz 0x11da63
+  11da56:	eb 3e                           jmp 0x11da96
+
+  11dbe0:	0f 1f 40 aa                     clp		<=
+  11dbe4:	48 8b 3d 05 ba 24 00            mov rdi, [rip+0x24ba05]
+  11dbeb:	48 85 ff                        test rdi, rdi
+  11dbee:	74 2c                           jz 0x11dc1c
+  11dbf0:	53                              push rbx
+  11dbf1:	eb 0e                           jmp 0x11dc01
+
+  11ddc0:	0f 1f 40 aa                     clp		<=
+  11ddc4:	48 8b 3d 0d dd 24 00            mov rdi, [rip+0x24dd0d]
+  11ddcb:	53                              push rbx
+  11ddcc:	48 85 ff                        test rdi, rdi
+  11ddcf:	75 0a                           jnz 0x11dddb
+  11ddd1:	eb 20                           jmp 0x11ddf3
+
+  11df10:	0f 1f 40 aa                     clp		<=
+  11df14:	be 01 00 00 00                  mov esi, 0x1
+  11df19:	31 c0                           xor eax, eax
+  11df1b:	83 3d 52 08 25 00 00            cmp dword [rip+0x250852], 0x0
+  11df22:	74 0c                           jz 0x11df30
+  11df24:	f0 0f b1 35 34 e9 24 00         lock cmpxchg [rip+0x24e934], esi
+  11df2c:	75 0b                           jnz 0x11df39
+  11df2e:	eb 27                           jmp 0x11df57
+
+./exesections/11e4a0-__libc_thread_freeres_fn: 11e4a0
+**********************************************************
+  11e560:	0f 1f 40 aa                     clp		<=
+  11e564:	55                              push rbp
+  11e565:	48 8d 2d fc 72 24 00            lea rbp, [rip+0x2472fc]
+  11e56c:	53                              push rbx
+  11e56d:	48 8d 1d d4 72 24 00            lea rbx, [rip+0x2472d4]
+  11e574:	48 83 ec 08                     sub rsp, 0x8
+  11e578:	48 39 eb                        cmp rbx, rbp
+  11e57b:	73 12                           jae 0x11e58f
+  11e57d:	0f 1f 00                        nop [rax]
+  11e580:	ff 13                           call qword [rbx]
+
+
+Totally 536 gadgets.
