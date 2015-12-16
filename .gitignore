@@ -4,7 +4,7 @@ exesections/*
 *.so
 *.o
 *.a
-output
+#output
 testls.sh
 
 # Python
