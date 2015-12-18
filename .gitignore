@@ -4,7 +4,6 @@ exesections/*
 *.so
 *.o
 *.a
-testls.sh
 
 # Python
 *.pyc

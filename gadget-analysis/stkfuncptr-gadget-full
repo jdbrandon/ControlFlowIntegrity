@@ -1,0 +1,166 @@
+./exesections/400498-.init: 400498
+**********************************************************
+  4004b1:	0f 1f 40 cc                     rlp		<=
+  4004b5:	e8 66 02 00 00                  call 0x400720
+  4004ba:	0f 1f 40 cc                     rlp		<=
+  4004be:	e8 bd 03 00 00                  call 0x400880
+  4004c3:	0f 1f 40 cc                     rlp		<=
+  4004c7:	48 83 c4 08                     add rsp, 0x8
+  4004cb:	c3                              ret
+
+./exesections/4004d0-.plt: 4004d0
+**********************************************************
+  4004f0:	0f 1f 40 aa                     clp		<=
+  4004f4:	ff 25 36 07 20 00               jmp qword [rip+0x200736]
+
+  4004fa:	0f 1f 40 bb                     jlp		<=
+  4004fe:	68 00 00 00 00                  push 0x0
+  400503:	e9 c8 ff ff ff                  jmp 0x4004d0
+
+  400510:	0f 1f 40 aa                     clp		<=
+  400514:	ff 25 1e 07 20 00               jmp qword [rip+0x20071e]
+
+  40051a:	0f 1f 40 bb                     jlp		<=
+  40051e:	68 01 00 00 00                  push 0x1
+  400523:	e9 a8 ff ff ff                  jmp 0x4004d0
+
+  400530:	0f 1f 40 aa                     clp		<=
+  400534:	ff 25 06 07 20 00               jmp qword [rip+0x200706]
+
+  40053a:	0f 1f 40 bb                     jlp		<=
+  40053e:	68 02 00 00 00                  push 0x2
+  400543:	e9 88 ff ff ff                  jmp 0x4004d0
+
+  400550:	0f 1f 40 aa                     clp		<=
+  400554:	ff 25 ee 06 20 00               jmp qword [rip+0x2006ee]
+
+  40055a:	0f 1f 40 bb                     jlp		<=
+  40055e:	68 03 00 00 00                  push 0x3
+  400563:	e9 68 ff ff ff                  jmp 0x4004d0
+
+  400570:	0f 1f 40 aa                     clp		<=
+  400574:	ff 25 d6 06 20 00               jmp qword [rip+0x2006d6]
+
+  40057a:	0f 1f 40 bb                     jlp		<=
+  40057e:	68 04 00 00 00                  push 0x4
+  400583:	e9 48 ff ff ff                  jmp 0x4004d0
+
+  400590:	0f 1f 40 aa                     clp		<=
+  400594:	ff 25 be 06 20 00               jmp qword [rip+0x2006be]
+
+  40059a:	0f 1f 40 bb                     jlp		<=
+  40059e:	68 05 00 00 00                  push 0x5
+  4005a3:	e9 28 ff ff ff                  jmp 0x4004d0
+
+  4005b0:	0f 1f 40 aa                     clp		<=
+  4005b4:	ff 25 a6 06 20 00               jmp qword [rip+0x2006a6]
+
+  4005ba:	0f 1f 40 bb                     jlp		<=
+  4005be:	68 06 00 00 00                  push 0x6
+  4005c3:	e9 08 ff ff ff                  jmp 0x4004d0
+
+./exesections/4005d0-.text: 4005d0
+**********************************************************
+  4005fd:	0f 1f 40 cc                     rlp		<=
+  400601:	f4                              hlt
+  400602:	66 2e 0f 1f 84 00 00 00 00 00   o16 nop [cs:rax+rax]
+  40060c:	0f 1f 40 00                     nop [rax]
+  400610:	0f 1f 40 aa                     clp		<=
+  400614:	b8 7f 0c 60 00                  mov eax, 0x600c7f
+  400619:	48 2d 78 0c 60 00               sub rax, 0x600c78
+  40061f:	48 83 f8 0e                     cmp rax, 0xe
+  400623:	77 01                           ja 0x400626
+  400625:	c3                              ret
+
+  40063b:	0f 1f 40 cc                     rlp		<=
+  40063f:	5d                              pop rbp
+  400640:	c3                              ret
+
+  400650:	0f 1f 40 aa                     clp		<=
+  400654:	b8 78 0c 60 00                  mov eax, 0x600c78
+  400659:	48 2d 78 0c 60 00               sub rax, 0x600c78
+  40065f:	48 c1 f8 03                     sar rax, 0x3
+  400663:	48 89 c2                        mov rdx, rax
+  400666:	48 c1 ea 3f                     shr rdx, 0x3f
+  40066a:	48 01 d0                        add rax, rdx
+  40066d:	48 d1 f8                        sar rax, 1
+  400670:	75 01                           jnz 0x400673
+  400672:	c3                              ret
+
+  40068b:	0f 1f 40 cc                     rlp		<=
+  40068f:	5d                              pop rbp
+  400690:	c3                              ret
+
+  400707:	0f 1f 40 cc                     rlp		<=
+  40070b:	c6 05 66 05 20 00 01            mov byte [rip+0x200566], 0x1
+  400712:	48 83 c4 08                     add rsp, 0x8
+  400716:	5b                              pop rbx
+  400717:	5d                              pop rbp
+  400718:	c3                              ret
+
+  400720:	0f 1f 40 aa                     clp		<=
+  400724:	48 83 3d 4c 03 20 00 00         cmp qword [rip+0x20034c], 0x0
+  40072c:	55                              push rbp
+  40072d:	48 89 e5                        mov rbp, rsp
+  400730:	74 15                           jz 0x400747
+  400732:	b8 00 00 00 00                  mov eax, 0x0
+  400737:	48 85 c0                        test rax, rax
+  40073a:	74 0b                           jz 0x400747
+  40073c:	bf 78 0a 60 00                  mov edi, 0x600a78
+  400741:	ff d0                           call rax
+
+  400743:	0f 1f 40 cc                     rlp		<=
+  400747:	e8 04 ff ff ff                  call 0x400650
+  40074c:	0f 1f 40 cc                     rlp		<=
+  400750:	5d                              pop rbp
+  400751:	c3                              ret
+
+  4007ce:	0f 1f 40 cc                     rlp		<=
+  4007d2:	48 8b 55 f8                     mov rdx, [rbp-0x8]
+  4007d6:	b8 00 00 00 00                  mov eax, 0x0
+  4007db:	ff d2                           call rdx
+
+  4007dd:	0f 1f 40 cc                     rlp		<=
+  4007e1:	c9                              leave
+  4007e2:	c3                              ret
+
+  4007e3:	0f 1f 40 aa                     clp		<=
+  4007e7:	55                              push rbp
+  4007e8:	48 89 e5                        mov rbp, rsp
+  4007eb:	bf ef 08 40 00                  mov edi, 0x4008ef
+  4007f0:	e8 fb fc ff ff                  call 0x4004f0
+  4007f5:	0f 1f 40 cc                     rlp		<=
+  4007f9:	5d                              pop rbp
+  4007fa:	c3                              ret
+
+  400837:	0f 1f 40 cc                     rlp		<=
+  40083b:	48 85 ed                        test rbp, rbp
+  40083e:	74 1a                           jz 0x40085a
+  400840:	4c 89 ea                        mov rdx, r13
+  400843:	4c 89 f6                        mov rsi, r14
+  400846:	44 89 ff                        mov edi, r15d
+  400849:	41 ff 14 dc                     call qword [r12+rbx*8]
+
+  400870:	0f 1f 40 aa                     clp		<=
+  400874:	c3                              ret
+
+  4008a6:	0f 1f 40 cc                     rlp		<=
+  4008aa:	48 8b 03                        mov rax, [rbx]
+  4008ad:	48 83 f8 ff                     cmp rax, 0xffffffffffffffff
+  4008b1:	75 ed                           jnz 0x4008a0
+  4008b3:	48 83 c4 08                     add rsp, 0x8
+  4008b7:	5b                              pop rbx
+  4008b8:	5d                              pop rbp
+  4008b9:	c3                              ret
+
+./exesections/4008bc-.fini: 4008bc
+**********************************************************
+  4008bc:	0f 1f 40 aa                     clp		<=
+  4008c0:	48 83 ec 08                     sub rsp, 0x8
+  4008c4:	e8 d7 fd ff ff                  call 0x4006a0
+  4008c9:	0f 1f 40 cc                     rlp		<=
+  4008cd:	48 83 c4 08                     add rsp, 0x8
+  4008d1:	c3                              ret
+
+
+Totally 29 gadgets.
