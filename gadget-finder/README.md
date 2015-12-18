@@ -6,7 +6,7 @@ Gadget Finder usage tips
 -n  Disable the shadow stack. This allows for rlp to be considered as a valid landing point
     or start of a gadget. By default the "shadow stack" is enabled.
 
--s  save raw binary files of the .text sections rather than deletiing them
+-s  save raw binary files of the executable sections rather than deleting them
 
 -o  specify a file for output to be stored to
 
